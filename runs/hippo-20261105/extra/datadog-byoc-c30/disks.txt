@@ -1,0 +1,9 @@
+NAME           SIZE MODEL                            FSTYPE   MOUNTPOINTS
+loop0         24.3M                                  squashfs /snap/amazon-ssm-agent/13348
+loop1           69M                                  squashfs /snap/core22/2988
+loop2         38.6M                                  squashfs /snap/snapd/28255
+nvme1n1        100G Amazon Elastic Block Store                
+├─nvme1n1p1     99G                                  ext4     /
+├─nvme1n1p15    99M                                  vfat     /boot/efi
+└─nvme1n1p16   923M                                  ext4     /boot
+nvme0n1      884.8G Amazon EC2 NVMe Instance Storage ext4     /mnt/local

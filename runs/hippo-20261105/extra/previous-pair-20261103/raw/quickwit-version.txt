@@ -1,0 +1,1 @@
+Quickwit 0.9.3 (aarch64-unknown-linux-gnu 2026-11-02T23:10:12+01:00 71c9181)

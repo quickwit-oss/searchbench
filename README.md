@@ -13,6 +13,17 @@ The runner shape follows
 implements `./install`, `./start`, `./stop`, `./check`, `./load`,
 `./query`, `./data-size`; the shared `lib/benchmark.sh` orchestrates.
 
+## Public benchmark (Datadog, 2026-11)
+
+This fork publishes the runs behind Datadog's 2026-11 log search benchmark: Datadog BYOC, ClickHouse and DuckDB
+on S3, 1B rows, AWS m8gd.4xlarge. [`PUBLIC_BENCH.md`](PUBLIC_BENCH.md) lists every published number and where it
+comes from; the run set, with its method, settings and evidence, is
+[`runs/hippo-20261105`](runs/hippo-20261105/README.md), and it is the results page's default view
+([`runs/README.md`](runs/README.md) describes the layout). Adapters used: [`datadog-byoc/`](datadog-byoc/README.md)
+(this fork's Quickwit-based adapter, renamed), [`clickhouse/`](clickhouse/README.md) and
+[`duckdb-parquet/`](duckdb-parquet/README.md) (configuration choices in
+[`duckdb-parquet/TUNING.md`](duckdb-parquet/TUNING.md)).
+
 ## Results page
 
 The React UI in `frontend/` is shared with SereneDB Playground. Engine adapters
@@ -129,7 +140,8 @@ real run.
 
 ## Hardware
 
-All published results were measured on the same machine class:
+The upstream results (`<engine>/results/`, `frontend/results.json`) were measured on the same machine
+class below. The public-benchmark runs under `runs/` use AWS m8gd.4xlarge; see their READMEs.
 
 | | |
 |---|---|

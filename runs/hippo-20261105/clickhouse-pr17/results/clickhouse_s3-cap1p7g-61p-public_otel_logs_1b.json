@@ -1,0 +1,1498 @@
+{
+ "system": "ClickHouse (s3-cap1p7g-61p-public)",
+ "version": "26.10.2.103",
+ "os": "Ubuntu 24.04.5 LTS",
+ "date": "2026-11-03",
+ "dataset": "otel_logs_1b",
+ "build": "26.10.2.103-m8gd.4xlarge-s3-sorted-ch17-1b-20261105T-ch-cap-1p7g-s3",
+ "tags": [
+  "C++",
+  "column-oriented",
+  "ClickHouse"
+ ],
+ "load_time": 1288.359,
+ "data_size": 62382447136,
+ "storage_units": {
+  "count": 61,
+  "unit": "parts"
+ },
+ "result": [
+  [
+   0.29,
+   0.169,
+   0.12
+  ],
+  [
+   0.244,
+   0.228,
+   0.249
+  ],
+  [
+   0.977,
+   0.701,
+   0.498
+  ],
+  [
+   1.679,
+   1.048,
+   0.781
+  ],
+  [
+   2.039,
+   1.243,
+   1.138
+  ],
+  [
+   0.531,
+   0.446,
+   0.393
+  ],
+  [
+   1.106,
+   0.739,
+   0.618
+  ],
+  [
+   1.653,
+   1.017,
+   1.128
+  ],
+  [
+   1.258,
+   0.965,
+   0.944
+  ],
+  [
+   2.983,
+   2.528,
+   2.217
+  ],
+  [
+   7.049,
+   6.319,
+   5.844
+  ],
+  [
+   4.738,
+   3.643,
+   3.295
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   6.357,
+   5.808,
+   5.832
+  ],
+  [
+   6.145,
+   5.572,
+   5.59
+  ],
+  [
+   0.547,
+   0.346,
+   0.347
+  ],
+  [
+   0.921,
+   0.737,
+   0.749
+  ],
+  [
+   1.508,
+   1.079,
+   0.993
+  ],
+  [
+   0.568,
+   0.486,
+   0.503
+  ],
+  [
+   1.169,
+   1.018,
+   0.99
+  ],
+  [
+   0.387,
+   0.337,
+   0.342
+  ],
+  [
+   16.221,
+   15.843,
+   15.897
+  ],
+  [
+   8.073,
+   7.884,
+   8.036
+  ],
+  [
+   9.599,
+   9.364,
+   9.455
+  ],
+  [
+   1.36,
+   1.121,
+   1.123
+  ],
+  [
+   9.261,
+   8.963,
+   8.824
+  ],
+  [
+   7.543,
+   7.335,
+   7.21
+  ],
+  [
+   1.137,
+   0.605,
+   0.578
+  ],
+  [
+   1.06,
+   0.764,
+   0.724
+  ],
+  [
+   2.153,
+   1.324,
+   1.282
+  ],
+  [
+   1.13,
+   0.893,
+   0.896
+  ],
+  [
+   3.008,
+   2.326,
+   2.298
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   0.605,
+   0.555,
+   0.512
+  ],
+  [
+   0.658,
+   0.338,
+   0.289
+  ],
+  [
+   0.835,
+   0.53,
+   0.475
+  ],
+  [
+   0.85,
+   0.653,
+   0.653
+  ],
+  [
+   1.011,
+   0.595,
+   0.569
+  ],
+  [
+   16.681,
+   16.375,
+   16.375
+  ],
+  [
+   0.915,
+   0.661,
+   0.639
+  ],
+  [
+   1.566,
+   1.253,
+   1.399
+  ],
+  [
+   1.363,
+   1.241,
+   0.993
+  ],
+  [
+   7.078,
+   6.1,
+   5.955
+  ],
+  [
+   2.169,
+   1.685,
+   1.59
+  ],
+  [
+   1.313,
+   1.253,
+   1.298
+  ],
+  [
+   0.619,
+   0.381,
+   0.498
+  ],
+  [
+   0.994,
+   0.81,
+   0.864
+  ],
+  [
+   1.509,
+   1.069,
+   0.951
+  ],
+  [
+   1.812,
+   1.273,
+   1.223
+  ],
+  [
+   1.146,
+   0.85,
+   0.789
+  ],
+  [
+   5.84,
+   4.653,
+   4.575
+  ],
+  [
+   1.373,
+   0.848,
+   0.765
+  ],
+  [
+   0.703,
+   0.37,
+   0.359
+  ],
+  [
+   1.226,
+   0.797,
+   0.772
+  ],
+  [
+   1.675,
+   1.333,
+   1.103
+  ],
+  [
+   0.839,
+   0.447,
+   0.419
+  ],
+  [
+   1.042,
+   0.611,
+   0.547
+  ],
+  [
+   0.552,
+   0.454,
+   0.319
+  ],
+  [
+   4.327,
+   3.438,
+   3.424
+  ],
+  [
+   0.642,
+   0.307,
+   0.315
+  ],
+  [
+   0.67,
+   0.359,
+   0.311
+  ],
+  [
+   0.59,
+   0.328,
+   0.36
+  ],
+  [
+   0.829,
+   0.433,
+   0.568
+  ],
+  [
+   2.762,
+   2.068,
+   2.075
+  ],
+  [
+   3.799,
+   2.877,
+   2.852
+  ],
+  [
+   8.636,
+   6.189,
+   6.32
+  ],
+  [
+   4.136,
+   3.29,
+   3.16
+  ],
+  [
+   5.622,
+   5.39,
+   5.41
+  ],
+  [
+   4.533,
+   4.078,
+   4.093
+  ],
+  [
+   3.003,
+   2.379,
+   2.33
+  ],
+  [
+   2.186,
+   1.865,
+   1.757
+  ],
+  [
+   3.551,
+   3.264,
+   3.114
+  ]
+ ],
+ "query_tags": [
+  {
+   "id": "Q01",
+   "task": "count",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q02",
+   "task": "count",
+   "filter": "term",
+   "freq": "lo"
+  },
+  {
+   "id": "Q03",
+   "task": "count",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q04",
+   "task": "count",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q05",
+   "task": "count",
+   "filter": "and",
+   "freq": "lo"
+  },
+  {
+   "id": "Q06",
+   "task": "count",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q07",
+   "task": "count",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q08",
+   "task": "count",
+   "filter": "or",
+   "freq": "mid"
+  },
+  {
+   "id": "Q09",
+   "task": "count",
+   "filter": "or,minmatch",
+   "freq": "hi"
+  },
+  {
+   "id": "Q10",
+   "task": "count",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q11",
+   "task": "count",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q12",
+   "task": "count",
+   "filter": "phrase",
+   "freq": "lo"
+  },
+  {
+   "id": "Q13",
+   "task": "count",
+   "filter": "phrase,proximity",
+   "freq": "hi"
+  },
+  {
+   "id": "Q14",
+   "task": "count",
+   "filter": "phrase,or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q15",
+   "task": "count",
+   "filter": "phrase,and",
+   "freq": "mid"
+  },
+  {
+   "id": "Q16",
+   "task": "count",
+   "filter": "regexp",
+   "freq": "hi"
+  },
+  {
+   "id": "Q17",
+   "task": "count",
+   "filter": "regexp",
+   "freq": "hi"
+  },
+  {
+   "id": "Q18",
+   "task": "count",
+   "filter": "regexp",
+   "freq": "mid"
+  },
+  {
+   "id": "Q19",
+   "task": "count",
+   "filter": "regexp",
+   "freq": "hi"
+  },
+  {
+   "id": "Q20",
+   "task": "count",
+   "filter": "prefix",
+   "freq": "mid"
+  },
+  {
+   "id": "Q21",
+   "task": "count",
+   "filter": "prefix",
+   "freq": "hi"
+  },
+  {
+   "id": "Q22",
+   "task": "count",
+   "filter": "fuzzy",
+   "freq": "mid"
+  },
+  {
+   "id": "Q23",
+   "task": "count",
+   "filter": "fuzzy",
+   "freq": "mid"
+  },
+  {
+   "id": "Q24",
+   "task": "count",
+   "filter": "fuzzy,prefix",
+   "freq": "mid"
+  },
+  {
+   "id": "Q25",
+   "task": "count",
+   "filter": "like",
+   "freq": "mid"
+  },
+  {
+   "id": "Q26",
+   "task": "count",
+   "filter": "like",
+   "freq": "hi"
+  },
+  {
+   "id": "Q27",
+   "task": "count",
+   "filter": "like",
+   "freq": "mid"
+  },
+  {
+   "id": "Q28",
+   "task": "count",
+   "filter": "and,negation",
+   "freq": "hi"
+  },
+  {
+   "id": "Q29",
+   "task": "count",
+   "filter": "or,negation",
+   "freq": "hi"
+  },
+  {
+   "id": "Q30",
+   "task": "count",
+   "filter": "term,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q31",
+   "task": "count",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q32",
+   "task": "count",
+   "filter": "or,window",
+   "freq": "mid"
+  },
+  {
+   "id": "Q33",
+   "task": "top_k",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q34",
+   "task": "top_k",
+   "filter": "term",
+   "freq": "mid"
+  },
+  {
+   "id": "Q35",
+   "task": "top_k",
+   "filter": "term",
+   "freq": "lo"
+  },
+  {
+   "id": "Q36",
+   "task": "top_k",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q37",
+   "task": "top_k",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q38",
+   "task": "top_k",
+   "filter": "and",
+   "freq": "lo"
+  },
+  {
+   "id": "Q39",
+   "task": "top_k",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q40",
+   "task": "top_k",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q41",
+   "task": "top_k",
+   "filter": "or",
+   "freq": "mid"
+  },
+  {
+   "id": "Q42",
+   "task": "top_k",
+   "filter": "or,minmatch",
+   "freq": "hi"
+  },
+  {
+   "id": "Q43",
+   "task": "top_k",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q44",
+   "task": "top_k",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q45",
+   "task": "top_k",
+   "filter": "phrase",
+   "freq": "lo"
+  },
+  {
+   "id": "Q46",
+   "task": "top_k",
+   "filter": "regexp",
+   "freq": "mid"
+  },
+  {
+   "id": "Q47",
+   "task": "top_k",
+   "filter": "prefix",
+   "freq": "hi"
+  },
+  {
+   "id": "Q48",
+   "task": "top_k",
+   "filter": "fuzzy",
+   "freq": "mid"
+  },
+  {
+   "id": "Q49",
+   "task": "top_k",
+   "filter": "fuzzy",
+   "freq": "mid"
+  },
+  {
+   "id": "Q50",
+   "task": "top_k",
+   "filter": "like",
+   "freq": "mid"
+  },
+  {
+   "id": "Q51",
+   "task": "top_k",
+   "filter": "phrase,or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q52",
+   "task": "top_k",
+   "filter": "and,negation",
+   "freq": "hi"
+  },
+  {
+   "id": "Q53",
+   "task": "top_k",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q54",
+   "task": "group_by",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q55",
+   "task": "group_by",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q56",
+   "task": "group_by",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q57",
+   "task": "group_by",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q58",
+   "task": "group_by",
+   "filter": "regexp",
+   "freq": "hi"
+  },
+  {
+   "id": "Q59",
+   "task": "group_by",
+   "filter": "fuzzy",
+   "freq": "mid"
+  },
+  {
+   "id": "Q60",
+   "task": "group_by",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q61",
+   "task": "group_by",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q62",
+   "task": "group_by",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q63",
+   "task": "group_by",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q64",
+   "task": "group_by",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q65",
+   "task": "group_by",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q66",
+   "task": "group_by",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q67",
+   "task": "group_by",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q68",
+   "task": "recent",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q69",
+   "task": "recent",
+   "filter": "or,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q70",
+   "task": "recent",
+   "filter": "term,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q71",
+   "task": "recent",
+   "filter": "phrase,window",
+   "freq": "mid"
+  },
+  {
+   "id": "Q72",
+   "task": "recent",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q73",
+   "task": "recent",
+   "filter": "window",
+   "freq": ""
+  },
+  {
+   "id": "Q74",
+   "task": "recent",
+   "filter": "regexp,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q75",
+   "task": "recent",
+   "filter": "or,window",
+   "freq": "mid"
+  },
+  {
+   "id": "Q76",
+   "task": "recent",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q77",
+   "task": "recent",
+   "filter": "or,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q78",
+   "task": "recent",
+   "filter": "term,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q79",
+   "task": "recent",
+   "filter": "phrase,window",
+   "freq": "mid"
+  },
+  {
+   "id": "Q80",
+   "task": "recent",
+   "filter": "and,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q81",
+   "task": "recent",
+   "filter": "window",
+   "freq": ""
+  },
+  {
+   "id": "Q82",
+   "task": "recent",
+   "filter": "regexp,window",
+   "freq": "hi"
+  },
+  {
+   "id": "Q83",
+   "task": "recent",
+   "filter": "or,window",
+   "freq": "mid"
+  },
+  {
+   "id": "Q84",
+   "task": "join",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q85",
+   "task": "join",
+   "filter": "or",
+   "freq": "hi"
+  },
+  {
+   "id": "Q86",
+   "task": "join",
+   "filter": "phrase",
+   "freq": "mid"
+  },
+  {
+   "id": "Q87",
+   "task": "join",
+   "filter": "regexp",
+   "freq": "hi"
+  },
+  {
+   "id": "Q88",
+   "task": "join",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q89",
+   "task": "join",
+   "filter": "or",
+   "freq": "mid"
+  },
+  {
+   "id": "Q90",
+   "task": "join",
+   "filter": "and",
+   "freq": "hi"
+  },
+  {
+   "id": "Q91",
+   "task": "join",
+   "filter": "term",
+   "freq": "hi"
+  },
+  {
+   "id": "Q92",
+   "task": "join",
+   "filter": "prefix",
+   "freq": "hi"
+  }
+ ],
+ "cpu": [
+  [
+   0.173,
+   0.142,
+   0.144
+  ],
+  [
+   0.16,
+   0.158,
+   0.141
+  ],
+  [
+   0.631,
+   0.574,
+   0.563
+  ],
+  [
+   1.049,
+   1.002,
+   0.976
+  ],
+  [
+   1.495,
+   1.431,
+   1.413
+  ],
+  [
+   0.559,
+   0.53,
+   0.518
+  ],
+  [
+   0.764,
+   0.714,
+   0.721
+  ],
+  [
+   1.059,
+   1.03,
+   1.015
+  ],
+  [
+   5.139,
+   5.05,
+   5.033
+  ],
+  [
+   3.795,
+   3.614,
+   4.29
+  ],
+  [
+   10.118,
+   10.326,
+   10.2
+  ],
+  [
+   4.581,
+   5.704,
+   4.357
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   11.241,
+   11.399,
+   11.596
+  ],
+  [
+   11.128,
+   11.439,
+   11.287
+  ],
+  [
+   0.459,
+   0.42,
+   0.414
+  ],
+  [
+   0.741,
+   0.699,
+   0.691
+  ],
+  [
+   2.32,
+   2.391,
+   2.378
+  ],
+  [
+   1.699,
+   1.65,
+   1.637
+  ],
+  [
+   2.28,
+   2.37,
+   2.384
+  ],
+  [
+   0.457,
+   0.426,
+   0.433
+  ],
+  [
+   246.202,
+   246.533,
+   246.158
+  ],
+  [
+   89.506,
+   89.478,
+   89.929
+  ],
+  [
+   136.613,
+   136.173,
+   136.253
+  ],
+  [
+   2.332,
+   2.362,
+   2.363
+  ],
+  [
+   125.345,
+   125.182,
+   125.203
+  ],
+  [
+   88.637,
+   87.826,
+   87.906
+  ],
+  [
+   1.641,
+   1.616,
+   1.629
+  ],
+  [
+   2.472,
+   2.461,
+   2.455
+  ],
+  [
+   9.116,
+   9.098,
+   9.028
+  ],
+  [
+   6.043,
+   5.769,
+   5.721
+  ],
+  [
+   9.405,
+   9.237,
+   9.976
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   null,
+   null
+  ],
+  [
+   3.808,
+   3.636,
+   3.626
+  ],
+  [
+   2.241,
+   2.135,
+   2.121
+  ],
+  [
+   2.91,
+   2.786,
+   2.745
+  ],
+  [
+   6.68,
+   6.541,
+   6.501
+  ],
+  [
+   4.313,
+   4.211,
+   4.208
+  ],
+  [
+   250.824,
+   250.406,
+   250.376
+  ],
+  [
+   6.705,
+   6.559,
+   6.554
+  ],
+  [
+   9.76,
+   9.922,
+   9.885
+  ],
+  [
+   7.034,
+   7.049,
+   7.013
+  ],
+  [
+   15.186,
+   14.32,
+   14.922
+  ],
+  [
+   11.624,
+   11.758,
+   11.788
+  ],
+  [
+   9.726,
+   9.461,
+   9.622
+  ],
+  [
+   2.819,
+   2.631,
+   2.488
+  ],
+  [
+   9.941,
+   9.854,
+   9.796
+  ],
+  [
+   0.974,
+   0.745,
+   0.736
+  ],
+  [
+   2.44,
+   2.191,
+   2.27
+  ],
+  [
+   1.928,
+   1.789,
+   1.706
+  ],
+  [
+   7.828,
+   7.915,
+   8.281
+  ],
+  [
+   0.731,
+   0.529,
+   0.529
+  ],
+  [
+   0.449,
+   0.285,
+   0.277
+  ],
+  [
+   1.406,
+   1.292,
+   1.247
+  ],
+  [
+   1.903,
+   1.759,
+   1.734
+  ],
+  [
+   1.129,
+   0.941,
+   0.87
+  ],
+  [
+   1.38,
+   1.014,
+   1.011
+  ],
+  [
+   1.362,
+   0.964,
+   0.98
+  ],
+  [
+   6.842,
+   7.333,
+   6.338
+  ],
+  [
+   1.063,
+   0.909,
+   0.798
+  ],
+  [
+   1.327,
+   0.97,
+   0.947
+  ],
+  [
+   1.531,
+   1.169,
+   1.155
+  ],
+  [
+   1.382,
+   1.127,
+   1.039
+  ],
+  [
+   18.091,
+   17.516,
+   18.272
+  ],
+  [
+   24.555,
+   25.501,
+   24.45
+  ],
+  [
+   24.757,
+   24.314,
+   23.935
+  ],
+  [
+   33.923,
+   32.355,
+   31.189
+  ],
+  [
+   48.13,
+   48.077,
+   48.349
+  ],
+  [
+   33.161,
+   32.09,
+   31.052
+  ],
+  [
+   17.334,
+   18.153,
+   18.782
+  ],
+  [
+   16.088,
+   15.176,
+   14.965
+  ],
+  [
+   33.88,
+   32.242,
+   31.239
+  ]
+ ],
+ "comment": "USED IN THE PUBLIC BENCH (2026-11 blog). Per-query, per-try median of 3 rounds (2026-11-03 21:32:44 to 2026-11-03 22:33:55 UTC); rounds in rounds.json and extra/"
+}
