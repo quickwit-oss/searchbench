@@ -1,0 +1,4 @@
+# Source manifest for requirements.txt (compiled with hashes; see the header there).
+duckdb==2.0.0
+# DuckDB's Python row conversion requires this for TIMESTAMP WITH TIME ZONE.
+pytz==2025.2

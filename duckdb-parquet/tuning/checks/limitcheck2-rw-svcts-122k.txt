@@ -1,0 +1,7 @@
+Q77: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q78: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q82: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q83: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q70: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q74: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
+Q75: copy returned 100 rows; failing the original predicate: 0; rows absent from the original file: n/a
