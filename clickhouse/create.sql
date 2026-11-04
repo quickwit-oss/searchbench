@@ -2,7 +2,10 @@ DROP TABLE IF EXISTS otel_logs;
 
 CREATE TABLE otel_logs
 (
-    `Timestamp`          DateTime,
+    -- Nanoseconds, the corpus's native precision (was DateTime = whole seconds,
+    -- as in TextBench): 'recent' ORDER BY Timestamp then ranks the same rows as
+    -- the other engines instead of breaking ties within a second arbitrarily.
+    `Timestamp`          DateTime64(9) CODEC(Delta(8), ZSTD(1)),
     `TraceId`            String CODEC(ZSTD(1)),
     `SpanId`             String CODEC(ZSTD(1)),
     `TraceFlags`         UInt8,
@@ -18,8 +21,10 @@ CREATE TABLE otel_logs
     `ScopeAttributes`    Map(LowCardinality(String), String) CODEC(ZSTD(1)),
     `LogAttributes`      Map(LowCardinality(String), String) CODEC(ZSTD(1)),
 
-    INDEX text_idx(Body) TYPE text(tokenizer = 'splitByNonAlpha', preprocessor = lower(Body), support_phrase_search = 1)
+    INDEX text_idx(Body) TYPE text(tokenizer = 'splitByNonAlpha', preprocessor = lower(Body)__PHRASE_OPT__)
 )
 ENGINE = MergeTree
-ORDER BY (ServiceName, Timestamp)
-SETTINGS allow_experimental_text_index_phrase_search = 1;
+-- Sorting key from ./load's CH_ORDER_BY (default: upstream's (ServiceName, Timestamp)).
+ORDER BY __ORDER_BY__
+-- __PHRASE_SETTING__
+;

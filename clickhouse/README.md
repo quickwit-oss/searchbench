@@ -39,11 +39,80 @@ SEARCHBENCH_DATASET=otel_logs_100k ./benchmark.sh
 | `CLICKHOUSE_BIN` | `./clickhouse` | binary |
 | `CH_HOST` / `CH_TCP_PORT` / `CH_HTTP_PORT` | `127.0.0.1` / `9000` / `8123` | server endpoint |
 | `CH_DATA_DIR` | `./clickhouse_data` | datadir |
+| `CH_ORDER_BY` | `(ServiceName, Timestamp)` | MergeTree sorting key; `tuple()` = unsorted |
+| `CH_MAX_PART_BYTES` | `1073741824` at 100M, else ClickHouse's 150 GiB | merge part-size cap; set empty to use ClickHouse's default |
 | `CH_LOAD_WORKERS` | `min(nproc,4)` | parallel parquet INSERTs |
 | `CH_INDEX_SETTING` | `enable_full_text_index=1` | text-index session flag |
 
 `CH_INDEX_SETTING` is the only version-sensitive knob — override if a
 non-26.x build names the flag differently.
+
+## Methodology changes (quickwit-oss fork)
+
+- **Nanosecond timestamps**: `Timestamp DateTime64(9) CODEC(Delta(8), ZSTD(1))`
+  instead of TextBench's whole-second `DateTime`, so time-sorted queries rank
+  the same rows as the other engines.
+- **Sorting key** `ORDER BY (ServiceName, Timestamp)`, as upstream and TextBench
+  (`CH_ORDER_BY`). Runs recorded between 2026-09-27 and 2026-10-31 used
+  `ORDER BY tuple()` (unsorted); e.g. the 2026-10-31 m8gd.4xlarge ingest column.
+- **Merges settle before queries**: `./load` waits until `system.merges` is
+  empty and the active part set is unchanged for `CH_MERGE_QUIET_SECS` (180s;
+  20s on smoke scales). At 1b the INSERT returns with ~740 parts and ~28
+  merges running; querying then measured a fragmented table (token queries 2x
+  slower). The wait counts in `load_time`.
+- **Version 26.9.9.28** (`CH_IMAGE`), as in serenedb/searchbench#9.
+- **Phrase index on by default** (`CH_PHRASE_INDEX=on`, upstream's schema):
+  `support_phrase_search = 1`. At 1b on 26.9.9.28 (parts settled, <= 1.75 GiB)
+  it costs +16% size (62.4 vs 53.9 GB) and +155s load, same query speed. On
+  26.8.2.7 it made the text index 126 GiB and `matchPhrase` >60s once parts
+  were fully merged. `off` keeps `matchPhrase` on the index for candidates and
+  re-checks adjacency on the column; results are identical.
+- **Query condition cache off** (`--use_query_condition_cache=0` on every
+  query). It is on by default in 26.x and replays per-granule filter results
+  on hot tries -- the counterpart of Quickwit's predicate cache, which is off.
+- **Data caches and statistics off on every query** (`clickhouse/query`, from
+  2026-10-31). Off:
+  - The four text-index caches that hold data or lookup results:
+    `use_text_index_{tokens,negative_tokens,pattern_bypass,postings}_cache=0`. In the
+    26.10 source (`TextIndexCache.h`):
+    - **tokens:** caches each token's posting info: its cardinality (which answers a
+      count with no read), its block offsets, and posting lists of up to 6 rows inline;
+    - **negative tokens:** caches that a token is absent from a part;
+    - **pattern bypass:** caches the outcome of a pattern dictionary scan;
+    - **postings:** caches decoded posting-list blocks and phrase-search results.
+
+    With them on, hot count and phrase queries on S3 make 0 GETs.
+  - Column statistics (`use_statistics=0`, `use_statistics_for_part_pruning=0`,
+    `use_statistics_for_min_max_aggregation=0`). 26.x reads every part's
+    `statistics.packed` one GET at a time before pruning, and they prune nothing here.
+
+  On, as metadata (like Quickwit's split footer cache, footer + hotcache):
+  - the mark and primary-index caches;
+  - since 2026-11-01, the **text-index header cache**. It holds, per part, the format
+    version, the codecs and the sparse index of the token dictionary (the first token and
+    offset of each dictionary block). Run sets up to 2026-11-01 had it off too.
+
+  The uncompressed and columns caches are off by default. `CH_DATA_CACHES=on` restores
+  the engine defaults; `CH_QUERY_SETTINGS` still overrides any setting.
+- **S3 request counts** come from `system.query_log` ProfileEvents: GETs =
+  `ProfileEvents['S3GetObject']`, bytes = `ProfileEvents['ReadBufferFromS3Bytes']`.
+  `S3GetObject` counts every GET; `DiskS3GetObject` is the subset made by a disk, also
+  incremented for the same request (`ReadBufferFromS3::sendRequest`), so do not add them
+  (here every GET is a disk GET and both are equal).
+- **`CH_STORAGE=s3`**: the table uses an `s3` disk (`config.d/storage_s3.xml`,
+  policy `s3_main`, endpoint `CH_S3_ENDPOINT`, instance-profile credentials).
+  Columns and the text index live in S3, only part metadata stays local. No
+  filesystem cache, like Quickwit on S3 without its split cache.
+- **`CH_RESOLV_CONF`** bind-mounts a resolv.conf into the container (unset: the
+  host's). On S3, 26.9 resolves the endpoint for every new connection and opens
+  hundreds per query; on a stock Ubuntu EC2 host the systemd-resolved stub
+  (127.0.0.53) drops part of those bursts and each dropped lookup waits the 5 s
+  resolver retry, so hot tries take ~5.2 s instead of ~0.2 s (100m and 1b; 26.8
+  is not affected). Pointing the container at the VPC resolver
+  (`nameserver 172.31.0.2`) removes it.
+- **Part count** is tunable with `CH_MAX_PART_BYTES`
+  (`max_bytes_to_merge_at_max_space_in_pool`). The default merges a 1b table
+  down to a single part.
 
 ## Q10–Q14
 

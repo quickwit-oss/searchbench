@@ -16,8 +16,16 @@ set -euo pipefail
 : "${CH_DATA_DIR:=${PWD}/clickhouse_data}"
 : "${CH_LOG:=${PWD}/clickhouse-server.log}"
 : "${CH_BACKEND:=docker}"
-: "${CH_IMAGE:=clickhouse/clickhouse-server:26.9.10.4}"
+: "${CH_IMAGE:=clickhouse/clickhouse-server:26.10.2.103@sha256:ec7bc702d862b9f7af6c604f0fa8f9688d62d10db44f0cd340bcdceaa25db2a8}"
 : "${CH_CONTAINER:=searchbench-clickhouse}"
+# CH_STORAGE=s3: mount config.d/storage_s3.xml (an s3 disk + policy s3_main);
+# ./load then creates the table with storage_policy = 's3_main'.
+: "${CH_STORAGE:=local}"
+s3_args=()
+if [[ "$CH_STORAGE" == s3 ]]; then
+    : "${CH_S3_ENDPOINT:?CH_STORAGE=s3 needs CH_S3_ENDPOINT (https://<bucket>.s3.<region>.amazonaws.com/<prefix>/)}"
+    s3_args=(-v "${PWD}/config.d/storage_s3.xml:/etc/clickhouse-server/config.d/storage_s3.xml:ro" -e "CH_S3_ENDPOINT=${CH_S3_ENDPOINT}")
+fi
 
 # Docker backend: run the official image with host networking (server binds
 # host :$CH_TCP_PORT / :$CH_HTTP_PORT). The client runs inside the container via
@@ -38,24 +46,38 @@ if [[ "$CH_BACKEND" == docker ]]; then
         # exist yet; create it (as serenedb/start does) or the bind mount is skipped and the INSERT
         # silently loads 0 rows (the 1B guard then aborts, the 100M smoke scale runs on an empty table).
         [[ -n "${SEARCHBENCH_DATA_DIR:-}" ]] && mkdir -p "${SEARCHBENCH_DATA_DIR}"
+        # CH_RESOLV_CONF: a resolv.conf for the container (e.g. the VPC resolver
+        # directly), instead of the host's. Unset = the host's /etc/resolv.conf.
+        dns_args=()
+        [[ -n "${CH_RESOLV_CONF:-}" ]] && dns_args=(-v "${CH_RESOLV_CONF}:/etc/resolv.conf:ro")
         [[ -n "${SEARCHBENCH_DATA_DIR:-}" && -d "${SEARCHBENCH_DATA_DIR:-}" ]] && \
             pq_mount=(-v "${SEARCHBENCH_DATA_DIR}:/var/lib/clickhouse/user_files/parquet:ro")
         # Run as the host user so the bind-mount stays host-owned (not uid 101 /
         # "messagebus"); CLICKHOUSE_SKIP_USER_SETUP stops the entrypoint's
         # root-only user/chown setup, which is unneeded when we supply --user.
+        # Under a root-run harness, the entrypoint otherwise switches to uid
+        # 101 and recursively chowns the read-only parquet mount, then fails.
+        # Keep the explicitly requested host uid in both root/non-root runs.
+        run_as_root=0
+        [[ "$(id -u)" == 0 ]] && run_as_root=1
         docker run -d --name "$CH_CONTAINER" --network host \
             --user "$(id -u):$(id -g)" \
+            -e "CLICKHOUSE_RUN_AS_ROOT=$run_as_root" \
             -e CLICKHOUSE_SKIP_USER_SETUP=1 \
             --ulimit nofile=262144:262144 \
             -v "${CH_DATA_DIR}:/var/lib/clickhouse" \
-            "${pq_mount[@]}" \
+            "${pq_mount[@]}" "${s3_args[@]}" "${dns_args[@]}" \
             "$CH_IMAGE" >/dev/null
     fi
     for _ in $(seq 1 60); do
         if ./check >/dev/null 2>&1; then
-            # SYSTEM STOP MERGES does not survive a restart and the driver restarts the server before every query.
-            "$CLICKHOUSE_BIN" client --host "$CH_HOST" --port "$CH_TCP_PORT" --query 'SYSTEM STOP MERGES otel_logs' >/dev/null 2>&1 || true
-            echo "ClickHouse up on :${CH_TCP_PORT} (docker), merges stopped"; exit 0
+            # CH_STOP_MERGES=on (see ./load): SYSTEM STOP MERGES does not survive a restart, and the driver
+            # restarts the server before every query.
+            if [[ "${CH_STOP_MERGES:-off}" == on ]]; then
+                "$CLICKHOUSE_BIN" client --host "$CH_HOST" --port "$CH_TCP_PORT" --query 'SYSTEM STOP MERGES otel_logs' >/dev/null 2>&1 || true
+                echo "ClickHouse up on :${CH_TCP_PORT} (docker), merges stopped"; exit 0
+            fi
+            echo "ClickHouse up on :${CH_TCP_PORT} (docker)"; exit 0
         fi
         sleep 1
     done
