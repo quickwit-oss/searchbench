@@ -53,7 +53,7 @@ meilisearch/meili-data/
 
 typesense/ts-data/
 
-quickwit/qw-data/
+datadog-byoc/qw-data/
 ydb/ydb-data/
 ydb/stage/
 clickhouse/clickhouse
@@ -66,3 +66,6 @@ manticore/manticore-data/
 node_modules/
 frontend/.build/
 frontend/results.json.??????
+clickhouse-pr9/clickhouse_data/
+_site/
+/frontend/node_modules
