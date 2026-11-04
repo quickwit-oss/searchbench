@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate quickwit/queries.dsl from elastic/queries.dsl.
+"""Generate datadog-byoc/queries.dsl from elastic/queries.dsl.
 
 Quickwit speaks the Elasticsearch query DSL, so this is a REWRITER, not a
 translator into another language: most queries pass through untouched. Measured
@@ -108,7 +108,7 @@ out, unsup, failed = [], [], []
 out += ["-- Quickwit runs the Elasticsearch query DSL through /api/v1/_elastic,",
         "-- so this file is elastic/queries.dsl with three constructs rewritten:",
         "-- `match` object form, and date_histogram calendar_interval. See",
-        "-- quickwit/translate.py for what passes through untouched.", ""]
+        "-- datadog-byoc/translate.py for what passes through untouched.", ""]
 for i in range(1, 93):
     qid = f"Q{i:02d}"
     if qid not in dsl:

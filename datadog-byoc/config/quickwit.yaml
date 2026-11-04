@@ -1,0 +1,81 @@
+# Node config for the benchmark. This file IS mounted by ./start and the
+# recorded 100m run used it.
+#
+# Note what it does NOT do: raising the ingest queue does not stop the silent
+# document loss under concurrent bulk load. Measured on 1m, 4 concurrent
+# requests: 858,000 indexed on the default 2GiB queue, 830,000 with the 32GiB
+# queue below -- i.e. slightly worse, and it also suppressed the
+# "failed to fetch records from ingester" warnings that were the only
+# client-visible hint. The queue was never the bottleneck; the per-shard
+# throughput limit is. Serial ingest is the actual fix (see README).
+#
+# The settings are kept because they are what the published numbers were
+# measured under, not because they are a recommendation.
+version: 0.8
+ingest_api:
+  # shard_throughput_limit DOES exist in 0.9.0, contrary to the README's claim
+  # that no shard-throughput setting is exposed. Default 5.2 MB, maximum 20mb
+  # (the validator rejects more: "must be within 1mb and 20mb"). Raising it to
+  # 20mb is a real 3.7-6.7x on ingest -- but it is left OFF deliberately:
+  # it buys speed by trading correctness, and no clean load was ever produced
+  # with it. See the README table. Uncomment only if you accept the loss.
+  #
+  #   shard_throughput_limit: 20mb
+  max_queue_memory_usage: 32GiB
+  max_queue_disk_usage: 64GiB
+  content_length_limit: 32MiB
+searcher:
+  # Previous setting, for reference: 16 GiB, sized so the 1b index's fast fields
+  # (~6 GiB with ns timestamps) fit with headroom (2026-10 runs before 10-31).
+  # Fast-field cache OFF: it keeps decoded fast-field (columnar) data in memory, so
+  # hot tries skip storage reads -- a data cache, like ClickHouse's text-index
+  # data caches (tokens, negative tokens, pattern bypass, postings), which the
+  # clickhouse adapter also disables. QW_FAST_FIELD_CACHE=16GiB
+  # (./start) restores the previous setting. The split footer cache (500 MiB
+  # default, footers + hotcache = split metadata, 33 MiB at 1b) stays on, like
+  # ClickHouse's mark, primary-index and text-index header caches.
+  fast_field_cache_capacity: 0
+  # Quickwit caches whole aggregation/search RESULTS keyed on the exact query
+  # body (default 64M). The driver runs each query 3x and reports min(try2,try3),
+  # so with the cache on, every reported "hot" number is a cache lookup rather
+  # than a query: Q67 measured 115ms cold, then 2ms forever after, and a
+  # semantically identical query with its clauses reordered went back to 29ms.
+  # That inflated the whole suite by 10.2x (4.09s -> 0.40s). Disabled so the
+  # benchmark measures query execution, like the engines that have no such cache.
+  partial_request_cache_capacity: 0
+  # 0.9.0 added a second result-shaped cache: the predicate cache (default
+  # 256M) stores per-split filter HIT SETS keyed on the query AST, and is used
+  # for every non-scored query (count, group_by, recent). Same problem as the
+  # partial request cache: hot tries replay a stored hit set instead of
+  # evaluating the filter -- the analogue of ES's node query cache, which the
+  # elastic/ and opensearch/ adapters disable (index.queries.cache.enabled).
+  # Capacity 0 makes put() a no-op. The 2026-09-20 0.9.0 results were measured
+  # with it ON (1b cold/hot: group_by 8.5x, recent 15x).
+  predicate_cache_capacity: 0
+  # Default 30s. The driver owns the per-query ceiling (SEARCHBENCH_QUERY_TIMEOUT
+  # / SEARCHBENCH_COLD_TIMEOUT); keep the server from cutting a cold try short
+  # first and turning a slow answer into an error.
+  request_timeout_secs: 300
+
+# Document clustering (Quickwit main; experimental, node-level, fresh splits only).
+# The Datadog logs policy mapped onto this OTel corpus:
+#   structure -> structure     (key set; LogAttributes/ResourceAttributes vary)
+#   source    -> ServiceName   (17 values)
+#   status    -> SeverityText  (6 values)
+#   message   -> Body, tokenized (token-type pattern, not literal values)
+# Each fresh split is reordered hierarchically in that order, largest groups
+# first; merges preserve it. It only changes doc order, so query results are
+# unaffected (verified by the smoke diff). Disable with QW_DISABLE_DOCS_CLUSTERING=true
+# (./start maps QW_CLUSTERING=off to it) to measure the unclustered baseline.
+docs_clustering:
+  - fingerprint:
+      - kind: structure
+  - fingerprint:
+      - kind: raw
+        path: ServiceName
+  - fingerprint:
+      - kind: raw
+        path: SeverityText
+  - fingerprint:
+      - kind: tokenized
+        path: Body
