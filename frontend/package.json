@@ -10,6 +10,7 @@
   "scripts": {
     "predev": "npm run build -w @serenedb/ui",
     "dev": "vite --host 127.0.0.1",
+    "preview:runs": "bash preview_runs.sh",
     "prebuild": "npm run build -w @serenedb/ui",
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
@@ -25,7 +26,7 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "typescript": "^5.9.3",
-    "vite": "^6.3.5",
+    "vite": "^6.4.5",
     "@vitejs/plugin-react": "^4.5.0",
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11",
