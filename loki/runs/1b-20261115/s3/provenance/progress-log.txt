@@ -1,0 +1,17 @@
+2026-11-15T14:02:09Z workload unit started; cutoff 2026-11-15T19:40:00Z
+2026-11-15T14:05:19Z setup rc=0
+2026-11-15T14:05:19Z production start; 20081s to cutoff
+2026-11-15T14:05:21Z dry check passed: 1 file, 1000000000 rows, S3 s3://<bucket>/searchbench/loki/s3-1b-20261115T123351Z/ empty, load-only limits 1024/2048/1024MB/2048MB
+2026-11-15T14:05:22Z load start (load_overlay.py, fresh /mnt/lp/loki-1b-s3 + s3://<bucket>/searchbench/loki/s3-1b-20261115T123351Z/)
+2026-11-15T15:29:43Z load done: {"status":"complete","wall_seconds":5046.048347086,"load_cpu_seconds":42056.015735,"data_size_bytes":74929022820,"storage_units":{"count":109851,"unit":"objects"}}
+2026-11-15T15:30:13Z load record: {"load_time":5046.048,"data_size":74929022820,"storage_units":{"count":109851,"unit":"objects"},"load_cpu":42056.016}
+2026-11-15T15:30:14Z checkpoint load uploaded
+2026-11-15T15:35:52Z row count verified: 1000000000 (load gate + independent read-target windows); layout unchanged
+2026-11-15T15:35:52Z phase2 start (lib/benchmark.sh query-only, 92 slots); deadline 2026-11-15T19:35:00Z
+2026-11-15T16:32:37Z phase2 rc=0 harness=0 {"supported_queries": 56, "executed_tries": 68, "ok_tries": 18, "timeout_tries": 50, "err_tries": 0, "ok_tries_with_gets": 18, "queries_with_cold_and_hot_gets": 6, "partial": true, "answer_mismatches": 0} problems=0
+2026-11-15T16:32:54Z checkpoint phase2 uploaded
+2026-11-15T16:32:55Z phase3 start (diag600 Q01,Q25,Q61); deadline 2026-11-15T19:35:00Z
+2026-11-15T17:04:16Z phase3 rc=0 {"statuses": {"ok": 9}, "ok_tries": 9, "inventory_unchanged": true} mismatches 0
+2026-11-15T17:04:18Z checkpoint phase3 uploaded
+2026-11-15T17:04:18Z production complete phase2=0 phase3=0
+2026-11-15T17:04:19Z production rc=0

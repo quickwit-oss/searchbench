@@ -1,0 +1,644 @@
+{
+  "round": 1,
+  "reverse": false,
+  "queries": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q10",
+    "Q11",
+    "Q12",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20",
+    "Q21",
+    "Q25",
+    "Q26",
+    "Q27",
+    "Q28",
+    "Q29",
+    "Q30",
+    "Q31",
+    "Q32",
+    "Q54",
+    "Q55",
+    "Q56",
+    "Q57",
+    "Q58",
+    "Q60",
+    "Q61",
+    "Q62",
+    "Q63",
+    "Q64",
+    "Q65",
+    "Q66",
+    "Q67",
+    "Q68",
+    "Q69",
+    "Q70",
+    "Q71",
+    "Q72",
+    "Q73",
+    "Q74",
+    "Q75",
+    "Q76",
+    "Q77",
+    "Q78",
+    "Q79",
+    "Q80",
+    "Q81",
+    "Q82",
+    "Q83"
+  ],
+  "steps": [
+    {
+      "query": "Q01",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q01",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q02",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q02",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q03",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q03",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q04",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q04",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q05",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q05",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q06",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q06",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q07",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q07",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q08",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q08",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q10",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q10",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q11",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q11",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q12",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q12",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q14",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q14",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q15",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q15",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q16",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q16",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q17",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q17",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q18",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q18",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q19",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q19",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q20",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q20",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q21",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q21",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q25",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q25",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q26",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q26",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q27",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q27",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q28",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q28",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q29",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q29",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q30",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q30",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q31",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q31",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q32",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q32",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q54",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q54",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q55",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q55",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q56",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q56",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q57",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q57",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q58",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q58",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q60",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q60",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q61",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q61",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q62",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q62",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q63",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q63",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q64",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q64",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q65",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q65",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q66",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q66",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q67",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q67",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q68",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q68",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q69",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q69",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q70",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q70",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q71",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q71",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q72",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q72",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q73",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q73",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q74",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q74",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q75",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q75",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q76",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q76",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q77",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q77",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q78",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q78",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q79",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q79",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q80",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q80",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q81",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q81",
+      "variant": "on",
+      "position": 2
+    },
+    {
+      "query": "Q82",
+      "variant": "on",
+      "position": 1
+    },
+    {
+      "query": "Q82",
+      "variant": "off",
+      "position": 2
+    },
+    {
+      "query": "Q83",
+      "variant": "off",
+      "position": 1
+    },
+    {
+      "query": "Q83",
+      "variant": "on",
+      "position": 2
+    }
+  ],
+  "tries": 3,
+  "cold_only": false,
+  "skip_hot_after_cold_timeout": true,
+  "cap_seconds": 60,
+  "cold_cap_seconds": 60,
+  "cap_source": "SEARCHBENCH_QUERY_TIMEOUT/SEARCHBENCH_COLD_TIMEOUT",
+  "server_query_timeout_seconds": 600,
+  "effective_ceiling_seconds": 60,
+  "pair_budget_floor_seconds": 0,
+  "data_dir": "/mnt/lp/loki-1b",
+  "storage": "filesystem",
+  "container": "searchbench-loki-prefilter-1b",
+  "image": "grafana/loki@sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580",
+  "destination_id": "9083c4c6-87c8-4957-9308-5e25216b38ab",
+  "manifest_rows": 1000000000,
+  "inventory_before": "861e427e2059c3079c231a2ec18c0390d4d514ce61da29812da71dd1806c45d7",
+  "deadline_epoch": 1794720840.0,
+  "started_epoch": 1794706624.6610568,
+  "driver_sha256": "45ef70ba7d9070e903d1e05e3f27a03c8d776bfff9bd0af7805a7d0cc8ee86fc",
+  "queries_sha256": "6ceff3c9cf56370c54cb857f3450d10e3884e9028a01a3a60e9a5d7dc541174b"
+}

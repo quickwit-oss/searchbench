@@ -1,0 +1,6 @@
+[Unit]
+Description=Searchbench engine containers CPU accounting
+[Slice]
+CPUAccounting=yes
+[Install]
+WantedBy=multi-user.target

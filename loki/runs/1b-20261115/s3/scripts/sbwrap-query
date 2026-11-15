@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Installed as loki/query for phase 2 only (original -> query.orig). Keeps every try's
+# stdout (lib/benchmark.sh logs only the last try) so each successful answer can be
+# checked. exec: timeout(1)'s SIGTERM/SIGKILL still reach the query process directly.
+here="$(cd "$(dirname "$0")" && pwd)"
+[[ -n "${SB_ANSWERS_DIR:-}" ]] || exec "$here/query.orig" "$@"
+seqf="$SB_ANSWERS_DIR/.seq"
+seq=$(( $(cat "$seqf" 2>/dev/null || echo 0) + 1 )); echo "$seq" > "$seqf"
+label=""
+[[ -n "${SB_HARNESS_LOG:-}" ]] && label=$(grep -o '==> Q[0-9]*' "$SB_HARNESS_LOG" 2>/dev/null | tail -n 1 | cut -c6-)
+printf '{"seq":%d,"harness_q":"%s","unix":%s}\n' "$seq" "$label" "$(date +%s.%N)" >> "$SB_ANSWERS_DIR/calls.jsonl"
+exec > >(tee "$SB_ANSWERS_DIR/$seq.stdout")
+exec "$here/query.orig" "$@"

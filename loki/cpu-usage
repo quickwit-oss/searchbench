@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec "$(dirname "$0")/../lib/cpu-usage.sh" containers "${LOKI_CONTAINER:-searchbench-loki}"

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Installed as loki/cpu-usage for phase 2 only (original -> cpu-usage.orig; stdout unchanged).
+# lib/benchmark.sh calls ./cpu-usage exactly once before and once after every try
+# (the after call only when the before call printed a value). Around those calls this
+# wrapper scrapes Loki's native GetObject counter OUTSIDE the CPU window:
+#   before-call: scrape, then read CPU;  after-call: read CPU, then scrape.
+# One JSONL record per call in $SB_GETS_DIR/calls.jsonl. Without SB_GETS_DIR: pure passthrough.
+here="$(cd "$(dirname "$0")" && pwd)"
+[[ -n "${SB_GETS_DIR:-}" ]] || exec "$here/cpu-usage.orig" "$@"
+state="$SB_GETS_DIR/.phase"; seqf="$SB_GETS_DIR/.seq"
+seq=$(( $(cat "$seqf" 2>/dev/null || echo 0) + 1 )); echo "$seq" > "$seqf"
+label=""
+[[ -n "${SB_HARNESS_LOG:-}" ]] && label=$(grep -o '==> Q[0-9]*' "$SB_HARNESS_LOG" 2>/dev/null | tail -n 1 | cut -c6-)
+url="http://127.0.0.1:${LOKI_PORT:-3100}/metrics"
+scrape() { "${SEARCHBENCH_PYTHON:-python3}" "$SB_GETS_DIR/getscrape.py" "$url" "$SB_GETS_DIR/raw/$seq-$1.metrics.gz" 2>/dev/null || echo '{"ok":false,"error":"scrape-wrapper"}'; }
+if [[ "$(cat "$state" 2>/dev/null)" == after ]]; then
+    role=after
+    cpu=$("$here/cpu-usage.orig" "$@"); rc=$?
+    s=$(scrape after)
+    echo idle > "$state"
+else
+    role=before
+    s=$(scrape before)
+    cpu=$("$here/cpu-usage.orig" "$@"); rc=$?
+    # benchmark.sh makes the after call only if this call printed a value.
+    [[ -n "$cpu" ]] && echo after > "$state"
+fi
+printf '{"seq":%d,"role":"%s","harness_q":"%s","cpu":"%s","unix":%s,"scrape":%s}\n' \
+    "$seq" "$role" "$label" "$cpu" "$(date +%s.%N)" "$s" >> "$SB_GETS_DIR/calls.jsonl"
+[[ -n "$cpu" ]] && printf '%s\n' "$cpu"
+exit $rc

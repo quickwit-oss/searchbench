@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "wall_seconds": 5205.124797484,
+  "load_cpu_seconds": 42839.146825,
+  "load_cpu_containers_seconds": 30772.007383,
+  "load_cpu_procs_seconds": 12067.139442,
+  "includes": [
+    "all-target start",
+    "Rust ingestion",
+    "flush",
+    "stop",
+    "read+compactor finalization",
+    "compaction settle",
+    "exact storage-only windowed count",
+    "stop",
+    "frozen inventory check"
+  ],
+  "excludes": [
+    "corpus download/hash",
+    "client build",
+    "image pull"
+  ],
+  "data_size_bytes": 74861992349
+}

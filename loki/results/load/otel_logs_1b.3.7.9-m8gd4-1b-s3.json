@@ -1,0 +1,22 @@
+{
+  "engine": "Loki",
+  "dataset": "otel_logs_1b",
+  "build": "3.7.9-m8gd4-1b-s3",
+  "engine_version": "3.7.9 d3b4a2f7",
+  "load_time": 5046.048,
+  "data_size": 74929022820,
+  "storage_units": {
+    "count": 109851,
+    "unit": "objects"
+  },
+  "os": "Ubuntu 24.04.5 LTS",
+  "date": "2026-11-15",
+  "loaded_by": "queries.logql",
+  "phases": {
+    "ingest": 4500.4337015539995,
+    "adapter_load": 5027.770285154
+  },
+  "load_cpu": 42056.016,
+  "load_cpu_containers": 30244.507,
+  "load_cpu_procs": 11811.509
+}

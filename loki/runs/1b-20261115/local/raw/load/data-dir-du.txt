@@ -1,0 +1,13 @@
+74861992349	/mnt/lp/loki-1b/chunks
+0	/mnt/lp/loki-1b/compactor
+2971	/mnt/lp/loki-1b/config.json
+62	/mnt/lp/loki-1b/destination.json
+187489	/mnt/lp/loki-1b/ingest-metrics.txt
+463	/mnt/lp/loki-1b/load-started.json
+206827	/mnt/lp/loki-1b/manifest.json
+0	/mnt/lp/loki-1b/rules
+212	/mnt/lp/loki-1b/runtime.json
+1512253	/mnt/lp/loki-1b/tsdb-cache
+476758	/mnt/lp/loki-1b/tsdb-index
+110959394816	/mnt/lp/loki-1b/wal
+109849

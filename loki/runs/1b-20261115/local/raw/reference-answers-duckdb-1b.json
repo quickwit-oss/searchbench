@@ -1,0 +1,3810 @@
+{
+ "source": "DuckDB 1B oracle from loki-frame-1b-20261102T110752Z (oracle.json); subset of the queries with a finished prefilter-on answer here",
+ "reference_path": "runs/2026-11-01-m8gd-4xlarge-1b-local-nocache/extra/duckdb/duckdb-parquet_d1b-local-sorted_otel_logs_1b.results.log.gz",
+ "reference_sha256": "de304fb712d5ef5e30a742fb4a358811f8cf9b21f30a42c9aa16285f321eee43",
+ "query_specs_sha256": "4be0e3b6b359def4cbce79de8da952d8094ebd879f145902f6696b7f716e5ec2",
+ "limitations": [
+  "logs rendered at microsecond precision",
+  "boundary ties may be inconclusive; no cardinality-only success"
+ ],
+ "queries": {
+  "Q01": {
+   "rows": [
+    {
+     "count": 93638388
+    }
+   ],
+   "reference_query": "Q01",
+   "sql": "SELECT count() FROM otel_logs WHERE sb_term(Body, 'error');"
+  },
+  "Q04": {
+   "rows": [
+    {
+     "count": 54410241
+    }
+   ],
+   "reference_query": "Q04",
+   "sql": "SELECT count() FROM otel_logs WHERE sb_all(Body, ['failed', 'charge', 'card', 'cache']);"
+  },
+  "Q25": {
+   "rows": [
+    {
+     "count": 19554788
+    }
+   ],
+   "reference_query": "Q25",
+   "sql": "SELECT count() FROM otel_logs WHERE sb_prefix(Body, 'conn');"
+  },
+  "Q27": {
+   "rows": [
+    {
+     "count": 19539754
+    }
+   ],
+   "reference_query": "Q27",
+   "sql": "SELECT count() FROM otel_logs WHERE sb_infix(Body, 'nnec');"
+  },
+  "Q61": {
+   "rows": [
+    {
+     "minute": "2025-09-23T00:00:00Z",
+     "count": 2946285
+    },
+    {
+     "minute": "2025-09-23T00:01:00Z",
+     "count": 3059709
+    },
+    {
+     "minute": "2025-09-23T00:02:00Z",
+     "count": 2651590
+    },
+    {
+     "minute": "2025-09-23T00:03:00Z",
+     "count": 2876144
+    },
+    {
+     "minute": "2025-09-23T00:04:00Z",
+     "count": 2607134
+    },
+    {
+     "minute": "2025-09-23T00:05:00Z",
+     "count": 2477858
+    },
+    {
+     "minute": "2025-09-23T00:06:00Z",
+     "count": 3315442
+    },
+    {
+     "minute": "2025-09-23T00:07:00Z",
+     "count": 3215699
+    },
+    {
+     "minute": "2025-09-23T00:08:00Z",
+     "count": 3273272
+    },
+    {
+     "minute": "2025-09-23T00:09:00Z",
+     "count": 3232623
+    },
+    {
+     "minute": "2025-09-23T00:10:00Z",
+     "count": 2893891
+    },
+    {
+     "minute": "2025-09-23T00:11:00Z",
+     "count": 3108484
+    },
+    {
+     "minute": "2025-09-23T00:12:00Z",
+     "count": 3587218
+    },
+    {
+     "minute": "2025-09-23T00:13:00Z",
+     "count": 3456948
+    },
+    {
+     "minute": "2025-09-23T00:14:00Z",
+     "count": 3795528
+    },
+    {
+     "minute": "2025-09-23T00:15:00Z",
+     "count": 3345680
+    },
+    {
+     "minute": "2025-09-23T00:16:00Z",
+     "count": 2983174
+    },
+    {
+     "minute": "2025-09-23T00:17:00Z",
+     "count": 3971964
+    },
+    {
+     "minute": "2025-09-23T00:18:00Z",
+     "count": 4277385
+    },
+    {
+     "minute": "2025-09-23T00:19:00Z",
+     "count": 2919020
+    },
+    {
+     "minute": "2025-09-23T00:20:00Z",
+     "count": 3268225
+    },
+    {
+     "minute": "2025-09-23T00:21:00Z",
+     "count": 3504607
+    },
+    {
+     "minute": "2025-09-23T00:22:00Z",
+     "count": 2650767
+    },
+    {
+     "minute": "2025-09-23T00:23:00Z",
+     "count": 2818800
+    },
+    {
+     "minute": "2025-09-23T00:24:00Z",
+     "count": 3303017
+    },
+    {
+     "minute": "2025-09-23T00:25:00Z",
+     "count": 2409807
+    },
+    {
+     "minute": "2025-09-23T00:26:00Z",
+     "count": 3247032
+    },
+    {
+     "minute": "2025-09-23T00:27:00Z",
+     "count": 3296260
+    },
+    {
+     "minute": "2025-09-23T00:28:00Z",
+     "count": 3743811
+    },
+    {
+     "minute": "2025-09-23T00:29:00Z",
+     "count": 1401014
+    }
+   ],
+   "reference_query": "Q61",
+   "sql": "SELECT make_timestamptz(epoch_ns(Timestamp) // 60000000000 * 60000000) AS minute, count() AS cnt FROM otel_logs WHERE sb_term(Body, 'error') GROUP BY minute ORDER BY minute;"
+  },
+  "Q68": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.037118Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"collinsmatthew@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:24.036936968Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035305Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"cfernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.035098327Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.029599Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"traviscurtis@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:24.029447352Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.016289Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"cassandra46@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.015915582Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.015749Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qmathis@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.015570432Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.014010Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dianehernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.01384225Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.007329Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"megan11@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.007109933Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.003695Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"keithhampton@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:24.003219493Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.003023Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"susan38@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:24.002854233Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.002534Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kathryn73@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:24.002268867Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.001167Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.000987603Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998890Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"davidcollins@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.997975633Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998628Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ashleyjohnson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.998480934Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998037Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonellis@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.997843833Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.997484Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"davisrichard@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.997081313Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.996677Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jenniferjones@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.996501733Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.995527Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"hawkinswilliam@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.994643453Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.993973Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"deniserice@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.993783373Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.992473Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"melissa46@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.992195313Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.991865Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mmarquez@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-26T00:29:23.991039631Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990981Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"alicia35@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.990131783Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990648Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobphillips@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-26T00:29:23.990131266Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990468Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"nicholashowe@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.990316175Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990412Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"coxshawn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.990102889Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.988890Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.988532623Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.987786Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"bhernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.987706353Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982842Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"robertknight@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.982767753Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982307Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"robinsonbradley@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.982185023Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982230Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kimberlyhunt@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.982030375Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.980635Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"keydiana@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.980502674Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.976764Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"daniel60@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.976566333Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.976202Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christophergarcia@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.976065533Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.974618Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"aguilarkiara@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.974425471Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.973785Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"haleymontgomery@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.973686323Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.973432Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"deanjones@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.971368095Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.972131Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dominique24@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.971973237Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.970705Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"lynnjackson@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.970078477Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.969035Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wromero@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.968728065Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.968183Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonanderson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.967890591Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.967423Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacqueline43@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.967242496Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.966922Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"olsonjohn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.966778223Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.962857Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jennifer64@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.961801194Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.962424Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jthornton@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.961898694Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.961885Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jessicalarson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.961687489Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.961588Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"olove@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.961365029Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.959626Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"paul87@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.959443366Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.958689Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"joseph28@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.95856126Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.958637Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"omorse@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.95850793Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947833Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mbenton@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.94773589Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947731Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"daniellesingh@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.947588202Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947391Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qbutler@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.94718587Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.943886Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"bchang@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.943716536Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.939943Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"westdaniel@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.938629596Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.938136Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"vangsheryl@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.937536686Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.937419Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"coxshawn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.937284439Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.934394Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wandagreen@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.933723345Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.932632Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"travis08@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.931577906Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.931811Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobsrobert@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.931139685Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.930307Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"michael70@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.929953126Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.930231Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"csimon@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.929742166Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.929329Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jesse12@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.928708067Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.929263Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"millerwilliam@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.928623258Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.927813Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"millerwilliam@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.927553966Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.920067Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dustinfleming@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.919459774Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.919332Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jennifer64@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.919230757Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.919275Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"leonburke@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.919079785Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.918315Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kevin59@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.917882046Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.917770Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ronald38@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.917482488Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.917487Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christina45@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.917275699Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.916970Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"martindenise@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.916636486Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.913110Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"edwardskatie@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.912508044Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.911073Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonmartinez@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.909968933Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.911005Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonanderson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.910328273Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.910451Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"gabrielsmith@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.908829028Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.910092Z",
+     "ServiceName": "checkout",
+     "SeverityText": "error",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mterry@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.909921163Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.909718Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"barbara99@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.909566216Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.908285Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"groberts@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.907803024Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.907137Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"michael70@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.90696587Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.907018Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"yoderjoshua@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.906637618Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.906197Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ktorres@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.905604918Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.904836Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"morankelly@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.904336724Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.904431Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"connie13@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.903975585Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.903774Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ryanlee@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.903590586Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.902812Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobrhodes@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.902393129Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.899479Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"briannamontgomery@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.899330255Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.898946Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"walkerdaniel@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.898707397Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.898842Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"reneehouse@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.898677493Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.897525Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.896840569Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.897472Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"moorejeremiah@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.897233527Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893935Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"odillon@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.893738066Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893818Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wayne80@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.893387106Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893702Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christopherjohnson@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.89350543Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893061Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"craigyoung@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.892927255Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.891961Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"toniarcher@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.891525682Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.891378Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"lisaedwards@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.891237756Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890725Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"matthew87@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.890510325Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890469Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"garzachristian@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.890384058Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890369Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"james29@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.89024695Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.888789Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qaustin@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.888587158Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.888349Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"pearsonmichael@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.888141008Z\"}"
+    }
+   ],
+   "reference_query": "Q68",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'checkout' AND sb_all(Body, ['failed', 'order']) AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  },
+  "Q72": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038814Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":809,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2030,\"creditCardNumber\":\"4963-2690-1996-0184\"}},\"span_id\":\"fa0cc72bd917d6b8\",\"trace_flags\":\"01\",\"trace_id\":\"dd8e8f2e3da2287a3193a50e4c807e9c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038609Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":199999987,\"units\":{\"high\":0,\"low\":4286,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":526,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4678-5807-0165-4091\"}},\"span_id\":\"f96332014094f2f1\",\"trace_flags\":\"01\",\"trace_id\":\"2ead2c07e2860cbcc2cc6433b2f9b97b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038331Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":760,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"4976-0345-6357-3162\"}},\"span_id\":\"712f4faeac37dfce\",\"trace_flags\":\"01\",\"trace_id\":\"a746db624b70dd1e22231f2e1b01003f\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037956Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":934,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4718-8452-5970-2234\"}},\"span_id\":\"d9a66edbecd3d2a2\",\"trace_flags\":\"01\",\"trace_id\":\"92782b364b0b917eef01e9f8f09237d2\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037843Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":99999996,\"units\":{\"high\":0,\"low\":41085,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":189,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4532-3223-7911-1583\"}},\"span_id\":\"9224f053bf9b4177\",\"trace_flags\":\"01\",\"trace_id\":\"52c9d6e219c0d2b51a891444fdaf32e1\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037672Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":328,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4858-8507-1806-6304\"}},\"span_id\":\"2379d03f7a0a4797\",\"trace_flags\":\"01\",\"trace_id\":\"4dc22ad23423aff4948e6a286b1ab22c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037648Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":819999998,\"units\":{\"high\":0,\"low\":723,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":727,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"4099-9587-7442-0551\"}},\"span_id\":\"05016af06f3328fb\",\"trace_flags\":\"01\",\"trace_id\":\"674ecfa7704f1ec7d464b7c2778d7c4f\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037510Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":757,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4837-4031-8720-2392\"}},\"span_id\":\"3b191cc6d171bc93\",\"trace_flags\":\"01\",\"trace_id\":\"b997e81c67773292a458f06e5cffeb48\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037323Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":660000000,\"units\":{\"high\":0,\"low\":1379,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":706,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4564-3718-1696-2869\"}},\"span_id\":\"8162a90c606d7fd7\",\"trace_flags\":\"01\",\"trace_id\":\"2bde97412cbbbbdaf1db0314451759b1\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037225Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":640,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"5500-7384-0293-3559\"}},\"span_id\":\"1798444ba0a50fa8\",\"trace_flags\":\"01\",\"trace_id\":\"8982e42952a1fca906600bc54d483e6b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037125Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":649999994,\"units\":{\"high\":0,\"low\":15559,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":278,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4457-3039-5095-1788\"}},\"span_id\":\"fd704e222195fca5\",\"trace_flags\":\"01\",\"trace_id\":\"825b36193a6a5f6b2f37db08328b0c06\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037087Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":634,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"5300-8349-4940-7025\"}},\"span_id\":\"c3bc5e9c75d41db7\",\"trace_flags\":\"01\",\"trace_id\":\"ceac98236b8868c158ed312c51c22491\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037020Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":707,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4991-2545-1944-5585\"}},\"span_id\":\"6cbf2aa3f86a447a\",\"trace_flags\":\"01\",\"trace_id\":\"6d6bc4f2123b6a9f4a71db3b53a3906c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036988Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":687,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4003-1933-5013-4112\"}},\"span_id\":\"71fb9cd3df8c0357\",\"trace_flags\":\"01\",\"trace_id\":\"2859abcc91088333185e7749a2778900\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036954Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":733,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4408-6621-7499-8267\"}},\"span_id\":\"a6131abc210037d7\",\"trace_flags\":\"01\",\"trace_id\":\"e2ca0537f64d33d4f0ffb53729eb4d0d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036767Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":386,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4954-9440-5380-9668\"}},\"span_id\":\"b8039625d5b2d4a2\",\"trace_flags\":\"01\",\"trace_id\":\"ce26e166a27578115060d3dcbe3aaf47\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036630Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":167,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4841-3249-8354-3330\"}},\"span_id\":\"fc7ef32420350741\",\"trace_flags\":\"01\",\"trace_id\":\"4bafed83e3c1734724f633b80f03f584\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036541Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":999999998,\"units\":{\"high\":0,\"low\":243,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":862,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"4100-2147-9595-8469\"}},\"span_id\":\"5c1b0a68e9496cd5\",\"trace_flags\":\"01\",\"trace_id\":\"aa8e1a52ef0e8ad31365ac6c58ac6ad5\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036445Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":199999997,\"units\":{\"high\":0,\"low\":409,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":951,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4488-7294-4282-5177\"}},\"span_id\":\"633dfa60c6c64b0d\",\"trace_flags\":\"01\",\"trace_id\":\"173e85dc0c573354d4b19c55a1d9bfbb\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036377Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":849999999,\"units\":{\"high\":0,\"low\":208,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":206,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2033,\"creditCardNumber\":\"4537-4670-1730-2790\"}},\"span_id\":\"c6663debadf7e25e\",\"trace_flags\":\"01\",\"trace_id\":\"c45fee147380617f90fd780efe4038d6\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036171Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":650000000,\"units\":{\"high\":0,\"low\":508,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":387,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4562-8151-0804-4010\"}},\"span_id\":\"a988c89c630cc576\",\"trace_flags\":\"01\",\"trace_id\":\"9ce7e1532615dc4ad8ec9acb290803a8\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036086Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":209999995,\"units\":{\"high\":0,\"low\":1805,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":186,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4531-4534-1792-8877\"}},\"span_id\":\"7349feaec51a00e7\",\"trace_flags\":\"01\",\"trace_id\":\"84100dc07697dbf0d87d7b1ba9e82a1d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036013Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":999999988,\"units\":{\"high\":0,\"low\":2578,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":188,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4111-7051-7761-4213\"}},\"span_id\":\"0b34057fe7305e59\",\"trace_flags\":\"01\",\"trace_id\":\"ca184d7c631caac0d2728d0587acb916\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035919Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":649999997,\"units\":{\"high\":0,\"low\":604,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":551,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4011-8242-0810-2592\"}},\"span_id\":\"df260916e54e5708\",\"trace_flags\":\"01\",\"trace_id\":\"75258dd591c5974d1c3473fbf5ddcf43\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035427Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":974,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4086-1102-8986-7729\"}},\"span_id\":\"f52a5619c16e6721\",\"trace_flags\":\"01\",\"trace_id\":\"24010e803941642466b9e1947298221b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035185Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":397,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4348-2376-9893-7076\"}},\"span_id\":\"7dc7fa9053ec549f\",\"trace_flags\":\"01\",\"trace_id\":\"d980fec32562eafc36fb80d93ac84d2d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035106Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":232,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4626-4502-3843-4701\"}},\"span_id\":\"f56f47d2ef5492a6\",\"trace_flags\":\"01\",\"trace_id\":\"19cc735294f968c17d264eedecf97af3\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035101Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":987,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4844-4458-8599-8061\"}},\"span_id\":\"315fb4f3a0b6e68b\",\"trace_flags\":\"01\",\"trace_id\":\"e254404aca01133efc7c0640dd399f26\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034985Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":550000000,\"units\":{\"high\":0,\"low\":128,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":927,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4514-8651-0002-6407\"}},\"span_id\":\"8290adc623eb33f3\",\"trace_flags\":\"01\",\"trace_id\":\"df971492aafcf2d95aa99cf44e98bc3a\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034618Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":203,\"creditCardExpirationMonth\":10,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"5300-6888-2467-9938\"}},\"span_id\":\"9edeb4b94bf62179\",\"trace_flags\":\"01\",\"trace_id\":\"d88a36f25921d4e2cc932f0cf6dbf111\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034446Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":733,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4448-3712-2360-8685\"}},\"span_id\":\"2f427d74d0b09898\",\"trace_flags\":\"01\",\"trace_id\":\"024f5ae3750b004b9a4e96901442bad2\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034444Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":185,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4649-3677-0473-5556\"}},\"span_id\":\"f2cbe35af3e2706c\",\"trace_flags\":\"01\",\"trace_id\":\"f7b421604b6bed1c18d51efdd98764e0\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034368Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":940,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4123-7648-0774-3500\"}},\"span_id\":\"04e429eb1a6cc153\",\"trace_flags\":\"01\",\"trace_id\":\"f4d47e314b573b7baffb24291f4e909b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034346Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":765,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"5200-3270-1582-2806\"}},\"span_id\":\"7a69739db6312560\",\"trace_flags\":\"01\",\"trace_id\":\"b0320ea070432b2aa83a60a9b708c50a\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":497,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4367-1859-8555-7618\"}},\"span_id\":\"539b6804d9eb7f47\",\"trace_flags\":\"01\",\"trace_id\":\"3e68ec7a3e6c751c6f60eefb06f62c31\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":949999999,\"units\":{\"high\":0,\"low\":400,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":763,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"2221-5854-0574-1298\"}},\"span_id\":\"a89c893d424047ba\",\"trace_flags\":\"01\",\"trace_id\":\"003fae13a192f67e8f15db0461270858\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033990Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"units\":{\"high\":0,\"low\":10974,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":583,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"5400-4605-0536-3508\"}},\"span_id\":\"56e5047cecead363\",\"trace_flags\":\"01\",\"trace_id\":\"766303f2107386be3707339cc8d95fb6\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033779Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":870,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4321-9241-6004-5055\"}},\"span_id\":\"8f30e9bdb34f6f87\",\"trace_flags\":\"01\",\"trace_id\":\"893ac6171e8da784b50f93de22487676\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033759Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":392,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4180-2262-4079-7311\"}},\"span_id\":\"1cc9315b563f387a\",\"trace_flags\":\"01\",\"trace_id\":\"00490667f71fc3556a4f3bb7adc1ddb3\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033471Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":894,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2029,\"creditCardNumber\":\"4421-6466-3272-5753\"}},\"span_id\":\"6eb4b3abde82498a\",\"trace_flags\":\"01\",\"trace_id\":\"26b69e0374eff22d3dc4253b58f1a879\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033441Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":450,\"creditCardExpirationMonth\":7,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4969-2389-1986-9401\"}},\"span_id\":\"ffdaa6ca9309b6f4\",\"trace_flags\":\"01\",\"trace_id\":\"4610336c622893bc8379cb341f938dba\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033321Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":361,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4804-3833-4076-9520\"}},\"span_id\":\"3ffd542423821dd6\",\"trace_flags\":\"01\",\"trace_id\":\"7f6425c0e6fd2a3ae1d2f5bae643152e\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033111Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":949999999,\"units\":{\"high\":0,\"low\":109,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":925,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4171-4483-1938-3614\"}},\"span_id\":\"6f35dabc4b675236\",\"trace_flags\":\"01\",\"trace_id\":\"7514f0b11cec8f85fc62a1ad8ae14897\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033039Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":899999998,\"units\":{\"high\":0,\"low\":595,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":343,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4029-6495-1825-5818\"}},\"span_id\":\"3970fbf5d9bad0a6\",\"trace_flags\":\"01\",\"trace_id\":\"7394ebac945314caa20d1ef2e45281dd\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032823Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":950000000,\"units\":{\"high\":0,\"low\":414,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":984,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4625-8758-9446-5618\"}},\"span_id\":\"d799227d77b21f3b\",\"trace_flags\":\"01\",\"trace_id\":\"3223ca55a40e866c1d8c37c5143080be\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032699Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":435,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4599-9181-8607-9309\"}},\"span_id\":\"47d9ce4db39c2f1e\",\"trace_flags\":\"01\",\"trace_id\":\"9087bf8137720b8e1a7c7e5710d544ef\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032512Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":816,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4126-1423-5814-3940\"}},\"span_id\":\"933ef4e913231dda\",\"trace_flags\":\"01\",\"trace_id\":\"a9e68e43b4de0959d524916ec4c575be\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032469Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":957,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"2230-6062-4820-2295\"}},\"span_id\":\"042bf69beb3c26bc\",\"trace_flags\":\"01\",\"trace_id\":\"b635a40698e89fb953b90ef04a325a26\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032437Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":316,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2038,\"creditCardNumber\":\"4369-9667-5830-3910\"}},\"span_id\":\"5958ebf7c39373ed\",\"trace_flags\":\"01\",\"trace_id\":\"90bcd04ea9fa022fcaa62cca6f10564b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032268Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":203,\"creditCardExpirationMonth\":10,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"4932-1489-0410-5147\"}},\"span_id\":\"f4988c67db71c3aa\",\"trace_flags\":\"01\",\"trace_id\":\"0c19e6352f5535acc077b270535c47dc\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032079Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":377,\"creditCardExpirationMonth\":7,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4001-0467-1495-6707\"}},\"span_id\":\"847d6ab36c88a34c\",\"trace_flags\":\"01\",\"trace_id\":\"68139f491ccee3ae0b70e2f4a1223d1c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":336,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4109-9495-8733-8351\"}},\"span_id\":\"8af9903c128539eb\",\"trace_flags\":\"01\",\"trace_id\":\"ff5f03b263b3c169da6090b86d59f7b5\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    }
+   ],
+   "reference_query": "Q72",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'payment' AND sb_term(Body, 'charge') AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  },
+  "Q73": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.039037Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039034Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039029Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=307c35e4-974b-11f0-a07b-aaed16911ddb, productId=6E92ZMYYFZ, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039027Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039020Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039017Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038976Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038967Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=aedb36b2-99a6-11f0-8582-da198e6e6242"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038957Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038950Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038942Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038938Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=047dff44-9b39-11f0-aecb-9e812adb6070"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038926Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038924Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038919Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038916Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038904Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038895Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038890Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=307b972e-974b-11f0-a07b-aaed16911ddb, productId=0PUK6V6EV0, quantity=2"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038889Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038885Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038885Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=2ef06c48-9c02-11f0-b2e7-4acbffda9c91, productId=66VCHSJNUP, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038881Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038865Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038860Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038857Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038856Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038856Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038844Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=853d5606-98dd-11f0-8832-6aab17b061cf"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038841Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038841Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038838Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038833Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=2ef38f4a-9c02-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038832Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038819Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=afb7e026-99a6-11f0-b97e-06ccf4ed6c43"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038810Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038802Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038798Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038789Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d38b5f5e-9a6f-11f0-a593-1e18b38d367b"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038786Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038783Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d7ae8034-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038781Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038781Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=593f8636-9ccb-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038780Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038777Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d72a4508-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038775Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=afb8acd6-99a6-11f0-a593-1e18b38d367b"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038773Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038769Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d50092d2-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038761Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038758Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038757Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038752Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038750Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038743Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0483f124-9b39-11f0-8582-da198e6e6242, productId=LS4PSXUNUM, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038740Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038734Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038730Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db3fb314-95b8-11f0-b97e-06ccf4ed6c43, productId=2ZYFJ3GM2N, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038727Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038726Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038725Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038721Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038719Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038716Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038713Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038710Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038707Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038707Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=da8c2286-95b8-11f0-af54-560eabe9e5fb, productId=LS4PSXUNUM, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038704Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038704Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=04824eaa-9b39-11f0-a07b-aaed16911ddb, productId=1YMWWN1N4O, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038701Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db50f1c4-95b8-11f0-a593-1e18b38d367b, productId=L9ECAV7KIM, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038700Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038700Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=854f8d62-98dd-11f0-8f38-6665ef6906d3, productId=LS4PSXUNUM, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038698Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038694Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db56489a-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038691Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038688Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db4df6ea-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038685Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038684Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038680Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038678Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0482757e-9b39-11f0-a07b-aaed16911ddb, productId=LS4PSXUNUM, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038677Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=daf60688-95b8-11f0-b97e-06ccf4ed6c43, productId=L9ECAV7KIM, quantity=3"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038674Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038671Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db501a2e-95b8-11f0-b97e-06ccf4ed6c43, productId=LS4PSXUNUM, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038668Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038664Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=daf65a02-95b8-11f0-af54-560eabe9e5fb, productId=66VCHSJNUP, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038661Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0461289c-9b39-11f0-a2ca-56735f3596fd, productId=2ZYFJ3GM2N, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038661Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038660Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038658Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db72f418-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038655Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038652Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db70c896-95b8-11f0-a593-1e18b38d367b, productId=6E92ZMYYFZ, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038649Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038648Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=dba2ea4c-95b8-11f0-8ea6-6e55e9e5b9df"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038646Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038643Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038642Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038640Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db3a2f5c-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038638Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=5ae250d8-9814-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038637Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038635Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    }
+   ],
+   "reference_query": "Q73",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'cart' AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  },
+  "Q76": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.037118Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"collinsmatthew@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:24.036936968Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035305Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"cfernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.035098327Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.029599Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"traviscurtis@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:24.029447352Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.016289Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"cassandra46@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.015915582Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.015749Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qmathis@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.015570432Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.014010Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dianehernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.01384225Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.007329Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"megan11@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.007109933Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.003695Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"keithhampton@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:24.003219493Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.003023Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"susan38@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:24.002854233Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.002534Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kathryn73@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:24.002268867Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.001167Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:24.000987603Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998890Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"davidcollins@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.997975633Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998628Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ashleyjohnson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.998480934Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.998037Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonellis@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.997843833Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.997484Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"davisrichard@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.997081313Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.996677Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jenniferjones@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.996501733Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.995527Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"hawkinswilliam@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.994643453Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.993973Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"deniserice@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.993783373Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.992473Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"melissa46@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.992195313Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.991865Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mmarquez@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-26T00:29:23.991039631Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990981Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"alicia35@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.990131783Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990648Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobphillips@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-26T00:29:23.990131266Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990468Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"nicholashowe@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.990316175Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.990412Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"coxshawn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.990102889Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.988890Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.988532623Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.987786Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"bhernandez@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.987706353Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982842Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"robertknight@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.982767753Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982307Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"robinsonbradley@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.982185023Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.982230Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kimberlyhunt@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.982030375Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.980635Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"keydiana@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.980502674Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.976764Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"daniel60@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.976566333Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.976202Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christophergarcia@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.976065533Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.974618Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"aguilarkiara@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.974425471Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.973785Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"haleymontgomery@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.973686323Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.973432Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"deanjones@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.971368095Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.972131Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dominique24@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.971973237Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.970705Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"lynnjackson@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.970078477Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.969035Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wromero@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.968728065Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.968183Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonanderson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.967890591Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.967423Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacqueline43@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.967242496Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.966922Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"olsonjohn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.966778223Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.962857Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jennifer64@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.961801194Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.962424Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jthornton@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-24T00:29:23.961898694Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.961885Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jessicalarson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.961687489Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.961588Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"olove@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.961365029Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.959626Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"paul87@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.959443366Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.958689Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"joseph28@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.95856126Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.958637Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"omorse@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.95850793Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947833Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mbenton@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.94773589Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947731Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"daniellesingh@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.947588202Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.947391Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qbutler@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.94718587Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.943886Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"bchang@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.943716536Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.939943Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"westdaniel@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.938629596Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.938136Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"vangsheryl@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.937536686Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.937419Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"coxshawn@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-28T00:29:23.937284439Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.934394Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wandagreen@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.933723345Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.932632Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"travis08@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.931577906Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.931811Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobsrobert@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.931139685Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.930307Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"michael70@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.929953126Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.930231Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"csimon@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.929742166Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.929329Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jesse12@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.928708067Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.929263Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"millerwilliam@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.928623258Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.927813Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"millerwilliam@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.927553966Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.920067Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"dustinfleming@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.919459774Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.919332Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jennifer64@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.919230757Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.919275Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"leonburke@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-20T00:29:23.919079785Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.918315Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"kevin59@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.917882046Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.917770Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ronald38@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.917482488Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.917487Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christina45@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.917275699Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.916970Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"martindenise@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.916636486Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.913110Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"edwardskatie@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.912508044Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.911073Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonmartinez@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.909968933Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.911005Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jasonanderson@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.910328273Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.910451Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"gabrielsmith@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.908829028Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.910092Z",
+     "ServiceName": "checkout",
+     "SeverityText": "error",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"mterry@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.909921163Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.909718Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"barbara99@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.909566216Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.908285Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"groberts@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.907803024Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.907137Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"michael70@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.90696587Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.907018Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"yoderjoshua@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.906637618Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.906197Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ktorres@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.905604918Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.904836Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"morankelly@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.904336724Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.904431Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"connie13@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.903975585Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.903774Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"ryanlee@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.903590586Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.902812Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"jacobrhodes@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.902393129Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.899479Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"briannamontgomery@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.899330255Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.898946Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"walkerdaniel@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.898707397Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.898842Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"reneehouse@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.898677493Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.897525Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"murphysean@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.896840569Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.897472Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"moorejeremiah@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-25T00:29:23.897233527Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893935Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"odillon@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.893738066Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893818Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"wayne80@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-22T00:29:23.893387106Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893702Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"christopherjohnson@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-21T00:29:23.89350543Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.893061Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"craigyoung@example.org\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.892927255Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.891961Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"toniarcher@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.891525682Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.891378Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"lisaedwards@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-19T00:29:23.891237756Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890725Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"matthew87@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.890510325Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890469Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"garzachristian@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.890384058Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.890369Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"james29@example.com\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-23T00:29:23.89024695Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.888789Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"qaustin@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-27T00:29:23.888587158Z\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:23.888349Z",
+     "ServiceName": "checkout",
+     "SeverityText": "warn",
+     "Body": "{\"message\":\"failed to send order confirmation to \\\"pearsonmichael@example.net\\\": failed POST to email service: expected 200, got 500\",\"severity\":\"warning\",\"timestamp\":\"2025-09-29T00:29:23.888141008Z\"}"
+    }
+   ],
+   "reference_query": "Q68",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'checkout' AND sb_all(Body, ['failed', 'order']) AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  },
+  "Q80": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038814Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":809,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2030,\"creditCardNumber\":\"4963-2690-1996-0184\"}},\"span_id\":\"fa0cc72bd917d6b8\",\"trace_flags\":\"01\",\"trace_id\":\"dd8e8f2e3da2287a3193a50e4c807e9c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038609Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":199999987,\"units\":{\"high\":0,\"low\":4286,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":526,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4678-5807-0165-4091\"}},\"span_id\":\"f96332014094f2f1\",\"trace_flags\":\"01\",\"trace_id\":\"2ead2c07e2860cbcc2cc6433b2f9b97b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038331Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":760,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"4976-0345-6357-3162\"}},\"span_id\":\"712f4faeac37dfce\",\"trace_flags\":\"01\",\"trace_id\":\"a746db624b70dd1e22231f2e1b01003f\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037956Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":934,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4718-8452-5970-2234\"}},\"span_id\":\"d9a66edbecd3d2a2\",\"trace_flags\":\"01\",\"trace_id\":\"92782b364b0b917eef01e9f8f09237d2\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037843Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":99999996,\"units\":{\"high\":0,\"low\":41085,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":189,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4532-3223-7911-1583\"}},\"span_id\":\"9224f053bf9b4177\",\"trace_flags\":\"01\",\"trace_id\":\"52c9d6e219c0d2b51a891444fdaf32e1\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037672Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":328,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4858-8507-1806-6304\"}},\"span_id\":\"2379d03f7a0a4797\",\"trace_flags\":\"01\",\"trace_id\":\"4dc22ad23423aff4948e6a286b1ab22c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037648Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":819999998,\"units\":{\"high\":0,\"low\":723,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":727,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"4099-9587-7442-0551\"}},\"span_id\":\"05016af06f3328fb\",\"trace_flags\":\"01\",\"trace_id\":\"674ecfa7704f1ec7d464b7c2778d7c4f\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037510Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":757,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4837-4031-8720-2392\"}},\"span_id\":\"3b191cc6d171bc93\",\"trace_flags\":\"01\",\"trace_id\":\"b997e81c67773292a458f06e5cffeb48\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037323Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":660000000,\"units\":{\"high\":0,\"low\":1379,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":706,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4564-3718-1696-2869\"}},\"span_id\":\"8162a90c606d7fd7\",\"trace_flags\":\"01\",\"trace_id\":\"2bde97412cbbbbdaf1db0314451759b1\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037225Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":640,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"5500-7384-0293-3559\"}},\"span_id\":\"1798444ba0a50fa8\",\"trace_flags\":\"01\",\"trace_id\":\"8982e42952a1fca906600bc54d483e6b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037125Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":649999994,\"units\":{\"high\":0,\"low\":15559,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":278,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4457-3039-5095-1788\"}},\"span_id\":\"fd704e222195fca5\",\"trace_flags\":\"01\",\"trace_id\":\"825b36193a6a5f6b2f37db08328b0c06\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037087Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":634,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"5300-8349-4940-7025\"}},\"span_id\":\"c3bc5e9c75d41db7\",\"trace_flags\":\"01\",\"trace_id\":\"ceac98236b8868c158ed312c51c22491\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037020Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":707,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4991-2545-1944-5585\"}},\"span_id\":\"6cbf2aa3f86a447a\",\"trace_flags\":\"01\",\"trace_id\":\"6d6bc4f2123b6a9f4a71db3b53a3906c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.037000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036988Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":687,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4003-1933-5013-4112\"}},\"span_id\":\"71fb9cd3df8c0357\",\"trace_flags\":\"01\",\"trace_id\":\"2859abcc91088333185e7749a2778900\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036954Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":733,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4408-6621-7499-8267\"}},\"span_id\":\"a6131abc210037d7\",\"trace_flags\":\"01\",\"trace_id\":\"e2ca0537f64d33d4f0ffb53729eb4d0d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036767Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":386,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4954-9440-5380-9668\"}},\"span_id\":\"b8039625d5b2d4a2\",\"trace_flags\":\"01\",\"trace_id\":\"ce26e166a27578115060d3dcbe3aaf47\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036630Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":167,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4841-3249-8354-3330\"}},\"span_id\":\"fc7ef32420350741\",\"trace_flags\":\"01\",\"trace_id\":\"4bafed83e3c1734724f633b80f03f584\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036541Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":999999998,\"units\":{\"high\":0,\"low\":243,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":862,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"4100-2147-9595-8469\"}},\"span_id\":\"5c1b0a68e9496cd5\",\"trace_flags\":\"01\",\"trace_id\":\"aa8e1a52ef0e8ad31365ac6c58ac6ad5\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036445Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":199999997,\"units\":{\"high\":0,\"low\":409,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":951,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4488-7294-4282-5177\"}},\"span_id\":\"633dfa60c6c64b0d\",\"trace_flags\":\"01\",\"trace_id\":\"173e85dc0c573354d4b19c55a1d9bfbb\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036377Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":849999999,\"units\":{\"high\":0,\"low\":208,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":206,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2033,\"creditCardNumber\":\"4537-4670-1730-2790\"}},\"span_id\":\"c6663debadf7e25e\",\"trace_flags\":\"01\",\"trace_id\":\"c45fee147380617f90fd780efe4038d6\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036171Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":650000000,\"units\":{\"high\":0,\"low\":508,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":387,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4562-8151-0804-4010\"}},\"span_id\":\"a988c89c630cc576\",\"trace_flags\":\"01\",\"trace_id\":\"9ce7e1532615dc4ad8ec9acb290803a8\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036086Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":209999995,\"units\":{\"high\":0,\"low\":1805,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":186,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2036,\"creditCardNumber\":\"4531-4534-1792-8877\"}},\"span_id\":\"7349feaec51a00e7\",\"trace_flags\":\"01\",\"trace_id\":\"84100dc07697dbf0d87d7b1ba9e82a1d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036013Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":999999988,\"units\":{\"high\":0,\"low\":2578,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":188,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4111-7051-7761-4213\"}},\"span_id\":\"0b34057fe7305e59\",\"trace_flags\":\"01\",\"trace_id\":\"ca184d7c631caac0d2728d0587acb916\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.036000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035919Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":649999997,\"units\":{\"high\":0,\"low\":604,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":551,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4011-8242-0810-2592\"}},\"span_id\":\"df260916e54e5708\",\"trace_flags\":\"01\",\"trace_id\":\"75258dd591c5974d1c3473fbf5ddcf43\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035427Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":974,\"creditCardExpirationMonth\":2,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4086-1102-8986-7729\"}},\"span_id\":\"f52a5619c16e6721\",\"trace_flags\":\"01\",\"trace_id\":\"24010e803941642466b9e1947298221b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035185Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":397,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4348-2376-9893-7076\"}},\"span_id\":\"7dc7fa9053ec549f\",\"trace_flags\":\"01\",\"trace_id\":\"d980fec32562eafc36fb80d93ac84d2d\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035106Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":232,\"creditCardExpirationMonth\":1,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4626-4502-3843-4701\"}},\"span_id\":\"f56f47d2ef5492a6\",\"trace_flags\":\"01\",\"trace_id\":\"19cc735294f968c17d264eedecf97af3\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035101Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":987,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4844-4458-8599-8061\"}},\"span_id\":\"315fb4f3a0b6e68b\",\"trace_flags\":\"01\",\"trace_id\":\"e254404aca01133efc7c0640dd399f26\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.035000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034985Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":550000000,\"units\":{\"high\":0,\"low\":128,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":927,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4514-8651-0002-6407\"}},\"span_id\":\"8290adc623eb33f3\",\"trace_flags\":\"01\",\"trace_id\":\"df971492aafcf2d95aa99cf44e98bc3a\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034618Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":203,\"creditCardExpirationMonth\":10,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"5300-6888-2467-9938\"}},\"span_id\":\"9edeb4b94bf62179\",\"trace_flags\":\"01\",\"trace_id\":\"d88a36f25921d4e2cc932f0cf6dbf111\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034446Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":733,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4448-3712-2360-8685\"}},\"span_id\":\"2f427d74d0b09898\",\"trace_flags\":\"01\",\"trace_id\":\"024f5ae3750b004b9a4e96901442bad2\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034444Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":185,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4649-3677-0473-5556\"}},\"span_id\":\"f2cbe35af3e2706c\",\"trace_flags\":\"01\",\"trace_id\":\"f7b421604b6bed1c18d51efdd98764e0\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034368Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":940,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2040,\"creditCardNumber\":\"4123-7648-0774-3500\"}},\"span_id\":\"04e429eb1a6cc153\",\"trace_flags\":\"01\",\"trace_id\":\"f4d47e314b573b7baffb24291f4e909b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034346Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":765,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"5200-3270-1582-2806\"}},\"span_id\":\"7a69739db6312560\",\"trace_flags\":\"01\",\"trace_id\":\"b0320ea070432b2aa83a60a9b708c50a\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":497,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4367-1859-8555-7618\"}},\"span_id\":\"539b6804d9eb7f47\",\"trace_flags\":\"01\",\"trace_id\":\"3e68ec7a3e6c751c6f60eefb06f62c31\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":949999999,\"units\":{\"high\":0,\"low\":400,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":763,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"2221-5854-0574-1298\"}},\"span_id\":\"a89c893d424047ba\",\"trace_flags\":\"01\",\"trace_id\":\"003fae13a192f67e8f15db0461270858\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.034000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033990Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"units\":{\"high\":0,\"low\":10974,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":583,\"creditCardExpirationMonth\":8,\"creditCardExpirationYear\":2032,\"creditCardNumber\":\"5400-4605-0536-3508\"}},\"span_id\":\"56e5047cecead363\",\"trace_flags\":\"01\",\"trace_id\":\"766303f2107386be3707339cc8d95fb6\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033779Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":870,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4321-9241-6004-5055\"}},\"span_id\":\"8f30e9bdb34f6f87\",\"trace_flags\":\"01\",\"trace_id\":\"893ac6171e8da784b50f93de22487676\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033759Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":392,\"creditCardExpirationMonth\":3,\"creditCardExpirationYear\":2039,\"creditCardNumber\":\"4180-2262-4079-7311\"}},\"span_id\":\"1cc9315b563f387a\",\"trace_flags\":\"01\",\"trace_id\":\"00490667f71fc3556a4f3bb7adc1ddb3\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033471Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":894,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2029,\"creditCardNumber\":\"4421-6466-3272-5753\"}},\"span_id\":\"6eb4b3abde82498a\",\"trace_flags\":\"01\",\"trace_id\":\"26b69e0374eff22d3dc4253b58f1a879\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033441Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":450,\"creditCardExpirationMonth\":7,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4969-2389-1986-9401\"}},\"span_id\":\"ffdaa6ca9309b6f4\",\"trace_flags\":\"01\",\"trace_id\":\"4610336c622893bc8379cb341f938dba\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033321Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":361,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4804-3833-4076-9520\"}},\"span_id\":\"3ffd542423821dd6\",\"trace_flags\":\"01\",\"trace_id\":\"7f6425c0e6fd2a3ae1d2f5bae643152e\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033111Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":949999999,\"units\":{\"high\":0,\"low\":109,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":925,\"creditCardExpirationMonth\":5,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4171-4483-1938-3614\"}},\"span_id\":\"6f35dabc4b675236\",\"trace_flags\":\"01\",\"trace_id\":\"7514f0b11cec8f85fc62a1ad8ae14897\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033039Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":899999998,\"units\":{\"high\":0,\"low\":595,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":343,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2034,\"creditCardNumber\":\"4029-6495-1825-5818\"}},\"span_id\":\"3970fbf5d9bad0a6\",\"trace_flags\":\"01\",\"trace_id\":\"7394ebac945314caa20d1ef2e45281dd\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.033000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032823Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\",\"nanos\":950000000,\"units\":{\"high\":0,\"low\":414,\"unsigned\":false}},\"creditCard\":{\"creditCardCvv\":984,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2037,\"creditCardNumber\":\"4625-8758-9446-5618\"}},\"span_id\":\"d799227d77b21f3b\",\"trace_flags\":\"01\",\"trace_id\":\"3223ca55a40e866c1d8c37c5143080be\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032699Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":435,\"creditCardExpirationMonth\":9,\"creditCardExpirationYear\":2031,\"creditCardNumber\":\"4599-9181-8607-9309\"}},\"span_id\":\"47d9ce4db39c2f1e\",\"trace_flags\":\"01\",\"trace_id\":\"9087bf8137720b8e1a7c7e5710d544ef\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032512Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":816,\"creditCardExpirationMonth\":11,\"creditCardExpirationYear\":2026,\"creditCardNumber\":\"4126-1423-5814-3940\"}},\"span_id\":\"933ef4e913231dda\",\"trace_flags\":\"01\",\"trace_id\":\"a9e68e43b4de0959d524916ec4c575be\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032469Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":957,\"creditCardExpirationMonth\":12,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"2230-6062-4820-2295\"}},\"span_id\":\"042bf69beb3c26bc\",\"trace_flags\":\"01\",\"trace_id\":\"b635a40698e89fb953b90ef04a325a26\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032437Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":316,\"creditCardExpirationMonth\":6,\"creditCardExpirationYear\":2038,\"creditCardNumber\":\"4369-9667-5830-3910\"}},\"span_id\":\"5958ebf7c39373ed\",\"trace_flags\":\"01\",\"trace_id\":\"90bcd04ea9fa022fcaa62cca6f10564b\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032268Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":203,\"creditCardExpirationMonth\":10,\"creditCardExpirationYear\":2027,\"creditCardNumber\":\"4932-1489-0410-5147\"}},\"span_id\":\"f4988c67db71c3aa\",\"trace_flags\":\"01\",\"trace_id\":\"0c19e6352f5535acc077b270535c47dc\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032079Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":377,\"creditCardExpirationMonth\":7,\"creditCardExpirationYear\":2028,\"creditCardNumber\":\"4001-0467-1495-6707\"}},\"span_id\":\"847d6ab36c88a34c\",\"trace_flags\":\"01\",\"trace_id\":\"68139f491ccee3ae0b70e2f4a1223d1c\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032077Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "{\"level\":\"info\",\"message\":\"Charge request received.\",\"request\":{\"amount\":{\"currencyCode\":\"USD\"},\"creditCard\":{\"creditCardCvv\":336,\"creditCardExpirationMonth\":4,\"creditCardExpirationYear\":2035,\"creditCardNumber\":\"4109-9495-8733-8351\"}},\"span_id\":\"8af9903c128539eb\",\"trace_flags\":\"01\",\"trace_id\":\"ff5f03b263b3c169da6090b86d59f7b5\"}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.032000Z",
+     "ServiceName": "payment",
+     "SeverityText": "info",
+     "Body": "Charge request received."
+    }
+   ],
+   "reference_query": "Q72",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'payment' AND sb_term(Body, 'charge') AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  },
+  "Q81": {
+   "rows": [
+    {
+     "Timestamp": "2025-09-23T00:29:24.039037Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039034Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039029Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=307c35e4-974b-11f0-a07b-aaed16911ddb, productId=6E92ZMYYFZ, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039027Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039020Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.039017Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038976Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038967Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=aedb36b2-99a6-11f0-8582-da198e6e6242"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038957Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038950Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038942Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038938Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=047dff44-9b39-11f0-aecb-9e812adb6070"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038926Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038924Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038919Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038916Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038904Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038895Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038890Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=307b972e-974b-11f0-a07b-aaed16911ddb, productId=0PUK6V6EV0, quantity=2"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038889Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038885Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038885Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=2ef06c48-9c02-11f0-b2e7-4acbffda9c91, productId=66VCHSJNUP, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038881Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038865Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038860Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038857Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038856Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038856Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038844Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=853d5606-98dd-11f0-8832-6aab17b061cf"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038841Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038841Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038838Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038833Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=2ef38f4a-9c02-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038832Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038819Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=afb7e026-99a6-11f0-b97e-06ccf4ed6c43"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038810Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038802Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038798Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038789Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d38b5f5e-9a6f-11f0-a593-1e18b38d367b"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038786Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038783Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d7ae8034-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038781Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038781Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=593f8636-9ccb-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038780Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038777Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d72a4508-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038775Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=afb8acd6-99a6-11f0-a593-1e18b38d367b"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038773Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038769Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=d50092d2-9a6f-11f0-af54-560eabe9e5fb"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038761Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038758Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038757Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038752Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038750Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038743Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0483f124-9b39-11f0-8582-da198e6e6242, productId=LS4PSXUNUM, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038740Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038734Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038730Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db3fb314-95b8-11f0-b97e-06ccf4ed6c43, productId=2ZYFJ3GM2N, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038727Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038726Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038725Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038721Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038719Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038716Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038713Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038710Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038707Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038707Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=da8c2286-95b8-11f0-af54-560eabe9e5fb, productId=LS4PSXUNUM, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038704Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038704Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=04824eaa-9b39-11f0-a07b-aaed16911ddb, productId=1YMWWN1N4O, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038701Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db50f1c4-95b8-11f0-a593-1e18b38d367b, productId=L9ECAV7KIM, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038700Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038700Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=854f8d62-98dd-11f0-8f38-6665ef6906d3, productId=LS4PSXUNUM, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038698Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038694Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db56489a-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038691Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038688Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db4df6ea-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038685Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038684Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038680Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038678Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0482757e-9b39-11f0-a07b-aaed16911ddb, productId=LS4PSXUNUM, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038677Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=daf60688-95b8-11f0-b97e-06ccf4ed6c43, productId=L9ECAV7KIM, quantity=3"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038674Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038671Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db501a2e-95b8-11f0-b97e-06ccf4ed6c43, productId=LS4PSXUNUM, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038668Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038664Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=daf65a02-95b8-11f0-af54-560eabe9e5fb, productId=66VCHSJNUP, quantity=1"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038661Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=0461289c-9b39-11f0-a2ca-56735f3596fd, productId=2ZYFJ3GM2N, quantity=5"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038661Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038660Z",
+     "ServiceName": "cart",
+     "SeverityText": "information",
+     "Body": "GetCartAsync called with userId={userId}"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038658Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db72f418-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038655Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038652Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db70c896-95b8-11f0-a593-1e18b38d367b, productId=6E92ZMYYFZ, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038649Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038648Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=dba2ea4c-95b8-11f0-8ea6-6e55e9e5b9df"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038646Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038643Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038642Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId="
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038640Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      AddItemAsync called with userId=db3a2f5c-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=10"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038638Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "      GetCartAsync called with userId=5ae250d8-9814-11f0-9112-7614fb24758f"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038637Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    },
+    {
+     "Timestamp": "2025-09-23T00:29:24.038635Z",
+     "ServiceName": "cart",
+     "SeverityText": "info",
+     "Body": "info: cart.cartstore.ValkeyCartStore[0]"
+    }
+   ],
+   "reference_query": "Q73",
+   "sql": "SELECT Timestamp, ServiceName, SeverityText, Body FROM otel_logs WHERE ServiceName = 'cart' AND Timestamp BETWEEN '2025-09-23 00:00:00' AND '2025-09-23 00:30:00' ORDER BY Timestamp DESC LIMIT 100;"
+  }
+ }
+}

@@ -1,0 +1,214 @@
+{
+  "rows": 100000,
+  "min_timestamp_ns": 1758585600000000000,
+  "max_timestamp_ns": 1758585600180953600,
+  "files": 1,
+  "row_groups": 1,
+  "readers": 1,
+  "http_workers": 8,
+  "batch_rows": 5000,
+  "queue_depth": 8,
+  "max_request_bytes": 3145728,
+  "requests": 59,
+  "protobuf_bytes": 114401157,
+  "compressed_bytes": 15142595,
+  "elapsed_seconds": 1.255750877,
+  "client": "rust",
+  "wire_format": "snappy-protobuf",
+  "ingest_seconds": 1.3368564189995595,
+  "verification_stats": {
+    "summary": {
+      "bytesProcessedPerSecond": 54358187,
+      "linesProcessedPerSecond": 216360,
+      "totalBytesProcessed": 25123907,
+      "totalLinesProcessed": 100000,
+      "execTime": 0.462191773,
+      "queueTime": 0.00018345,
+      "subqueries": 0,
+      "totalEntriesReturned": 1,
+      "splits": 0,
+      "shards": 1,
+      "totalPostFilterLines": 100000,
+      "totalStructuredMetadataBytesProcessed": 14657640
+    },
+    "querier": {
+      "store": {
+        "totalChunksRef": 63,
+        "totalChunksDownloaded": 63,
+        "chunksDownloadTime": 6824461,
+        "queryReferencedStructuredMetadata": false,
+        "queryUsedV2Engine": false,
+        "chunk": {
+          "headChunkBytes": 0,
+          "headChunkLines": 0,
+          "decompressedBytes": 25123907,
+          "decompressedLines": 100000,
+          "compressedBytes": 2801744,
+          "totalDuplicates": 0,
+          "postFilterLines": 100000,
+          "headChunkStructuredMetadataBytes": 0,
+          "decompressedStructuredMetadataBytes": 14657640
+        },
+        "chunkRefsFetchTime": 948160,
+        "congestionControlLatency": 0,
+        "pipelineWrapperFilteredLines": 0,
+        "dataobj": {
+          "prePredicateDecompressedRows": 0,
+          "prePredicateDecompressedBytes": 0,
+          "prePredicateDecompressedStructuredMetadataBytes": 0,
+          "postPredicateRows": 0,
+          "postPredicateDecompressedBytes": 0,
+          "postPredicateStructuredMetadataBytes": 0,
+          "postFilterRows": 0,
+          "pagesScanned": 0,
+          "pagesDownloaded": 0,
+          "pagesDownloadedBytes": 0,
+          "pageBatches": 0,
+          "totalRowsAvailable": 0,
+          "totalPageDownloadTime": 0
+        }
+      },
+      "querierExecTime": 0.915340533
+    },
+    "ingester": {
+      "totalReached": 0,
+      "totalChunksMatched": 0,
+      "totalBatches": 0,
+      "totalLinesSent": 0,
+      "store": {
+        "totalChunksRef": 0,
+        "totalChunksDownloaded": 0,
+        "chunksDownloadTime": 0,
+        "queryReferencedStructuredMetadata": false,
+        "queryUsedV2Engine": false,
+        "chunk": {
+          "headChunkBytes": 0,
+          "headChunkLines": 0,
+          "decompressedBytes": 0,
+          "decompressedLines": 0,
+          "compressedBytes": 0,
+          "totalDuplicates": 0,
+          "postFilterLines": 0,
+          "headChunkStructuredMetadataBytes": 0,
+          "decompressedStructuredMetadataBytes": 0
+        },
+        "chunkRefsFetchTime": 0,
+        "congestionControlLatency": 0,
+        "pipelineWrapperFilteredLines": 0,
+        "dataobj": {
+          "prePredicateDecompressedRows": 0,
+          "prePredicateDecompressedBytes": 0,
+          "prePredicateDecompressedStructuredMetadataBytes": 0,
+          "postPredicateRows": 0,
+          "postPredicateDecompressedBytes": 0,
+          "postPredicateStructuredMetadataBytes": 0,
+          "postFilterRows": 0,
+          "pagesScanned": 0,
+          "pagesDownloaded": 0,
+          "pagesDownloadedBytes": 0,
+          "pageBatches": 0,
+          "totalRowsAvailable": 0,
+          "totalPageDownloadTime": 0
+        }
+      }
+    },
+    "cache": {
+      "chunk": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 63,
+        "bytesReceived": 0,
+        "bytesSent": 6197899,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "index": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "result": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "statsResult": {
+        "entriesFound": 0,
+        "entriesRequested": 2,
+        "entriesStored": 2,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 4,
+        "downloadTime": 17682,
+        "queryLengthServed": 0
+      },
+      "volumeResult": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "seriesResult": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "labelResult": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      },
+      "instantMetricResult": {
+        "entriesFound": 0,
+        "entriesRequested": 0,
+        "entriesStored": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0,
+        "requests": 0,
+        "downloadTime": 0,
+        "queryLengthServed": 0
+      }
+    },
+    "index": {
+      "totalChunks": 0,
+      "postFilterChunks": 0,
+      "shardsDuration": 0,
+      "usedBloomFilters": false,
+      "totalStreams": 0,
+      "chunkRefsLookupTime": 0,
+      "bloomFilterTime": 0
+    }
+  },
+  "persisted_inventory": "4da4cf592874037299ef028b589e49addd20b8f3114a8f72fba7df6ee87d5efb",
+  "storage": "filesystem",
+  "image": "grafana/loki:3.7.9",
+  "load_seconds": 158.76803167599974,
+  "query_store_only": true,
+  "verification_target": "read,query-scheduler,compactor",
+  "query_target": "read,query-scheduler"
+}

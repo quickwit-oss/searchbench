@@ -1,0 +1,2 @@
+TARGET         SOURCE       FSTYPE OPTIONS
+/mnt/local-ssd /dev/nvme1n1 ext4   rw,noatime

@@ -1,0 +1,5 @@
+{
+  "target": "read,query-scheduler",
+  "image": "grafana/loki:3.7.9",
+  "container": "searchbench-loki"
+}

@@ -1,0 +1,407 @@
+{
+  "body-count": {
+    "queries": 27,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 27,
+      "on": 27
+    },
+    "cold_timeouts": {
+      "off": 27,
+      "on": 27
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q25",
+      "Q26",
+      "Q27",
+      "Q28",
+      "Q29",
+      "Q30",
+      "Q31",
+      "Q32"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": null,
+    "on_cold_geomean": null,
+    "cold_ratio_on_over_off": null,
+    "cold_queries": 0,
+    "off_best_hot_geomean": null,
+    "on_best_hot_geomean": null,
+    "best_hot_ratio_on_over_off": null,
+    "best_hot_queries": 0,
+    "off_best_hot_raw_geomean": null,
+    "on_best_hot_raw_geomean": null,
+    "best_hot_raw_ratio_on_over_off": null,
+    "best_hot_raw_queries": 0
+  },
+  "group-by": {
+    "queries": 8,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 8,
+      "on": 8
+    },
+    "cold_timeouts": {
+      "off": 8,
+      "on": 8
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q54",
+      "Q55",
+      "Q56",
+      "Q57",
+      "Q58",
+      "Q60",
+      "Q66",
+      "Q67"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": null,
+    "on_cold_geomean": null,
+    "cold_ratio_on_over_off": null,
+    "cold_queries": 0,
+    "off_best_hot_geomean": null,
+    "on_best_hot_geomean": null,
+    "best_hot_ratio_on_over_off": null,
+    "best_hot_queries": 0,
+    "off_best_hot_raw_geomean": null,
+    "on_best_hot_raw_geomean": null,
+    "best_hot_raw_ratio_on_over_off": null,
+    "best_hot_raw_queries": 0
+  },
+  "histogram": {
+    "queries": 5,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 5,
+      "on": 5
+    },
+    "cold_timeouts": {
+      "off": 5,
+      "on": 5
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q61",
+      "Q62",
+      "Q63",
+      "Q64",
+      "Q65"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": null,
+    "on_cold_geomean": null,
+    "cold_ratio_on_over_off": null,
+    "cold_queries": 0,
+    "off_best_hot_geomean": null,
+    "on_best_hot_geomean": null,
+    "best_hot_ratio_on_over_off": null,
+    "best_hot_queries": 0,
+    "off_best_hot_raw_geomean": null,
+    "on_best_hot_raw_geomean": null,
+    "best_hot_raw_ratio_on_over_off": null,
+    "best_hot_raw_queries": 0
+  },
+  "logs": {
+    "queries": 14,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 10,
+      "on": 10
+    },
+    "cold_timeouts": {
+      "off": 10,
+      "on": 10
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q69",
+      "Q70",
+      "Q71",
+      "Q74",
+      "Q75",
+      "Q77",
+      "Q78",
+      "Q79",
+      "Q82",
+      "Q83"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": 32.78415503348963,
+    "on_cold_geomean": 5.395943478339733,
+    "cold_ratio_on_over_off": 0.16458998174049858,
+    "cold_queries": 4,
+    "off_best_hot_geomean": 32.785789034398455,
+    "on_best_hot_geomean": 5.28199404603184,
+    "best_hot_ratio_on_over_off": 0.16110620490146005,
+    "best_hot_queries": 4,
+    "off_best_hot_raw_geomean": 32.785789034398455,
+    "on_best_hot_raw_geomean": 5.28199404603184,
+    "best_hot_raw_ratio_on_over_off": 0.16110620490146005,
+    "best_hot_raw_queries": 4
+  },
+  "unfiltered": {
+    "queries": 2,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeouts": {
+      "off": 0,
+      "on": 0
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": 1.3063131938459474,
+    "on_cold_geomean": 1.1849913438215487,
+    "cold_ratio_on_over_off": 0.9071265217285205,
+    "cold_queries": 2,
+    "off_best_hot_geomean": 0.8381679290011042,
+    "on_best_hot_geomean": 0.8733457952340528,
+    "best_hot_ratio_on_over_off": 1.041969950192287,
+    "best_hot_queries": 2,
+    "off_best_hot_raw_geomean": 0.8381679290011042,
+    "on_best_hot_raw_geomean": 0.8733457952340528,
+    "best_hot_raw_ratio_on_over_off": 1.041969950192287,
+    "best_hot_raw_queries": 2
+  },
+  "all": {
+    "queries": 56,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 50,
+      "on": 50
+    },
+    "cold_timeouts": {
+      "off": 50,
+      "on": 50
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q25",
+      "Q26",
+      "Q27",
+      "Q28",
+      "Q29",
+      "Q30",
+      "Q31",
+      "Q32",
+      "Q54",
+      "Q55",
+      "Q56",
+      "Q57",
+      "Q58",
+      "Q60",
+      "Q61",
+      "Q62",
+      "Q63",
+      "Q64",
+      "Q65",
+      "Q66",
+      "Q67",
+      "Q69",
+      "Q70",
+      "Q71",
+      "Q74",
+      "Q75",
+      "Q77",
+      "Q78",
+      "Q79",
+      "Q82",
+      "Q83"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": 11.197603902728856,
+    "on_cold_geomean": 3.2554921605473868,
+    "cold_ratio_on_over_off": 0.29073114112868587,
+    "cold_queries": 6,
+    "off_best_hot_geomean": 9.658301824912538,
+    "on_best_hot_geomean": 2.8990832236071,
+    "best_hot_ratio_on_over_off": 0.30016490229464876,
+    "best_hot_queries": 6,
+    "off_best_hot_raw_geomean": 9.658301824912538,
+    "on_best_hot_raw_geomean": 2.8990832236071,
+    "best_hot_raw_ratio_on_over_off": 0.30016490229464876,
+    "best_hot_raw_queries": 6
+  },
+  "prefiltered": {
+    "queries": 38,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 34,
+      "on": 34
+    },
+    "cold_timeouts": {
+      "off": 34,
+      "on": 34
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q25",
+      "Q27",
+      "Q28",
+      "Q30",
+      "Q31",
+      "Q55",
+      "Q56",
+      "Q58",
+      "Q61",
+      "Q62",
+      "Q63",
+      "Q65",
+      "Q66",
+      "Q70",
+      "Q71",
+      "Q74",
+      "Q78",
+      "Q79",
+      "Q82"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": 32.78415503348963,
+    "on_cold_geomean": 5.395943478339733,
+    "cold_ratio_on_over_off": 0.16458998174049858,
+    "cold_queries": 4,
+    "off_best_hot_geomean": 32.785789034398455,
+    "on_best_hot_geomean": 5.28199404603184,
+    "best_hot_ratio_on_over_off": 0.16110620490146005,
+    "best_hot_queries": 4,
+    "off_best_hot_raw_geomean": 32.785789034398455,
+    "on_best_hot_raw_geomean": 5.28199404603184,
+    "best_hot_raw_ratio_on_over_off": 0.16110620490146005,
+    "best_hot_raw_queries": 4
+  },
+  "not-prefiltered": {
+    "queries": 18,
+    "cap_seconds": 60,
+    "timeouts": {
+      "off": 16,
+      "on": 16
+    },
+    "cold_timeouts": {
+      "off": 16,
+      "on": 16
+    },
+    "errors": {
+      "off": 0,
+      "on": 0
+    },
+    "cold_timeout_both": [
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q14",
+      "Q26",
+      "Q29",
+      "Q32",
+      "Q54",
+      "Q57",
+      "Q60",
+      "Q64",
+      "Q67",
+      "Q69",
+      "Q75",
+      "Q77",
+      "Q83"
+    ],
+    "cold_timeout_only_off": [],
+    "cold_timeout_only_on": [],
+    "off_cold_geomean": 1.3063131938459474,
+    "on_cold_geomean": 1.1849913438215487,
+    "cold_ratio_on_over_off": 0.9071265217285205,
+    "cold_queries": 2,
+    "off_best_hot_geomean": 0.8381679290011042,
+    "on_best_hot_geomean": 0.8733457952340528,
+    "best_hot_ratio_on_over_off": 1.041969950192287,
+    "best_hot_queries": 2,
+    "off_best_hot_raw_geomean": 0.8381679290011042,
+    "on_best_hot_raw_geomean": 0.8733457952340528,
+    "best_hot_raw_ratio_on_over_off": 1.041969950192287,
+    "best_hot_raw_queries": 2
+  }
+}

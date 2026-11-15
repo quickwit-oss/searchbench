@@ -1,0 +1,100 @@
+{"Timestamp":"2025-09-23T00:29:24.039037200Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.039034579Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.039029516Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=307c35e4-974b-11f0-a07b-aaed16911ddb, productId=6E92ZMYYFZ, quantity=5"}
+{"Timestamp":"2025-09-23T00:29:24.039027205Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.039020316Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.039017102Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038976900Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038967417Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=aedb36b2-99a6-11f0-8582-da198e6e6242"}
+{"Timestamp":"2025-09-23T00:29:24.038957744Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038950300Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038942437Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038938608Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=047dff44-9b39-11f0-aecb-9e812adb6070"}
+{"Timestamp":"2025-09-23T00:29:24.038926844Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038924700Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038919400Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038916700Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038904500Z","ServiceName":"cart","SeverityText":"information","Body":"AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"}
+{"Timestamp":"2025-09-23T00:29:24.038895400Z","ServiceName":"cart","SeverityText":"information","Body":"AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"}
+{"Timestamp":"2025-09-23T00:29:24.038890406Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=307b972e-974b-11f0-a07b-aaed16911ddb, productId=0PUK6V6EV0, quantity=2"}
+{"Timestamp":"2025-09-23T00:29:24.038889178Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038885100Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038885010Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=2ef06c48-9c02-11f0-b2e7-4acbffda9c91, productId=66VCHSJNUP, quantity=10"}
+{"Timestamp":"2025-09-23T00:29:24.038881645Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038865235Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038860116Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038857638Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038856961Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038856208Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038844296Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=853d5606-98dd-11f0-8832-6aab17b061cf"}
+{"Timestamp":"2025-09-23T00:29:24.038841600Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038841393Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038838103Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038833613Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=2ef38f4a-9c02-11f0-9112-7614fb24758f"}
+{"Timestamp":"2025-09-23T00:29:24.038832226Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038819550Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=afb7e026-99a6-11f0-b97e-06ccf4ed6c43"}
+{"Timestamp":"2025-09-23T00:29:24.038810000Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038802200Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038798100Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038789689Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=d38b5f5e-9a6f-11f0-a593-1e18b38d367b"}
+{"Timestamp":"2025-09-23T00:29:24.038786520Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038783300Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=d7ae8034-9a6f-11f0-af54-560eabe9e5fb"}
+{"Timestamp":"2025-09-23T00:29:24.038781803Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038781774Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=593f8636-9ccb-11f0-9112-7614fb24758f"}
+{"Timestamp":"2025-09-23T00:29:24.038780549Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038777200Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=d72a4508-9a6f-11f0-af54-560eabe9e5fb"}
+{"Timestamp":"2025-09-23T00:29:24.038775521Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=afb8acd6-99a6-11f0-a593-1e18b38d367b"}
+{"Timestamp":"2025-09-23T00:29:24.038773640Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038769480Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=d50092d2-9a6f-11f0-af54-560eabe9e5fb"}
+{"Timestamp":"2025-09-23T00:29:24.038761194Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038758807Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038757670Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038752200Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038750257Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038743913Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=0483f124-9b39-11f0-8582-da198e6e6242, productId=LS4PSXUNUM, quantity=10"}
+{"Timestamp":"2025-09-23T00:29:24.038740329Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038734343Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038730978Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db3fb314-95b8-11f0-b97e-06ccf4ed6c43, productId=2ZYFJ3GM2N, quantity=5"}
+{"Timestamp":"2025-09-23T00:29:24.038727798Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038726800Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038725108Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038721968Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038719258Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038716518Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038713788Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038710758Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038707472Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038707458Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=da8c2286-95b8-11f0-af54-560eabe9e5fb, productId=LS4PSXUNUM, quantity=5"}
+{"Timestamp":"2025-09-23T00:29:24.038704658Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038704403Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=04824eaa-9b39-11f0-a07b-aaed16911ddb, productId=1YMWWN1N4O, quantity=1"}
+{"Timestamp":"2025-09-23T00:29:24.038701678Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db50f1c4-95b8-11f0-a593-1e18b38d367b, productId=L9ECAV7KIM, quantity=5"}
+{"Timestamp":"2025-09-23T00:29:24.038700623Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038700466Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=854f8d62-98dd-11f0-8f38-6665ef6906d3, productId=LS4PSXUNUM, quantity=10"}
+{"Timestamp":"2025-09-23T00:29:24.038698548Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038694938Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db56489a-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=1"}
+{"Timestamp":"2025-09-23T00:29:24.038691888Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038688228Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db4df6ea-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"}
+{"Timestamp":"2025-09-23T00:29:24.038685100Z","ServiceName":"cart","SeverityText":"information","Body":"AddItemAsync called with userId={userId}, productId={productId}, quantity={quantity}"}
+{"Timestamp":"2025-09-23T00:29:24.038684118Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038680500Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038678503Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=0482757e-9b39-11f0-a07b-aaed16911ddb, productId=LS4PSXUNUM, quantity=1"}
+{"Timestamp":"2025-09-23T00:29:24.038677618Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=daf60688-95b8-11f0-b97e-06ccf4ed6c43, productId=L9ECAV7KIM, quantity=3"}
+{"Timestamp":"2025-09-23T00:29:24.038674738Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038671698Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db501a2e-95b8-11f0-b97e-06ccf4ed6c43, productId=LS4PSXUNUM, quantity=4"}
+{"Timestamp":"2025-09-23T00:29:24.038668268Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038664828Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=daf65a02-95b8-11f0-af54-560eabe9e5fb, productId=66VCHSJNUP, quantity=1"}
+{"Timestamp":"2025-09-23T00:29:24.038661758Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=0461289c-9b39-11f0-a2ca-56735f3596fd, productId=2ZYFJ3GM2N, quantity=5"}
+{"Timestamp":"2025-09-23T00:29:24.038661728Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038660200Z","ServiceName":"cart","SeverityText":"information","Body":"GetCartAsync called with userId={userId}"}
+{"Timestamp":"2025-09-23T00:29:24.038658588Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db72f418-95b8-11f0-a593-1e18b38d367b, productId=OLJCESPC7Z, quantity=4"}
+{"Timestamp":"2025-09-23T00:29:24.038655388Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038652448Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db70c896-95b8-11f0-a593-1e18b38d367b, productId=6E92ZMYYFZ, quantity=10"}
+{"Timestamp":"2025-09-23T00:29:24.038649598Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038648779Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=dba2ea4c-95b8-11f0-8ea6-6e55e9e5b9df"}
+{"Timestamp":"2025-09-23T00:29:24.038646758Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038643478Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038642333Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId="}
+{"Timestamp":"2025-09-23T00:29:24.038640628Z","ServiceName":"cart","SeverityText":"info","Body":"      AddItemAsync called with userId=db3a2f5c-95b8-11f0-af54-560eabe9e5fb, productId=HQTGWGPNH4, quantity=10"}
+{"Timestamp":"2025-09-23T00:29:24.038638785Z","ServiceName":"cart","SeverityText":"info","Body":"      GetCartAsync called with userId=5ae250d8-9814-11f0-9112-7614fb24758f"}
+{"Timestamp":"2025-09-23T00:29:24.038637428Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
+{"Timestamp":"2025-09-23T00:29:24.038635515Z","ServiceName":"cart","SeverityText":"info","Body":"info: cart.cartstore.ValkeyCartStore[0]"}
