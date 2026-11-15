@@ -98,9 +98,13 @@ def bulk_post(session: requests.Session, index: str, body: bytes, n_docs: int) -
                 f"{ES_URL}/{index}/_bulk",
                 data=body,
                 headers={"Content-Type": "application/x-ndjson"},
-                timeout=120,
+                # No read timeout: documents have no _id, so re-sending a batch the
+                # server is still indexing duplicates it (a 120 s read timeout at
+                # 100M re-sent 230 batches: 101.15M docs). Only a failed connect is
+                # retried; ./load checks the final count.
+                timeout=(30, None),
             )
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+        except requests.exceptions.ConnectTimeout as e:
             retries += 1
             print(f"  connect error ({type(e).__name__}); retry {retries}", flush=True)
             time.sleep(min(backoff, 30.0)); backoff *= 2

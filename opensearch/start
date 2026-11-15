@@ -9,6 +9,29 @@ cd "$(dirname "$0")"
 : "${OS_CONTAINER:=searchbench-os}"
 # JVM heap; SEARCHBENCH_HEAP keeps ES/OS equal (both), OS_HEAP overrides one
 : "${OS_HEAP:=${SEARCHBENCH_HEAP:-30g}}"
+# OS_STORAGE=s3: the node also has the `warm` role (searchable snapshots) and an S3
+# snapshot repository; ./load mounts the index from S3 as a remote_snapshot. Needs the
+# image with the repository-s3 plugin (./install builds it). See README "S3".
+: "${OS_STORAGE:=local}"
+case "$OS_STORAGE" in
+    local) s3_env=() ;;
+    s3)    [[ "$OS_IMAGE" == */opensearch:* ]] && OS_IMAGE="searchbench/opensearch-s3:${OS_IMAGE##*:}"
+           s3_env=(-e "node.roles=cluster_manager,data,ingest,warm"
+                   -e "node.search.cache.size=${OS_FILE_CACHE_SIZE:-200gb}"
+                   -e "cluster.filecache.remote_data_ratio=${OS_REMOTE_DATA_RATIO:-5}"
+                   -e "thread_pool.force_merge.size=${OS_FORCE_MERGE_THREADS:-8}"
+                   -e "AWS_REGION=${AWS_REGION:-us-east-1}") ;;
+    *) echo "OS_STORAGE must be local or s3, got: $OS_STORAGE" >&2; exit 1 ;;
+esac
+# S3 mode: the searchable-snapshot file cache (8 MiB blocks fetched from S3, on local
+# disk) is a data cache. It survives restarts, `_cache/clear?file=true` only drops blocks
+# no open reader holds, and a remote_snapshot index cannot be closed: so ./start empties
+# it while the node is down (OS_FILE_CACHE_WIPE=on, default). With the driver's restart
+# before every query, try 1 reads its data from S3; tries 2-3 find it in the file cache.
+if [[ "$OS_STORAGE" == s3 && "${OS_FILE_CACHE_WIPE:-on}" == on ]] && ! ./check >/dev/null 2>&1; then
+    cache_dir="${OS_DATA_DIR}/data/nodes/0/cache"
+    if [[ -d "$cache_dir" ]]; then rm -rf "$cache_dir" 2>/dev/null || sudo -n rm -rf "$cache_dir"; fi
+fi
 
 if ./check >/dev/null 2>&1; then
     echo "OS already up on :${OS_PORT}"
@@ -38,6 +61,7 @@ else
         -e "http.port=${OS_PORT}" \
         -e "http.host=0.0.0.0" \
         -e DISABLE_SECURITY_PLUGIN=true \
+        "${s3_env[@]}" \
         -e bootstrap.memory_lock=true \
         -e "OPENSEARCH_JAVA_OPTS=-Xms${OS_HEAP} -Xmx${OS_HEAP}" \
         --ulimit memlock=-1:-1 \
