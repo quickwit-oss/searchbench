@@ -1,0 +1,20 @@
+{
+  "rows": 100000,
+  "query_only": true,
+  "supported_queries": 56,
+  "tries": 3,
+  "timeout_seconds": 60,
+  "image": "grafana/loki@sha256:0db216b630ae1f348a1584c67f3cead8b4c1fc839169a39501db664744158e28",
+  "source_commit": "248c6b71c8931597865fd457a3d976e409b36254",
+  "collector_sha256": "9c50a08e4f63f7e18e0e034db88fab80f7dc9a4f0511d4e69fe74a3ddd3b984d",
+  "get_metric": "loki_s3_request_duration_seconds_count{operation=\"S3.GetObject\"}",
+  "get_semantics": "Completed outer SDK calls in observed process windows. Includes outer retries/background work, not necessarily internal HTTP attempts. Status labels are synthetic nil/error labels.",
+  "bytes_collected": false,
+  "cold": "one engine restart and OS page-cache drop per query, then cold/hot/hot",
+  "cpu_window": "counter immediately before query_response through its return; metric scrapes outside CPU/window timing",
+  "metadata_cache": "seeded once with unmeasured Q01, then retained; data/result caches disabled",
+  "idle_tail_seconds": 1,
+  "load_metrics": "inherited from original build, not remeasured",
+  "reference_result": "<home>/loki-s3-validation/s3-100k-20261101T175953Z/loki-results/loki_3.7.9-m8gd4-100k-s3-validation_otel_logs_100k.json",
+  "reference_sha256": "cb7f9cfd658ff64c2e1232b25d1937545005154967e9d19a37ed0167fe66c846"
+}

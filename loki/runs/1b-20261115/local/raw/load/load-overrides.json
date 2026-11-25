@@ -1,0 +1,11 @@
+{
+  "approved_by": "parent supervisor: load-only overlay from the start (10M attempt 1 hit HTTP 429 at 128MB/s)",
+  "scope": "load process only, including finalization; query starts use the stock config",
+  "limits_config": {
+    "ingestion_rate_mb": 1024,
+    "ingestion_burst_size_mb": 2048,
+    "per_stream_rate_limit": "1024MB",
+    "per_stream_rate_limit_burst": "2048MB"
+  },
+  "source": "loki-frame-1b-20261102T110752Z load_config.py"
+}

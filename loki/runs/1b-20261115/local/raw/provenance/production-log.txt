@@ -1,0 +1,124 @@
+{
+  "source_dir": "/mnt/lp/corpus/otel_logs_1b",
+  "source_files": {
+    "/mnt/lp/corpus/otel_logs_1b/part_000.parquet": 1000000000
+  },
+  "data_dir": "/mnt/lp/loki-1b",
+  "container": "searchbench-loki-prefilter-1b",
+  "target": "all",
+  "effective_limits": {
+    "ingestion_rate_mb": 1024,
+    "ingestion_burst_size_mb": 2048,
+    "per_stream_rate_limit": "1024MB",
+    "per_stream_rate_limit_burst": "2048MB"
+  },
+  "stock_limits": {
+    "ingestion_rate_mb": 128,
+    "ingestion_burst_size_mb": 256,
+    "per_stream_rate_limit": "32MB",
+    "per_stream_rate_limit_burst": "64MB"
+  },
+  "query_timeout": "600s"
+}
+true
+2026-11-15T00:04:04Z dry check passed: 1 file, 1000000000 rows, load-only limits 1024/2048/1024MB/2048MB
+2026-11-15T00:04:05Z load start (load_overlay.py, fresh /mnt/lp/loki-1b)
+preflight: 1 files, 1624 row groups, 1000000000 rows; 8 readers + 8 HTTP senders
+complete: 1000000000 rows / 599268 pushes in 4576.585s
+verification window 1: 32833886 rows; cumulative 32833886
+verification window 2: 33081892 rows; cumulative 65915778
+verification window 3: 31753208 rows; cumulative 97668986
+verification window 4: 32605242 rows; cumulative 130274228
+verification window 5: 31749724 rows; cumulative 162023952
+verification window 6: 31338756 rows; cumulative 193362708
+verification window 7: 34228766 rows; cumulative 227591474
+verification window 8: 33512854 rows; cumulative 261104328
+verification window 9: 33700408 rows; cumulative 294804736
+verification window 10: 34275680 rows; cumulative 329080416
+verification window 11: 33358891 rows; cumulative 362439307
+verification window 12: 33924875 rows; cumulative 396364182
+verification window 13: 34865888 rows; cumulative 431230070
+verification window 14: 34393896 rows; cumulative 465623966
+verification window 15: 35806732 rows; cumulative 501430698
+verification window 16: 34718991 rows; cumulative 536149689
+verification window 17: 33753351 rows; cumulative 569903040
+verification window 18: 36886142 rows; cumulative 606789182
+verification window 19: 38242255 rows; cumulative 645031437
+verification window 20: 33202928 rows; cumulative 678234365
+verification window 21: 34315800 rows; cumulative 712550165
+verification window 22: 35435034 rows; cumulative 747985199
+verification window 23: 32647108 rows; cumulative 780632307
+verification window 24: 33266102 rows; cumulative 813898409
+verification window 25: 34961844 rows; cumulative 848860253
+verification window 26: 31846358 rows; cumulative 880706611
+verification window 27: 34689530 rows; cumulative 915396141
+verification window 28: 34291014 rows; cumulative 949687155
+verification window 29: 35974066 rows; cumulative 985661221
+verification window 30: 14338779 rows; cumulative 1000000000
+[load] verified 1000000000 persisted rows; 5197.560s including flush, compaction and verification
+Persisted object inventory unchanged
+{"status": "complete", "wall_seconds": 5205.124797484, "load_cpu_seconds": 42839.146825, "load_cpu_containers_seconds": 30772.007383, "load_cpu_procs_seconds": 12067.139442, "includes": ["all-target start", "Rust ingestion", "flush", "stop", "read+compactor finalization", "compaction settle", "exact storage-only windowed count", "stop", "frozen inventory check"], "excludes": ["corpus download/hash", "client build", "image pull"], "data_size_bytes": 74861992349}
+2026-11-15T01:30:52Z load done: {
+  "status": "complete",
+  "wall_seconds": 5205.124797484,
+  "load_cpu_seconds": 42839.146825,
+  "load_cpu_containers_seconds": 30772.007383,
+  "load_cpu_procs_seconds": 12067.139442,
+  "includes": [
+    "all-target start",
+    "Rust ingestion",
+    "flush",
+    "stop",
+    "read+compactor finalization",
+    "compaction settle",
+    "exact storage-only windowed count",
+    "stop",
+    "frozen inventory check"
+  ],
+  "excludes": [
+    "corpus download/hash",
+    "client build",
+    "image pull"
+  ],
+  "data_size_bytes": 74861992349
+}
+true
+verification window 1: 32833886 rows; cumulative 32833886
+verification window 2: 33081892 rows; cumulative 65915778
+verification window 3: 31753208 rows; cumulative 97668986
+verification window 4: 32605242 rows; cumulative 130274228
+verification window 5: 31749724 rows; cumulative 162023952
+verification window 6: 31338756 rows; cumulative 193362708
+verification window 7: 34228766 rows; cumulative 227591474
+verification window 8: 33512854 rows; cumulative 261104328
+verification window 9: 33700408 rows; cumulative 294804736
+verification window 10: 34275680 rows; cumulative 329080416
+verification window 11: 33358891 rows; cumulative 362439307
+verification window 12: 33924875 rows; cumulative 396364182
+verification window 13: 34865888 rows; cumulative 431230070
+verification window 14: 34393896 rows; cumulative 465623966
+verification window 15: 35806732 rows; cumulative 501430698
+verification window 16: 34718991 rows; cumulative 536149689
+verification window 17: 33753351 rows; cumulative 569903040
+verification window 18: 36886142 rows; cumulative 606789182
+verification window 19: 38242255 rows; cumulative 645031437
+verification window 20: 33202928 rows; cumulative 678234365
+verification window 21: 34315800 rows; cumulative 712550165
+verification window 22: 35435034 rows; cumulative 747985199
+verification window 23: 32647108 rows; cumulative 780632307
+verification window 24: 33266102 rows; cumulative 813898409
+verification window 25: 34961844 rows; cumulative 848860253
+verification window 26: 31846358 rows; cumulative 880706611
+verification window 27: 34689530 rows; cumulative 915396141
+verification window 28: 34291014 rows; cumulative 949687155
+verification window 29: 35974066 rows; cumulative 985661221
+verification window 30: 14338779 rows; cumulative 1000000000
+{"count": 1000000000, "elapsed": 359.1194351180002}
+Persisted object inventory unchanged
+2026-11-15T01:37:00Z row count verified: 1000000000 (load gate + independent read-target windows)
+2026-11-15T01:37:00Z phase-a start; driver deadline 2026-11-15T05:34:00Z
+2026-11-15T03:35:57Z phase-a rc=0 unfinished=[] mismatches=[]
+2026-11-15T03:35:59Z phase-b start; driver deadline 2026-11-15T05:34:00Z
+2026-11-15T04:48:49Z phase-b rc=0 unfinished=[] mismatches=[]
+2026-11-15T04:48:51Z phase-c skipped: no query where exactly one variant cold-timed-out in phase A
+2026-11-15T04:48:51Z production complete a=0 b=0 c=skipped

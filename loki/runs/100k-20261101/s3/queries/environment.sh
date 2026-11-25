@@ -1,0 +1,23 @@
+export PATH=/mnt/local-ssd/venv/bin:$PATH
+export SEARCHBENCH_PYTHON=/mnt/local-ssd/venv/bin/python
+export SEARCHBENCH_DATA_DIR=/mnt/local-ssd/data
+export SEARCHBENCH_DATASET=otel_logs_100k
+export SEARCHBENCH_SKIP_DOWNLOAD=yes
+export SEARCHBENCH_CPU=on
+export SEARCHBENCH_RESTART=yes
+export SEARCHBENCH_TRIES=3
+export SEARCHBENCH_QUERY_TIMEOUT=60
+export SEARCHBENCH_COLD_TIMEOUT=60
+export AWS_REGION=us-east-1
+export LOKI_STORAGE=s3
+export LOKI_S3_BUCKET=<bucket>
+export LOKI_S3_PREFIX=searchbench/loki/s3-100k-20261101T175953Z/
+export LOKI_DATA_DIR=/mnt/local-ssd/loki-s3-100k-20261101T175953Z
+export LOKI_IMAGE=grafana/loki@sha256:0db216b630ae1f348a1584c67f3cead8b4c1fc839169a39501db664744158e28
+export LOKI_TARGET=auto
+export LOKI_LOAD_CLIENT=rust
+export LOKI_CLIENT_BUILD=docker
+export LOKI_CHUNK_ENCODING=snappy
+unset AWS_PROFILE AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+
+export LOKI_TARGET=read

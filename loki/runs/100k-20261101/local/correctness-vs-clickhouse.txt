@@ -1,0 +1,105 @@
+SearchBench result comparison
+dataset  : otel_logs_100k
+engines  : ClickHouse (loki100k-reference) (2026-11-01), Loki (3.7.9-m8gd4-100k-baseline) (2026-11-01), Loki (3.7.9-m8gd4-100k-read-lz4-256k) (2026-11-01), Loki (3.7.9-m8gd4-100k-read-snappy) (2026-11-01), Loki (3.7.9-m8gd4-100k-read-zstd) (2026-11-01)
+reference: ClickHouse (loki100k-reference)
+
+Q     task             ClickHouse (loki100k-reference)     Loki (3.7.9-m8gd4-100k-baseline)Loki (3.7.9-m8gd4-100k-read-lz4-256k)  Loki (3.7.9-m8gd4-100k-read-snappy)    Loki (3.7.9-m8gd4-100k-read-zstd)   vs-ref
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q01   count                                          1                                    1                                    1                                    1                                    1   OK
+Q02   count                                          1                                    1                                    1                                    1                                    1   OK
+Q03   count                                          1                                    1                                    1                                    1                                    1   OK
+Q04   count                                          1                                    1                                    1                                    1                                    1   OK
+Q05   count                                          1                                    1                                    1                                    1                                    1   OK
+Q06   count                                          1                                    1                                    1                                    1                                    1   OK
+Q07   count                                          1                                    1                                    1                                    1                                    1   OK
+Q08   count                                          1                                    1                                    1                                    1                                    1   OK
+Q09   count                                          1                                 skip                                 skip                                 skip                                 skip   OK
+Q10   count                                          1                                    1                                    1                                    1                                    1   OK
+Q11   count                                          1                                    1                                    1                                    1                                    1   OK
+Q12   count                                          1                                    1                                    1                                    1                                    1   OK
+Q13   count                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q14   count                                          1                                    1                                    1                                    1                                    1   OK
+Q15   count                                          1                                    1                                    1                                    1                                    1   OK
+Q16   count                                          1                                    1                                    1                                    1                                    1   OK
+Q17   count                                          1                                    1                                    1                                    1                                    1   OK
+Q18   count                                          1                                    1                                    1                                    1                                    1   OK
+Q19   count                                          1                                    1                                    1                                    1                                    1   OK
+Q20   count                                          1                                    1                                    1                                    1                                    1   OK
+Q21   count                                          1                                    1                                    1                                    1                                    1   OK
+Q22   count                                          1                                 skip                                 skip                                 skip                                 skip   OK
+Q23   count                                          1                                 skip                                 skip                                 skip                                 skip   OK
+Q24   count                                          1                                 skip                                 skip                                 skip                                 skip   OK
+Q25   count                                          1                                    1                                    1                                    1                                    1   OK
+Q26   count                                          1                                    1                                    1                                    1                                    1   OK
+Q27   count                                          1                                    1                                    1                                    1                                    1   OK
+Q28   count                                          1                                    1                                    1                                    1                                    1   OK
+Q29   count                                          1                                    1                                    1                                    1                                    1   OK
+Q30   count                                          1                                    1                                    1                                    1                                    1   OK
+Q31   count                                          1                                    1                                    1                                    1                                    1   OK
+Q32   count                                          1                                    1                                    1                                    1                                    1   OK
+Q33   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q34   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q35   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q36   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q37   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q38   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q39   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q40   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q41   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q42   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q43   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q44   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q45   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q46   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q47   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q48   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q49   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q50   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q51   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q52   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q53   top_k                                       skip                                 skip                                 skip                                 skip                                 skip   no-ref
+Q54   group_by                                       3                                    3                                    3                                    3                                    3   OK
+Q55   group_by                                       2                                    2                                    2                                    2                                    2   OK
+Q56   group_by                                       3                                    3                                    3                                    3                                    3   OK
+Q57   group_by                                       2                                    2                                    2                                    2                                    2   OK
+Q58   group_by                                       2                                    2                                    2                                    2                                    2   OK
+Q59   group_by                                       2                                 skip                                 skip                                 skip                                 skip   OK
+Q60   group_by                                       2                                    2                                    2                                    2                                    2   OK
+Q61   group_by                                       1                                    1                                    1                                    1                                    1   OK
+Q62   group_by                                       1                                    1                                    1                                    1                                    1   OK
+Q63   group_by                                       1                                    1                                    1                                    1                                    1   OK
+Q64   group_by                                       1                                    1                                    1                                    1                                    1   OK
+Q65   group_by                                       1                                    1                                    1                                    1                                    1   OK
+Q66   group_by                                       2                                    2                                    2                                    2                                    2   OK
+Q67   group_by                                       4                                    4                                    4                                    4                                    4   OK
+Q68   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q69   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q70   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q71   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q72   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q73   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q74   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q75   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q76   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q77   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q78   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q79   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q80   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q81   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q82   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q83   recent                                       100                                  100                                  100                                  100                                  100   OK
+Q84   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q85   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q86   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q87   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q88   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q89   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q90   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q91   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+Q92   join                                           1                                 skip                                 skip                                 skip                                 skip   OK
+
+ISSUES
+------
+  (none)
+
+VERDICT: OK: engines agree (no empty results, errors, or disagreements).

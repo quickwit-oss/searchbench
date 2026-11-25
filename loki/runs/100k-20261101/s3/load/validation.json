@@ -1,0 +1,308 @@
+{
+  "rows": 100000,
+  "supported_queries": 56,
+  "local_chunk_files": 0,
+  "objects": [
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/_searchbench_load_lock.json",
+      "size": 136,
+      "etag": "\"5b816b7d546a086b2654c1c31cff8116\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/132ac32d3186ae3e/19973deb87d:19973deb8b5:1b665046",
+      "size": 86301,
+      "etag": "\"ccbc1642bdb69acc166ddc11e8dde59c\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/1590565a6fe4dca1/19973deb802:19973deb8b5:848bf181",
+      "size": 36614,
+      "etag": "\"95646a060228818c923f6611b7abb8cd\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/1bdbf3bd7bc52749/19973deb800:19973deb8b5:746ad311",
+      "size": 104530,
+      "etag": "\"aa363451f532ef4f8844ecc4adf20a78\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/1e2023c9b3dafd34/19973deb803:19973deb8b1:9cb526c7",
+      "size": 150385,
+      "etag": "\"2f75e6bf0af48b65627a0f8e2d23588a\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/258525e4e009c99c/19973deb806:19973deb8ad:332c6429",
+      "size": 11452,
+      "etag": "\"4f2ea335279c7d869cde68fa017f615f\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/27dc21074efff1d6/19973deb800:19973deb8b5:f71229",
+      "size": 362753,
+      "etag": "\"f422300cc8d2115e7f0721fc93bfa33b\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/2afa17aa63563982/19973deb80e:19973deb896:23a5498e",
+      "size": 4134,
+      "etag": "\"33f69ab126b72a7b68b0df1279244977\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/2e1972bdcc0fe974/19973deb801:19973deb8b5:80e2f7a1",
+      "size": 31975,
+      "etag": "\"b0c22cfdd1795a92cc10bc9377d4d92c\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/36543b350c240e/19973deb800:19973deb8b5:732e1c81",
+      "size": 243616,
+      "etag": "\"06015ce363ab35ae08111c5eb1aa6460\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/39ada7ae3271f7f4/19973deb800:19973deb8b5:983e04fd",
+      "size": 66678,
+      "etag": "\"02ef92e1434fcb68d880ff6a908922c1\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/417085a5e43465bd/19973deb800:19973deb8b5:c7b1c366",
+      "size": 139805,
+      "etag": "\"2ac50c4bb3f99c58a728dc782a421555\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/536a03955f0e8bde/19973deb800:19973deb8b5:984b7c9f",
+      "size": 385631,
+      "etag": "\"1bf8c0546a850ba6f4e0816efaf30a60\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/543181e6713dafb0/19973deb87d:19973deb8b5:7005351d",
+      "size": 43767,
+      "etag": "\"57c39ee636f5bb8aaf5f801c2928550c\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/5ad1016becc82a06/19973deb806:19973deb8ac:3439f8b0",
+      "size": 11901,
+      "etag": "\"2a75e62dac36c5b3c2902e7213022820\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/5b13a4ce86ce7cca/19973deb809:19973deb84d:3b61f029",
+      "size": 2013,
+      "etag": "\"72308f6d15f43863dd74777e4246a9d8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/5b6921dd9d2c23c1/19973deb800:19973deb87e:20de910e",
+      "size": 351581,
+      "etag": "\"4f669c7e077c5726702947dafbb4c16e\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/64ac68c234df750/19973deb87f:19973deb8b5:769e4e33",
+      "size": 24145,
+      "etag": "\"1e89c6c62130a9b05bb740ad52e6de3f\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/6a0534d87f658533/19973deb87d:19973deb8b5:dd069309",
+      "size": 43238,
+      "etag": "\"2ddca993f070755808f84ee42a651e04\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/6bc82d41ab921d6a/19973deb87d:19973deb8b5:48112e90",
+      "size": 92203,
+      "etag": "\"cd7bcb92078dd4203262f10bb8cf52c3\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/6c752dbd8292eef9/19973deb87d:19973deb8b5:8e4f4894",
+      "size": 91649,
+      "etag": "\"98aaa62275b0ea2a3d0939283cd9258d\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/6d03256d99c1397c/19973deb87d:19973deb8b5:9a9f2ce5",
+      "size": 151888,
+      "etag": "\"7ebd70085a51d574be88475a0a7c6118\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/74ad0b5ed6955b2d/19973deb87d:19973deb8b5:c0517a5e",
+      "size": 43274,
+      "etag": "\"2fbc21dfc9bf0108630b280180684c0a\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/7600332f8534602d/19973deb87d:19973deb87e:d3e03f0",
+      "size": 1064,
+      "etag": "\"47e3a93874e51dfead7f7ce176d1f675\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/7a682336414ab562/19973deb848:19973deb8ab:8559b255",
+      "size": 7019,
+      "etag": "\"476f6b6787d6461873878315eec40dd8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/840e75e46d56e76/19973deb840:19973deb841:408e8c91",
+      "size": 1273,
+      "etag": "\"b7c7b08d5219f15780a616df25ae3590\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/8d4818824a8ee8fd/19973deb87d:19973deb8b5:9bb5965e",
+      "size": 47075,
+      "etag": "\"d249b58f9151e7a37e72b64c8f229551\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/97eb2305b102c212/19973deb800:19973deb8b5:efea2c2a",
+      "size": 10075,
+      "etag": "\"a69cd619229958b8bddf42e364e4afa8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/9dc65e7d3920be8b/19973deb87d:19973deb8b5:993718c7",
+      "size": 46460,
+      "etag": "\"a15af8452b197e853525c0f9348d4a09\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/a596ce02d69091a2/19973deb809:19973deb846:d8b1a71f",
+      "size": 1513,
+      "etag": "\"53ea834fb7b3ee7ea0d45673fdb80d9a\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/a77ad83aa4e6d777/19973deb801:19973deb8a4:a31bee0c",
+      "size": 12701,
+      "etag": "\"989db1a2ae88b178c58f9b6ad48a7c50\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/a7c712ab2fced7c9/19973deb848:19973deb8a0:98a1ae9b",
+      "size": 4294,
+      "etag": "\"c12f7cd22b58168979b7a4e5bc189a66\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/aec1bb52cb5be4a4/19973deb87d:19973deb8b5:be19423e",
+      "size": 42569,
+      "etag": "\"767eca7afc6ab50095e4d768e6d1617a\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/b1fb131fb2241612/19973deb87d:19973deb8b5:c5fa985a",
+      "size": 152224,
+      "etag": "\"619df49161eae76c5f6be36c120341d2\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/b42196047979e10b/19973deb82a:19973deb8af:293364e0",
+      "size": 10436,
+      "etag": "\"95a2b8164e08efe9fd04ad2291756018\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/b997d91bf8f36255/19973deb87d:19973deb8b5:a5c71860",
+      "size": 43516,
+      "etag": "\"1e1a7b29b15ea8173ba2c53fd85d2809\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/c19a90de84fb8d49/19973deb800:19973deb87e:5c2e4460",
+      "size": 866082,
+      "etag": "\"d456b79ab2e74d32be4d5886dda9b46f\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/c55e89d9b86db400/19973deb800:19973deb8b5:1a26830",
+      "size": 148063,
+      "etag": "\"0413d5b16ac56aa9359c2132168d5142\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/c5d4f9af4504f2f/19973deb87d:19973deb8b5:d023a0e6",
+      "size": 151368,
+      "etag": "\"35c04b1e89d745f1273c15ce06d82f17\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/ca6125f67e7ef06c/19973deb87d:19973deb8b5:37795cc6",
+      "size": 42805,
+      "etag": "\"48e4684f62ef240361bb925f7fc272d4\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/cad801906a1e7c9a/19973deb809:19973deb846:dcac4fb6",
+      "size": 1391,
+      "etag": "\"a5cda52c0dd23daff5dcf948d701b6d8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/cb0196fe53cf18ab/19973deb803:19973deb8b5:d3393638",
+      "size": 14351,
+      "etag": "\"b8f01ddad0c4a326daa7a89299421ae9\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/cbc379b55684668d/19973deb87d:19973deb8b5:710840a9",
+      "size": 43789,
+      "etag": "\"15e5f63dc18924b57b4760b5ff86742e\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/d28e6c11d6307a9a/19973deb800:19973deb8b5:b8f8d2a4",
+      "size": 292929,
+      "etag": "\"e386a196a876a4f4fea62061adb2ae11\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/d99bb2580d9cb1e0/19973deb800:19973deb8b5:dbbf5542",
+      "size": 283979,
+      "etag": "\"3f3f825d2dec1b8199c2e763e35ca8c6\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/daf77ee7aaa36cac/19973deb87d:19973deb8b5:953a92df",
+      "size": 47046,
+      "etag": "\"2e9cc5609cf00204e314f7a6d29836b8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/dd73ce35df3731dd/19973deb87d:19973deb8b5:4aedf35e",
+      "size": 91074,
+      "etag": "\"3e77684f52c707df1274f484b30afb3c\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/e0b78a455adfddf3/19973deb87d:19973deb8b5:e672d39a",
+      "size": 47233,
+      "etag": "\"4af7316ff5f6c91d43d2eccb0ccaec94\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/e31d08e1791a628f/19973deb81d:19973deb89b:81a410",
+      "size": 2539,
+      "etag": "\"11231b33e2f188cef8746868569c84ac\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/e612caa9f076fe88/19973deb868:19973deb869:fb10e72b",
+      "size": 1305,
+      "etag": "\"b6bf27b5b77463d4d46820c8be99c32f\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/e71c04052d29b928/19973deb87f:19973deb8b5:19b0ce27",
+      "size": 23856,
+      "etag": "\"5162851b398c564f400a8c6948e230d2\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/eb59440ba4336218/19973deb800:19973deb862:51bbd59c",
+      "size": 416522,
+      "etag": "\"93938f4c008c98f48a653f1da461b55c\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/eb59440ba4336218/19973deb859:19973deb87e:1090f266",
+      "size": 161905,
+      "etag": "\"8f1b4382c7355229d2f54185be7b43ab\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/ec637c506274b85a/19973deb87d:19973deb8b5:d20b31e",
+      "size": 46639,
+      "etag": "\"9e7741368fa833090e232c1aacbbbcd8\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/ecaaa2413d8fdabf/19973deb83e:19973deb83f:f5f87f88",
+      "size": 1378,
+      "etag": "\"777cc72948f378c4126f88ee939237e1\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/f354f25689c8b16f/19973deb800:19973deb87d:657b821b",
+      "size": 114376,
+      "etag": "\"d470aba6c4d582db9e954a8cd2dd9677\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/f3e4d692b535fc68/19973deb80e:19973deb896:cceef270",
+      "size": 3790,
+      "etag": "\"a2d899634e1b7693f408d7646497584a\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/f7b72b038d74b449/19973deb805:19973deb8b2:b907948e",
+      "size": 2938,
+      "etag": "\"71d331153ca12d5a8a4668fdad6aeb40\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/fake/fb8aa496a1b3d7c9/19973deb800:19973deb87e:b118e58c",
+      "size": 550494,
+      "etag": "\"5c9b6f912ede9b68e4b3c10750b2e7fd\""
+    },
+    {
+      "key": "searchbench/loki/s3-100k-20261101T175953Z/index/index_20354/fake/1793556689265023452-compactor-1758585600000-1758585600181-f4a75199.tsdb.gz",
+      "size": 3305,
+      "etag": "\"0cf4b49371628e16878a36d4e178caaf\""
+    }
+  ],
+  "persisted_bytes_including_reservation": 6219045
+}

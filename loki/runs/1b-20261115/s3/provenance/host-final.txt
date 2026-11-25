@@ -1,0 +1,45 @@
+Sun Nov 15 17:04:19 UTC 2026
+ 17:04:19 up  3:03,  1 user,  load average: 6.83, 11.56, 12.60
+               total        used        free      shared  buff/cache   available
+Mem:     66190802944  1169895424 65188769792     1269760   382545920 65020907520
+Swap:              0           0           0
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root         96G  4.8G   92G   5% /
+tmpfs             31G     0   31G   0% /dev/shm
+tmpfs             13G  1.2M   13G   1% /run
+tmpfs            5.0M     0  5.0M   0% /run/lock
+efivarfs         128K  3.4K  125K   3% /sys/firmware/efi/efivars
+/dev/nvme1n1p16  891M   95M  734M  12% /boot
+/dev/nvme1n1p15   98M  6.4M   92M   7% /boot/efi
+tmpfs            6.2G   12K  6.2G   1% /run/user/1000
+/dev/nvme0n1     870G  109G  717G  14% /mnt/lp
+NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0          7:0    0  24.3M  1 loop /snap/amazon-ssm-agent/13348
+loop1          7:1    0    69M  1 loop /snap/core22/2988
+loop2          7:2    0  38.6M  1 loop /snap/snapd/28255
+nvme1n1      259:0    0   100G  0 disk 
+├─nvme1n1p1  259:1    0    99G  0 part /
+├─nvme1n1p15 259:2    0    99M  0 part /boot/efi
+└─nvme1n1p16 259:3    0   923M  0 part /boot
+nvme0n1      259:4    0 884.8G  0 disk /mnt/lp
+NEXT                                 LEFT LAST                              PASSED UNIT                           ACTIVATES
+Sun 2026-11-15 17:10:00 UTC          5min Sun 2026-11-15 17:00:13 UTC  4min 6s ago sysstat-collect.timer          sysstat-collect.service
+Sun 2026-11-15 17:49:07 UTC         44min Sun 2026-11-15 16:31:22 UTC    32min ago fwupd-refresh.timer            fwupd-refresh.service
+Sun 2026-11-15 19:45:47 UTC      2h 41min -                                      - motd-news.timer                motd-news.service
+Sun 2026-11-15 19:55:00 UTC      2h 50min -                                      - lp-deadline.timer              lp-deadline.service
+Mon 2026-11-16 00:00:00 UTC            6h -                                      - dpkg-db-backup.timer           dpkg-db-backup.service
+Mon 2026-11-16 00:00:00 UTC            6h -                                      - logrotate.timer                logrotate.service
+Mon 2026-11-16 00:07:00 UTC            7h -                                      - sysstat-summary.timer          sysstat-summary.service
+Mon 2026-11-16 01:19:10 UTC            8h -                                      - fstrim.timer                   fstrim.service
+Mon 2026-11-16 05:20:42 UTC           12h -                                      - man-db.timer                   man-db.service
+Mon 2026-11-16 14:06:25 UTC           21h Sun 2026-11-15 14:06:25 UTC 2h 57min ago update-notifier-download.timer update-notifier-download.service
+Mon 2026-11-16 14:15:46 UTC           21h Sun 2026-11-15 14:15:46 UTC 2h 48min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Sun 2026-11-22 03:10:05 UTC        6 days -                                      - e2scrub_all.timer              e2scrub_all.service
+Thu 2026-11-26 19:16:01 UTC 1 week 4 days -                                      - update-notifier-motd.timer     update-notifier-motd.service
+-                                       - -                                      - apport-autoreport.timer        apport-autoreport.service
+-                                       - -                                      - apt-daily-upgrade.timer        apt-daily-upgrade.service
+-                                       - -                                      - apt-daily.timer                apt-daily.service
+-                                       - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                       - -                                      - ua-timer.timer                 ua-timer.service
+
+18 timers listed.

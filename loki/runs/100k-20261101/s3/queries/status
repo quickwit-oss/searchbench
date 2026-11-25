@@ -1,0 +1,4 @@
+2026-11-01T21:40:22Z 100K existing-data query-only GET collection; no ingestion
+2026-11-01T21:40:46Z stock image and original 100K S3 layout verified; start 56-query suite
+2026-11-01T21:46:27Z PASS: all 56 queries with paired native GETs/wall/CPU; original S3 objects unchanged
+2026-11-01T21:46:28Z query-only exit rc=0

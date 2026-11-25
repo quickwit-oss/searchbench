@@ -1,0 +1,9 @@
+{
+  "rows": 100000,
+  "queries": 56,
+  "trials": 168,
+  "reference_answers_match": true,
+  "layout_unchanged": true,
+  "query_only": true,
+  "bytes_collected": false
+}

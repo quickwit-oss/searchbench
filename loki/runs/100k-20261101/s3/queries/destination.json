@@ -1,0 +1,5 @@
+{
+  "storage": "s3",
+  "bucket": "<bucket>",
+  "prefix": "searchbench/loki/s3-100k-20261101T175953Z/"
+}

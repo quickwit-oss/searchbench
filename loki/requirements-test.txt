@@ -1,0 +1,3 @@
+-r requirements.txt
+protobuf>=6,<8
+python-snappy>=0.7,<1

@@ -1,0 +1,8 @@
+{
+  "rows": 100000,
+  "query_only": true,
+  "role_arn": "<role-arn>",
+  "credential_method": "iam-role",
+  "bucket": "<bucket>",
+  "prefix": "searchbench/loki/s3-100k-20261101T175953Z/"
+}

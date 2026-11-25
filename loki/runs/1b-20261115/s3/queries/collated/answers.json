@@ -1,0 +1,209 @@
+{
+ "verified_ok_tries": 18,
+ "verdict_counts": {
+  "match": 18,
+  "match-tie-order": 0,
+  "MISMATCH": 0
+ },
+ "mismatches": [],
+ "verdicts": [
+  {
+   "query": "Q68",
+   "try": 1,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q68",
+   "try": 2,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q68",
+   "try": 3,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q72",
+   "try": 1,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q72",
+   "try": 2,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q72",
+   "try": 3,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q73",
+   "try": 1,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q73",
+   "try": 2,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q73",
+   "try": 3,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q76",
+   "try": 1,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q76",
+   "try": 2,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q76",
+   "try": 3,
+   "multiset_sha256": "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q80",
+   "try": 1,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q80",
+   "try": 2,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q80",
+   "try": 3,
+   "multiset_sha256": "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q81",
+   "try": 1,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q81",
+   "try": 2,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  },
+  {
+   "query": "Q81",
+   "try": 3,
+   "multiset_sha256": "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296",
+   "rows": 100,
+   "oracle_ordered": true,
+   "oracle_multiset": true,
+   "clickhouse": true,
+   "loki_multiset": true,
+   "verdict": "match"
+  }
+ ]
+}

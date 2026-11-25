@@ -1,0 +1,83 @@
+{
+  "source_dir": "/mnt/lp/corpus/otel_logs_1b",
+  "source_files": {
+    "/mnt/lp/corpus/otel_logs_1b/part_000.parquet": 1000000000
+  },
+  "data_dir": "/mnt/lp/loki-1b-s3",
+  "container": "searchbench-loki-s3-1b",
+  "target": "all",
+  "effective_limits": {
+    "ingestion_rate_mb": 1024,
+    "ingestion_burst_size_mb": 2048,
+    "per_stream_rate_limit": "1024MB",
+    "per_stream_rate_limit_burst": "2048MB"
+  },
+  "stock_limits": {
+    "ingestion_rate_mb": 128,
+    "ingestion_burst_size_mb": 256,
+    "per_stream_rate_limit": "32MB",
+    "per_stream_rate_limit_burst": "64MB"
+  },
+  "query_timeout": "600s",
+  "storage": "s3",
+  "bucket": "<bucket>",
+  "prefix": "searchbench/loki/s3-1b-20261115T123351Z/",
+  "chunk_encoding": "snappy",
+  "storage_config": {
+    "s3": {
+      "bucketnames": "<bucket>",
+      "region": "us-east-1"
+    }
+  },
+  "object_prefix": "searchbench/loki/s3-1b-20261115T123351Z/"
+}
+true
+2026-11-15T14:05:21Z dry check passed: 1 file, 1000000000 rows, S3 s3://<bucket>/searchbench/loki/s3-1b-20261115T123351Z/ empty, load-only limits 1024/2048/1024MB/2048MB
+2026-11-15T14:05:22Z load start (load_overlay.py, fresh /mnt/lp/loki-1b-s3 + s3://<bucket>/searchbench/loki/s3-1b-20261115T123351Z/)
+verification window 29: 35974066 rows; cumulative 985661221
+verification window 30: 14338779 rows; cumulative 1000000000
+[load] verified 1000000000 persisted rows; 5027.770s including flush, compaction and verification
+Persisted object inventory unchanged
+{"status": "complete", "wall_seconds": 5046.048347086, "load_cpu_seconds": 42056.015735, "load_cpu_containers_seconds": 30244.507232, "load_cpu_procs_seconds": 11811.508503, "includes": ["all-target start", "Rust ingestion", "flush", "stop", "read+compactor finalization", "compaction settle", "exact storage-only windowed count", "stop", "frozen inventory check"], "excludes": ["corpus download/hash", "client build", "image pull"], "data_size_bytes": 74929022820, "storage_units": {"count": 109851, "unit": "objects"}, "s3_objects_by_top": {"_searchbench_load_lock.json": {"objects": 1, "bytes": 472}, "fake": {"objects": 109850, "bytes": 74927625889}, "index": {"objects": 1, "bytes": 1396459}}}
+2026-11-15T15:29:43Z load done: {"status":"complete","wall_seconds":5046.048347086,"load_cpu_seconds":42056.015735,"data_size_bytes":74929022820,"storage_units":{"count":109851,"unit":"objects"}}
+true
+true
+2026-11-15T15:30:13Z load record: {"load_time":5046.048,"data_size":74929022820,"storage_units":{"count":109851,"unit":"objects"},"load_cpu":42056.016}
+verification window 1: 32833886 rows; cumulative 32833886
+verification window 2: 33081892 rows; cumulative 65915778
+verification window 3: 31753208 rows; cumulative 97668986
+verification window 4: 32605242 rows; cumulative 130274228
+verification window 5: 31749724 rows; cumulative 162023952
+verification window 6: 31338756 rows; cumulative 193362708
+verification window 7: 34228766 rows; cumulative 227591474
+verification window 8: 33512854 rows; cumulative 261104328
+verification window 9: 33700408 rows; cumulative 294804736
+verification window 10: 34275680 rows; cumulative 329080416
+verification window 11: 33358891 rows; cumulative 362439307
+verification window 12: 33924875 rows; cumulative 396364182
+verification window 13: 34865888 rows; cumulative 431230070
+verification window 14: 34393896 rows; cumulative 465623966
+verification window 15: 35806732 rows; cumulative 501430698
+verification window 16: 34718991 rows; cumulative 536149689
+verification window 17: 33753351 rows; cumulative 569903040
+verification window 18: 36886142 rows; cumulative 606789182
+verification window 19: 38242255 rows; cumulative 645031437
+verification window 20: 33202928 rows; cumulative 678234365
+verification window 21: 34315800 rows; cumulative 712550165
+verification window 22: 35435034 rows; cumulative 747985199
+verification window 23: 32647108 rows; cumulative 780632307
+verification window 24: 33266102 rows; cumulative 813898409
+verification window 25: 34961844 rows; cumulative 848860253
+verification window 26: 31846358 rows; cumulative 880706611
+verification window 27: 34689530 rows; cumulative 915396141
+verification window 28: 34291014 rows; cumulative 949687155
+verification window 29: 35974066 rows; cumulative 985661221
+verification window 30: 14338779 rows; cumulative 1000000000
+{"count": 1000000000, "elapsed": 322.5279408639999}
+Persisted object inventory unchanged
+2026-11-15T15:35:52Z row count verified: 1000000000 (load gate + independent read-target windows); layout unchanged
+2026-11-15T15:35:52Z phase2 start (lib/benchmark.sh query-only, 92 slots); deadline 2026-11-15T19:35:00Z
+2026-11-15T16:32:37Z phase2 rc=0 harness=0 {"supported_queries": 56, "executed_tries": 68, "ok_tries": 18, "timeout_tries": 50, "err_tries": 0, "ok_tries_with_gets": 18, "queries_with_cold_and_hot_gets": 6, "partial": true, "answer_mismatches": 0} problems=0
+2026-11-15T16:32:55Z phase3 start (diag600 Q01,Q25,Q61); deadline 2026-11-15T19:35:00Z
+2026-11-15T17:04:16Z phase3 rc=0 {"statuses": {"ok": 9}, "ok_tries": 9, "inventory_unchanged": true} mismatches 0
+2026-11-15T17:04:18Z production complete phase2=0 phase3=0

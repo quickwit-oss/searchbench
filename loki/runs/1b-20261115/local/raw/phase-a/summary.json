@@ -1,0 +1,4354 @@
+[
+  {
+    "query": "Q01",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q01",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q02",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q02",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q03",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q03",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q04",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q04",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q05",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q05",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q06",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q06",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q07",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q07",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q08",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q08",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q10",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q10",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q11",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q11",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q12",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q12",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q14",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q14",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q15",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q15",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q16",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q16",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q17",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q17",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q18",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q18",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q19",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q19",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q20",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q20",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q21",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q21",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q25",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q25",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q26",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q26",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q27",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q27",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q28",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q28",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q29",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q29",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q30",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q30",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q31",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q31",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q32",
+    "variant": "off",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q32",
+    "variant": "on",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q54",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q54",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q55",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q55",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q56",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q56",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q57",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q57",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q58",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q58",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q60",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q60",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q61",
+    "variant": "off",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q61",
+    "variant": "on",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q62",
+    "variant": "off",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q62",
+    "variant": "on",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q63",
+    "variant": "off",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q63",
+    "variant": "on",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q64",
+    "variant": "off",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q64",
+    "variant": "on",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q65",
+    "variant": "off",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q65",
+    "variant": "on",
+    "category": "histogram",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q66",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q66",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q67",
+    "variant": "off",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q67",
+    "variant": "on",
+    "category": "group-by",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q68",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      57.70485,
+      58.019677,
+      57.878458
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 57.70485,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      58.019677,
+      57.878458
+    ],
+    "best_hot_raw": 57.878458,
+    "best_hot": 57.878458,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 57.69513,
+    "cold_lines_processed": 12911979,
+    "cold_bytes_processed": 5662075394,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q68",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      7.417165,
+      7.271485,
+      7.253935
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 7.417165,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      7.271485,
+      7.253935
+    ],
+    "best_hot_raw": 7.253935,
+    "best_hot": 7.253935,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 7.407774,
+    "cold_lines_processed": 12911979,
+    "cold_bytes_processed": 5662075394,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q69",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q69",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q70",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q70",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q71",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q71",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q72",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      18.551509,
+      18.668525,
+      18.507602
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 18.551509,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      18.668525,
+      18.507602
+    ],
+    "best_hot_raw": 18.507602,
+    "best_hot": 18.507602,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 18.54099,
+    "cold_lines_processed": 5873076,
+    "cold_bytes_processed": 2017181387,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q72",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      4.091192,
+      3.797891,
+      4.003273
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 4.091192,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      3.797891,
+      4.003273
+    ],
+    "best_hot_raw": 3.797891,
+    "best_hot": 3.797891,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 4.079956,
+    "cold_lines_processed": 5873076,
+    "cold_bytes_processed": 2017181387,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q73",
+    "variant": "off",
+    "category": "unfiltered",
+    "latencies": [
+      1.292688,
+      0.849037,
+      0.961045
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.292688,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      0.849037,
+      0.961045
+    ],
+    "best_hot_raw": 0.849037,
+    "best_hot": 0.849037,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.28612,
+    "cold_lines_processed": 305142,
+    "cold_bytes_processed": 86326174,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q73",
+    "variant": "on",
+    "category": "unfiltered",
+    "latencies": [
+      1.168236,
+      0.905221,
+      1.006754
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.168236,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      0.905221,
+      1.006754
+    ],
+    "best_hot_raw": 0.905221,
+    "best_hot": 0.905221,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.158654,
+    "cold_lines_processed": 305142,
+    "cold_bytes_processed": 86326174,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q74",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q74",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q75",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q75",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q76",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      58.137078,
+      58.122658,
+      58.053254
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 58.137078,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      58.122658,
+      58.053254
+    ],
+    "best_hot_raw": 58.053254,
+    "best_hot": 58.053254,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 58.126575,
+    "cold_lines_processed": 12911979,
+    "cold_bytes_processed": 5662075394,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q76",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      7.225031,
+      7.363267,
+      7.31538
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 7.225031,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      7.363267,
+      7.31538
+    ],
+    "best_hot_raw": 7.31538,
+    "best_hot": 7.31538,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 7.215325,
+    "cold_lines_processed": 12911979,
+    "cold_bytes_processed": 5662075394,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q77",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q77",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q78",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q78",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q79",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q79",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q80",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      18.561421,
+      18.580136,
+      18.690671
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 18.561421,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      18.580136,
+      18.690671
+    ],
+    "best_hot_raw": 18.580136,
+    "best_hot": 18.580136,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 18.55264,
+    "cold_lines_processed": 5873076,
+    "cold_bytes_processed": 2017181387,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q80",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      3.866714,
+      3.951071,
+      3.862234
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 3.866714,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      3.951071,
+      3.862234
+    ],
+    "best_hot_raw": 3.862234,
+    "best_hot": 3.862234,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 3.85778,
+    "cold_lines_processed": 5873076,
+    "cold_bytes_processed": 2017181387,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q81",
+    "variant": "off",
+    "category": "unfiltered",
+    "latencies": [
+      1.320082,
+      0.827438,
+      1.143603
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.320082,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      0.827438,
+      1.143603
+    ],
+    "best_hot_raw": 0.827438,
+    "best_hot": 0.827438,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.308366,
+    "cold_lines_processed": 305142,
+    "cold_bytes_processed": 86326174,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q81",
+    "variant": "on",
+    "category": "unfiltered",
+    "latencies": [
+      1.201987,
+      0.883903,
+      0.842593
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.201987,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      0.883903,
+      0.842593
+    ],
+    "best_hot_raw": 0.842593,
+    "best_hot": 0.842593,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.193439,
+    "cold_lines_processed": 305142,
+    "cold_bytes_processed": 86326174,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q82",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q82",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q83",
+    "variant": "off",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q83",
+    "variant": "on",
+    "category": "logs",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      60,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 60,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "rows": null,
+    "answer_multiset_sha256": []
+  }
+]
