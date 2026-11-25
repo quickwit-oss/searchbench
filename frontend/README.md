@@ -72,7 +72,7 @@ They remain counts when switching Wall/CPU/S3 metrics or seconds/milliseconds.
 Unknown measurements display `—`; a measured zero stays `0 files` (or its unit).
 
 Results/load records can supply `"storage_units":{"count":100,"unit":"splits"}`.
-Allowed units are `splits`, `parts`, `files`, `objects`; counts must be non-negative
+Allowed units are `splits`, `parts`, `segments`, `files`, `objects`; counts must be non-negative
 safe integers. An authoritative load record overrides the field only when it
 contains it, so old records do not erase newer result metadata. New result rows
 record their explicit `build` identity for correct overlays.
@@ -80,7 +80,8 @@ record their explicit `build` identity for correct overlays.
 The optional `storage-units` adapter hook measures after load/settling, outside
 the load timer. Query-only runs inherit the same build's recorded count. Hooks:
 Quickwit counts published splits from metadata (local or object storage);
-ClickHouse counts active table parts; Loki counts persisted chunk/index files
+ClickHouse counts active table parts; OpenSearch counts the searchable Lucene
+segments of the primaries (local index or mounted searchable snapshot); Loki counts persisted chunk/index files
 or S3 objects, excluding transient caches/WALs and the reservation marker.
 
 The new c8gd run's 100 Quickwit splits and 76 ClickHouse parts are backed by saved

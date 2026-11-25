@@ -94,7 +94,8 @@ test('the published page selects runs, keeps state across switches, and opens on
   execFileSync('bash', ['frontend/build_run.sh', `runs/${hippo}`, runJson, '--rows-only'], { cwd: root, stdio: 'pipe' });
   assert.deepEqual(runRows, JSON.parse(readFileSync(runJson, 'utf8')), 'all columns and metrics preserved');
   assert.deepEqual(runRows.map(row => row.system).sort(), ['ClickHouse · S3 · 1.7 GiB cap · 61 parts · public bench',
-    'Datadog BYOC 0.1.36 · S3 · ingest API · 64 splits · public bench', 'DuckDB 2.0 · S3 · sorted copy']);
+    'Datadog BYOC 0.1.36 · S3 · ingest API · 64 splits · public bench', 'DuckDB 2.0 · S3 · sorted copy',
+    'OpenSearch 3.8 · S3 · searchable snapshot · 16 shards · public bench']);
   for (const row of runRows) {
     const source = JSON.parse(readFileSync(join(root, 'runs', hippo, row._source), 'utf8'));
     assert.deepEqual(row.result, source.result, 'UI inputs preserve the recorded measurements');
@@ -125,12 +126,12 @@ test('the published page selects runs, keeps state across switches, and opens on
       assert.equal(new URL(page.url()).pathname, new URL(base).pathname);
       assert.equal(new URL(page.url()).searchParams.get('runSet'), id);
     };
-    // The public bench is the default page: Datadog BYOC, ClickHouse and DuckDB on S3, S3 counters over 57 queries.
+    // The public bench is the default page: Datadog BYOC, ClickHouse, OpenSearch and DuckDB on S3, S3 counters over 57 queries.
     await page.goto(base); await waitReady();
     assert.equal(await selector.inputValue(), hippo);
     assert.deepEqual(await selector.locator('option').evaluateAll(os => os.map(o => o.value)), [hippo, 'upstream']);
-    assert.equal(await page.locator('.engcol').count(), 3);
-    assert.deepEqual((await page.locator('.storage-units-row [data-storage-system]').allTextContents()).sort(), ['61 parts', '64 splits', '—']);
+    assert.equal(await page.locator('.engcol').count(), 4);
+    assert.deepEqual((await page.locator('.storage-units-row [data-storage-system]').allTextContents()).sort(), ['16 segments', '61 parts', '64 splits', '—']);
     assert.match(await page.locator('.rowlab[data-key="s3_gets_cold"]').innerText(), /57 q\./);
     assert.match(await page.locator('.rowlab[data-key="geomean"]').innerText(), /57 common q\./);
     // A long description shows one line; the full text and the links are in a collapsed details.
@@ -139,13 +140,13 @@ test('the published page selects runs, keeps state across switches, and opens on
     assert.equal(await page.locator('.run-desc-short').innerText(), sbShortDescription(full));
     assert.ok((await page.locator('.run-desc-short').boundingBox()).height < 20, 'one line');
     assert.equal(await page.locator('.run-desc').evaluate(e => e.open), false, 'collapsed by default');
-    assert.equal(await page.locator('.run-desc summary').innerText(), 'details · 3 links', 'README + two run.json links');
+    assert.equal(await page.locator('.run-desc summary').innerText(), 'details · 4 links', 'README + three run.json links');
     assert.equal(await page.locator('.run-desc-full').isVisible(), false);
     await page.locator('.run-desc summary').click();
     assert.equal(await page.locator('.run-desc-full').innerText(), full);
     const links = page.locator('.run-selector .run-links a');
     assert.ok(await links.first().isVisible());
-    assert.deepEqual(await links.allTextContents(), ['README', 'Public bench runs', 'DuckDB configuration']);
+    assert.deepEqual(await links.allTextContents(), ['README', 'Public bench runs', 'DuckDB configuration', 'OpenSearch rounds']);
     assert.match(await links.first().getAttribute('href'), new RegExp(`^https://github\\.com/.+/blob/.+/runs/${hippo}/README\\.md$`));
     assert.equal(await links.first().getAttribute('target'), '_blank');
     await page.locator('.run-desc summary').click();
@@ -162,7 +163,7 @@ test('the published page selects runs, keeps state across switches, and opens on
     assert.equal(await page.getByRole('button', { name: 'CPU', exact: true }).getAttribute('class'), 'on');
     assert.equal(await page.locator('.rowlab[data-key="s3_gets_hot"]').innerText(), 'S3 GETs · hot', 'no S3 summary leaked from the public bench');
     await switchRun(hippo);
-    assert.equal(await page.locator('.engcol').count(), 3);
+    assert.equal(await page.locator('.engcol').count(), 4);
     assert.match(await page.locator('.rowlab[data-key="cpu_hot"]').innerText(), /57 q\./);
     const shared = page.url();
     await page.reload(); await waitReady();
@@ -178,7 +179,7 @@ test('the published page selects runs, keeps state across switches, and opens on
     await fresh.close();
     await page.goto(base + '?runSet=unknown&dataset=otel_logs_1b'); await waitReady();
     assert.equal(await selector.inputValue(), hippo, 'unknown run set falls back to the default');
-    assert.equal(await page.locator('.engcol').count(), 3);
+    assert.equal(await page.locator('.engcol').count(), 4);
     // The legacy per-run path redirects to the one page, keeping its state.
     const legacy = pathToFileURL(join(temp, 'runs', hippo, 'index.html'));
     legacy.search = '?dataset=otel_logs_1b&cells=sec'; legacy.hash = '#m=gets';

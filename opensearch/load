@@ -33,17 +33,25 @@ curl -fsS -X PUT "$OS_URL/_cluster/settings" \
 
 # Recreate index from scratch
 curl -fsS -X DELETE "$OS_URL/$INDEX" >/dev/null 2>&1 || true
+# OS_MAPPING: default (config/index_mapping.json) or lean (config/index_mapping_lean.json: indexes
+# only what the queries use, derived source, zstd; the maps are sent as JSON strings). README "Mappings".
+case "${OS_MAPPING:-default}" in
+    default) MAPPING=config/index_mapping.json; ingest_opts=() ;;
+    lean)    MAPPING=config/index_mapping_lean.json; ingest_opts=(--maps-as-json) ;;
+    *) echo "OS_MAPPING must be default or lean" >&2; exit 1 ;;
+esac
+echo "[load] mapping: $MAPPING"
 # OS_SHARDS (default: the mapping's 1) and OS_FORCE_MERGE_SEGMENTS (default: none) set the
 # layout; the S3 runs use 16 shards force-merged to 1 segment each (README "S3").
 jq --argjson n "${OS_SHARDS:-null}" 'if $n then .settings.number_of_shards = $n else . end' \
-    config/index_mapping.json \
+    "$MAPPING" \
   | curl -fsS -X PUT "$OS_URL/$INDEX" -H 'Content-Type: application/json' --data-binary @- >/dev/null
 
 # Bulk-ingest; ingest.py reads part_${nnn}.parquet under --local-dir
 ES_URL="$OS_URL" "${SEARCHBENCH_PYTHON:-python3}" ./ingest.py \
     --index "$INDEX" \
     --local-dir "$SEARCHBENCH_DATA_DIR" \
-    --files "${#files[@]}"
+    --files "${#files[@]}" "${ingest_opts[@]}"
 
 # Refresh + flush so cold-cache numbers are well-defined
 curl -fsS -X POST "$OS_URL/$INDEX/_refresh" >/dev/null
@@ -51,8 +59,11 @@ curl -fsS -X POST "$OS_URL/$INDEX/_flush"   >/dev/null
 if [[ -n "${OS_FORCE_MERGE_SEGMENTS:-}" ]]; then
     echo "[load] force merge to ${OS_FORCE_MERGE_SEGMENTS} segment(s) per shard"
     curl -fsS -m 86400 -X POST "$OS_URL/$INDEX/_forcemerge?max_num_segments=${OS_FORCE_MERGE_SEGMENTS}" | jq -c ._shards
+    # The merged segments are committed (and snapshotted) at once, but the searcher sees them only after a
+    # refresh: without it _cat/segments still lists the merged-away segments (38 instead of 16 at 1B).
+    curl -fsS -X POST "$OS_URL/$INDEX/_refresh" >/dev/null
 fi
-echo "[load] layout: $(curl -fsS "$OS_URL/_cat/shards/$INDEX?h=shard,prirep" | grep -c ' p') shards, $(curl -fsS "$OS_URL/_cat/segments/$INDEX?h=segment" | wc -l) segments"
+echo "[load] layout: $(curl -fsS "$OS_URL/_cat/shards/$INDEX?h=shard,prirep" | grep -c ' p') shards, $(curl -fsS "$OS_URL/_cat/segments/$INDEX?h=prirep" | grep -c '^p') primary segments"
 
 # Row count must equal the corpus's (a lost or re-sent bulk batch changes every count)
 count=$(curl -fsS "$OS_URL/$INDEX/_count" | jq -r .count)
