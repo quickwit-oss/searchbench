@@ -33,10 +33,11 @@ curl -fsS -X PUT "$OS_URL/_cluster/settings" \
 
 # Recreate index from scratch
 curl -fsS -X DELETE "$OS_URL/$INDEX" >/dev/null 2>&1 || true
-curl -fsS -X PUT "$OS_URL/$INDEX" \
-    -H 'Content-Type: application/json' \
-    --data-binary @config/index_mapping.json \
-    >/dev/null
+# OS_SHARDS (default: the mapping's 1) and OS_FORCE_MERGE_SEGMENTS (default: none) set the
+# layout; the S3 runs use 16 shards force-merged to 1 segment each (README "S3").
+jq --argjson n "${OS_SHARDS:-null}" 'if $n then .settings.number_of_shards = $n else . end' \
+    config/index_mapping.json \
+  | curl -fsS -X PUT "$OS_URL/$INDEX" -H 'Content-Type: application/json' --data-binary @- >/dev/null
 
 # Bulk-ingest; ingest.py reads part_${nnn}.parquet under --local-dir
 ES_URL="$OS_URL" "${SEARCHBENCH_PYTHON:-python3}" ./ingest.py \
@@ -47,7 +48,42 @@ ES_URL="$OS_URL" "${SEARCHBENCH_PYTHON:-python3}" ./ingest.py \
 # Refresh + flush so cold-cache numbers are well-defined
 curl -fsS -X POST "$OS_URL/$INDEX/_refresh" >/dev/null
 curl -fsS -X POST "$OS_URL/$INDEX/_flush"   >/dev/null
+if [[ -n "${OS_FORCE_MERGE_SEGMENTS:-}" ]]; then
+    echo "[load] force merge to ${OS_FORCE_MERGE_SEGMENTS} segment(s) per shard"
+    curl -fsS -m 86400 -X POST "$OS_URL/$INDEX/_forcemerge?max_num_segments=${OS_FORCE_MERGE_SEGMENTS}" | jq -c ._shards
+fi
+echo "[load] layout: $(curl -fsS "$OS_URL/_cat/shards/$INDEX?h=shard,prirep" | grep -c ' p') shards, $(curl -fsS "$OS_URL/_cat/segments/$INDEX?h=segment" | wc -l) segments"
 
-# Sanity row count
+# Row count must equal the corpus's (a lost or re-sent bulk batch changes every count)
 count=$(curl -fsS "$OS_URL/$INDEX/_count" | jq -r .count)
-echo "[load] $INDEX docs.count=$count"
+expected=$("${SEARCHBENCH_PYTHON:-python3}" -c '
+import sys, pyarrow.parquet as pq
+print(sum(pq.ParquetFile(f).metadata.num_rows for f in sys.argv[1:]))' "${files[@]}")
+echo "[load] $INDEX docs.count=$count (corpus $expected)"
+[[ "$count" == "$expected" ]] || { echo "[load] count mismatch: $count != $expected" >&2; exit 1; }
+
+# OS_STORAGE=s3: snapshot the index to the S3 repository, delete the local copy and
+# mount the snapshot as a searchable snapshot (storage_type remote_snapshot): S3 stays
+# the store of the index data, the node fetches 8 MiB blocks into its file cache on
+# demand. The index is snapshotted as built (no force merge), like the local column.
+# max_snapshot_bytes_per_sec: 2gb (default 40mb, which caps a 1B snapshot at ~1 h);
+# reads (max_remote_download_bytes_per_sec) are unthrottled by default.
+if [[ "${OS_STORAGE:-local}" == s3 ]]; then
+    : "${OS_S3_BUCKET:?}"; : "${OS_S3_BASE_PATH:?}"; REPO=searchbench_s3; SNAP=otel_logs
+    curl -fsS -X PUT "$OS_URL/_snapshot/$REPO" -H 'Content-Type: application/json' -d "$(jq -cn \
+        --arg b "$OS_S3_BUCKET" --arg p "$OS_S3_BASE_PATH" --arg r "${AWS_REGION:-us-east-1}" \
+        '{type: "s3", settings: {bucket: $b, base_path: $p, region: $r, max_snapshot_bytes_per_sec: "2gb"}}')" >/dev/null
+    curl -fsS -X DELETE "$OS_URL/_snapshot/$REPO/$SNAP" >/dev/null 2>&1 || true
+    echo "[load] snapshot -> s3://$OS_S3_BUCKET/$OS_S3_BASE_PATH"
+    curl -fsS -X PUT "$OS_URL/_snapshot/$REPO/$SNAP?wait_for_completion=true" -H 'Content-Type: application/json' \
+        -d "{\"indices\": \"$INDEX\", \"include_global_state\": false}" \
+        | jq -c '.snapshot | {state, shards, start_time, end_time}'
+    curl -fsS -X DELETE "$OS_URL/$INDEX" >/dev/null
+    curl -fsS -X POST "$OS_URL/_snapshot/$REPO/$SNAP/_restore?wait_for_completion=true" \
+        -H 'Content-Type: application/json' \
+        -d "{\"indices\": \"$INDEX\", \"storage_type\": \"remote_snapshot\"}" | jq -c '.snapshot.shards'
+    curl -fsS "$OS_URL/_cluster/health/$INDEX?wait_for_status=green&timeout=600s" | jq -c '{status}'
+    curl -fsS "$OS_URL/$INDEX/_settings" | jq -c '.[].settings.index.store'
+    count=$(curl -fsS "$OS_URL/$INDEX/_count" | jq -r .count)
+    echo "[load] $INDEX (remote_snapshot) docs.count=$count"
+fi

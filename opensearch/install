@@ -21,6 +21,14 @@ docker info >/dev/null 2>&1 \
   || die "docker daemon not responding (try: systemctl start docker; or fix permissions)"
 echo "OS backend: docker ($OS_IMAGE)"
 docker pull --quiet "$OS_IMAGE" >/dev/null   # idempotent, cheap once cached
+if [[ "${OS_STORAGE:-local}" == s3 ]]; then
+    # The official image does not bundle repository-s3: derive one that does.
+    s3_image="searchbench/opensearch-s3:${OS_IMAGE##*:}"
+    printf 'FROM %s\nRUN /usr/share/opensearch/bin/opensearch-plugin install --batch repository-s3\n' "$OS_IMAGE" \
+        | docker build -q -t "$s3_image" - >/dev/null
+    echo "S3 mode: image $s3_image (repository-s3), repository s3://${OS_S3_BUCKET:?OS_STORAGE=s3 needs OS_S3_BUCKET}/${OS_S3_BASE_PATH:?OS_STORAGE=s3 needs OS_S3_BASE_PATH}"
+    [[ "$OS_S3_BASE_PATH" == searchbench/* ]] || die "OS_S3_BASE_PATH must start with searchbench/"
+fi
 
 echo "OS_DATA_DIR: $OS_DATA_DIR"
 echo

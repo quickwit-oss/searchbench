@@ -9,19 +9,38 @@ set -euo pipefail
 
 : "${OS_PORT:=9200}"
 OS_URL="http://127.0.0.1:${OS_PORT}"
-INDEX="otel_logs"
+INDEX="${OS_INDEX:-otel_logs}"
 
 # request_cache=false is belt-and-braces only: config/index_mapping.json already
 # sets index.requests.cache.enable=false, and re-running with this parameter
 # changed no timing beyond run-to-run noise. The residual cold/hot ratio is page
 # cache and JVM warm-up, not a result cache.
 q=$(cat)
+
+# SEARCHBENCH_OS_METRICS_LOG=<file>: one JSON line per query with the S3 GETs it caused
+# (the snapshot repository's GetObject count and time) and the file cache's misses and
+# used bytes (node stats deltas around the search; the timed request is unchanged).
+fc() { curl -fsS "$OS_URL/_nodes/_local/stats" 2>/dev/null | jq -c '.nodes[] |
+    {gets: ([.repositories[]?.request_success_total.GetObject // 0] | add // 0),
+     get_ms: ([.repositories[]?.request_time_in_millis.GetObject // 0] | add // 0),
+     misses: (.aggregate_file_cache.miss_count // 0), used: (.aggregate_file_cache.used_in_bytes // 0)}'; }
+[[ -n "${SEARCHBENCH_OS_METRICS_LOG:-}" ]] && fc0=$(fc)
 # -w appends round-trip secs on final line
-resp=$(curl -fsS -w '\n%{time_total}' -X POST "$OS_URL/$INDEX/_search?request_cache=false" \
+resp=$(curl -fsS -w '\n%{time_total}' -X POST "$OS_URL/$INDEX/_search?request_cache=false&allow_partial_search_results=false" \
     -H 'Content-Type: application/json' --data-binary "$q")
 rt=$(printf '%s\n' "$resp" | tail -n1)
+if [[ -n "${SEARCHBENCH_OS_METRICS_LOG:-}" ]]; then
+    jq -cn --arg sha "$(printf '%s' "$q" | sha1sum | cut -c1-12)" --argjson t "$rt" \
+        --argjson a "${fc0:-null}" --argjson b "$(fc)" \
+        '{query_sha1: $sha, time: $t, gets: ($b.gets - $a.gets), get_ms: ($b.get_ms - $a.get_ms),
+          misses: ($b.misses - $a.misses), cache_used_after: $b.used}' >> "$SEARCHBENCH_OS_METRICS_LOG" || true
+fi
 body=$(printf '%s\n' "$resp" | sed '$d')
 
+# Every shard must have answered: a partial result is a wrong count, not a timing.
+if ! jq -e '._shards.failed == 0 and ._shards.successful == ._shards.total' <<<"$body" >/dev/null; then
+    echo "partial result: $(jq -c ._shards <<<"$body")" >&2; exit 1
+fi
 # Emit rows per response shape, so every query type yields comparable non-empty result:
 #   * group_by     -> agg buckets ({key, doc_count})  [size:0 + aggs]
 #   * top_k/recent -> hit _source rows                [size:N, hits]
