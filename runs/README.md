@@ -23,7 +23,7 @@ runs/<date>-<machine>/
 
 | run set | machine | datasets | engines |
 |---|---|---|---|
-| [hippo-20261105](hippo-20261105/README.md) | AWS m8gd.4xlarge (16 vCPU ARM64, 64 GiB), S3 us-east-1 | otel_logs_1b | The public bench: Datadog BYOC 0.1.36 (ingest API, 64 splits) and ClickHouse 26.10.2.103 (1.7 GiB part cap, 61 parts), median of 3 rounds each; DuckDB 2.0 over a sorted Parquet copy, one run. Listed in [PUBLIC_BENCH.md](../PUBLIC_BENCH.md) |
+| [hippo-20261105](hippo-20261105/README.md) | AWS m8gd.4xlarge (16 vCPU ARM64, 64 GiB), S3 us-east-1 | otel_logs_1b | The public bench: Datadog BYOC 0.1.36 (ingest API, 64 splits), ClickHouse 26.10.2.103 (1.7 GiB part cap, 61 parts) and OpenSearch 3.8.0 (searchable snapshot, lean mapping, 16 segments; hot tries read local file cache), median of 3 rounds each; DuckDB 2.0 over a sorted Parquet copy, one run. Listed in [PUBLIC_BENCH.md](../PUBLIC_BENCH.md) |
 
 ## Pages
 
