@@ -137,7 +137,11 @@ page = patchOnce(page, 'const Mc=.01,E0=60;',
   'SBB=y=>typeof y!="number"?"—":y>=1e9?(y/1e9).toFixed(2)+" GB":y>=1e6?(y/1e6).toFixed(1)+" MB":(y/1e3).toFixed(0)+" kB",' +
   'SBU=y=>SBM==="gets"?SBG(y)+" GETs":SBM==="bytes"?SBB(y):jt(y)+" s";',
   'metric: state');
-page = patchOnce(page, 'function _r(a){return typeof a=="number"&&a>=E0}', 'function _r(a){return SBM==="wall"&&typeof a=="number"&&a>=E0}', 'metric: timeout only for wall time');
+// The timeout test also takes the column's cap: SBC(row) = row.timeout_cap, else E0 (60 s). A column
+// run with another cap (e.g. Loki 1B at 600 s) shows 💀 only at its own cap; see 7d below.
+page = patchOnce(page, 'function _r(a){return typeof a=="number"&&a>=E0}',
+  'function _r(a,c){return SBM==="wall"&&typeof a=="number"&&a>=(c??E0)}function SBC(y){return y&&typeof y.timeout_cap=="number"?y.timeout_cap:E0}',
+  'metric: timeout only for wall time, at the column cap');
 page = patchOnce(page, 'const m=a.result[s];if(!Array.isArray(m))return null;',
   'const m=SBM==="wall"?a.result[s]:SBM==="cpu"?(a.cpu_by_q?a.cpu_by_q[n]:null):(a.s3_requests&&a.s3_requests[n]?a.s3_requests[n].map(t=>t?t[SBM==="gets"?0:1]:null):null);if(!Array.isArray(m))return null;',
   'metric: cell values');
@@ -173,6 +177,34 @@ page = patchOnce(page,
   '[data-product=searchbench] .engcol .grip{',
   '[data-product=searchbench] .engcol .ver{display:block;font-weight:400;font-size:10px;line-height:13px;color:var(--mut);overflow-wrap:anywhere;margin-top:2px}[data-product=searchbench] .engcol .grip{',
   'version line style');
+// 7c) Sparse columns (sparse_columns.py): "finished N/M q. · not in common set" above the version,
+//     and their "—" geomean/CPU summary cells say why instead of "no result recorded".
+page = patchOnce(page,
+  'R.jsx("span",{className:"sm",children:w}),A.version&&',
+  'R.jsx("span",{className:"sm",children:w}),A.sparse?R.jsx("span",{className:"ver",title:A.sparse.reason?`run with a ${SBC(A)} s timeout cap instead of ${E0} s: left out of the geomean and CPU common query sets`:"fewer than half of its supported queries finished (no timeout): left out of the geomean and CPU common query sets",children:`finished ${A.sparse.finished}/${A.sparse.supported} q. · ${A.sparse.reason||"not in common set"}`}):null,A.version&&',
+  'sparse column note in headers');
+page = patchOnce(page,
+  'title:"no result recorded",children:"—"},w.system)',
+  'title:!p&&w.sparse&&(a.kind==="geomean"||a.key==="cpu_cold"||a.key==="cpu_hot")?`${w.sparse.reason||"sparse column"}: finished ${w.sparse.finished} of ${w.sparse.supported} supported queries, so not in the common query set`:"no result recorded",children:"—"},w.system)',
+  'sparse column summary cells');
+// 7d) Per-column timeout cap (SBC, defined with _r above): coverage, cells, query panel and legend
+//     test and name the column's own cap. Rows without `timeout_cap` keep the 60 s cap (E0).
+page = patchOnce(page, 'typeof _=="number"&&(E++,_r(_)||f++)', 'typeof _=="number"&&(E++,_r(_,SBC(m))||f++)', 'column cap: coverage');
+page = patchOnce(page, 'de=p&&_r(ie),', 'de=p&&_r(ie,SBC(w)),', 'column cap: cell');
+page = patchOnce(page, 'pe=de?`timed out — killed at the ${E0}s cap — click for query`',
+  'pe=de?`timed out — killed at the ${SBC(w)}s cap — click for query`', 'column cap: cell tooltip');
+page = patchOnce(page,
+  'x=f.map(ie=>typeof ie!="number"?"null":(_r(ie)?"💀":"")+jt(ie)).join(", "),F=`${n.metric} ${y==null?"—":(_r(y)?"💀 ":"")+jt(y)+" s"}`+(_r(y)?` (timed out — killed at the ${E0}s cap)`',
+  'x=f.map(ie=>typeof ie!="number"?"null":(_r(ie,SBC(s))?"💀":"")+jt(ie)).join(", "),F=`${n.metric} ${y==null?"—":(_r(y,SBC(s))?"💀 ":"")+jt(y)+" s"}`+(_r(y,SBC(s))?` (timed out — killed at the ${SBC(s)}s cap)`',
+  'column cap: query panel');
+// Legend: when a displayed column has another cap, say that 💀 is at the column's own cap.
+page = patchOnce(page, 'function Y_({metric:a,valueMode:n,sortRow:c}){', 'function Y_({metric:a,valueMode:n,sortRow:c,engines:SBe}){', 'column cap: legend engines');
+page = patchOnce(page, '"💀 timed out (",E0,"s cap)"]}),',
+  '"💀 timed out (",E0,"s cap)"]}),(()=>{const k=[...new Set((SBe||[]).map(SBC).filter(v=>v!==E0))].sort((u,v)=>u-v);' +
+  'return k.length?R.jsx("span",{children:`💀 = the column\'s cap: ${E0} s, or ${k.join(" / ")} s where noted`}):null})(),',
+  'column cap: legend note');
+page = patchOnce(page, 'R.jsx(Y_,{metric:s.metric,valueMode:s.valueMode,sortRow:s.sortRow})',
+  'R.jsx(Y_,{metric:s.metric,valueMode:s.valueMode,sortRow:s.sortRow,engines:n})', 'column cap: legend call');
 // 8) Participant list wraps long names too.
 page = patchOnce(page,
   'overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},children:p}',

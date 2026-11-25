@@ -10,14 +10,28 @@ import type { BenchRow } from './rows';
 /** 10 ms — ClickBench's ratio-smoothing constant. */
 export const SMOOTH = 0.01;
 
-export const RESOLUTION = 0.001;
-
 /** Per-try wall-clock cap (lib/benchmark.sh default). */
 export const TIMEOUT_CAP = 60;
 
-/** A run that hit the cap is a kill, not a measurement. */
-export function isTimeout(v: unknown): boolean {
-  return typeof v === 'number' && v >= TIMEOUT_CAP;
+/** The column's wall-clock cap: its own `timeout_cap` (e.g. 600 s), else TIMEOUT_CAP. */
+export function capOf(row: Pick<BenchRow, 'timeout_cap'>): number {
+  return row.timeout_cap ?? TIMEOUT_CAP;
+}
+
+/** "💀 = the column's cap: 60 s, or 600 s where noted", or null when every cap is the default. */
+export function capNote(rows: readonly Pick<BenchRow, 'timeout_cap'>[]): string | null {
+  const other = [...new Set(rows.map(capOf).filter((c) => c !== TIMEOUT_CAP))].sort((a, b) => a - b);
+  return other.length
+    ? `💀 = the column's cap: ${TIMEOUT_CAP} s, or ${other.join(' / ')} s where noted`
+    : null;
+}
+
+/**
+ * A run that hit the cap is a kill, not a measurement. Pass the column's cap
+ * (`capOf(row)`) for a row value.
+ */
+export function isTimeout(v: unknown, cap: number = TIMEOUT_CAP): boolean {
+  return typeof v === 'number' && v >= cap;
 }
 
 /**
@@ -48,16 +62,18 @@ export function smoothedRatio(t: number | null, best: number | null): number | n
   return (SMOOTH + t) / (SMOOTH + best);
 }
 
+/** Plain ratio, as shown in a relative cell. `Infinity` when only `t` is > 0. */
 export function ratioOf(t: number | null, best: number | null): number | null {
   if (typeof t !== 'number' || typeof best !== 'number') return null;
-  return Math.max(t, RESOLUTION) / Math.max(best, RESOLUTION);
+  if (best === 0) return t === 0 ? 1 : Infinity;
+  return t / best;
 }
 
 /**
  * Geomean of the smoothed per-query ratios, per engine, over `ids` — one pass
  * with the fastest-per-query memoized.
  *
- * Timeouts are dropped rather than counted as 60 s: at the cap the engine was
+ * Timeouts are dropped rather than counted at the cap: at the cap the engine was
  * killed, so the number says "unsupported", and averaging it in would rank an
  * engine that answered nothing above one that answered slowly.
  *
@@ -83,7 +99,7 @@ export function geomeanMap(
     let k = 0;
     for (const id of ids) {
       const v = metricValue(r, id, metric);
-      if (isTimeout(v) || typeof v !== 'number') continue;
+      if (isTimeout(v, capOf(r)) || typeof v !== 'number') continue;
       const best = fastest[id];
       if (best == null) continue;
       const ratio = (SMOOTH + v) / (SMOOTH + best);
@@ -129,7 +145,7 @@ export function coverageMap(
       const v = metricValue(r, id, metric);
       if (typeof v !== 'number') continue;
       supported++;
-      if (!isTimeout(v)) completed++;
+      if (!isTimeout(v, capOf(r))) completed++;
     }
     out.set(r.system, { supported, completed });
   }

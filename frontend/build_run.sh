@@ -66,6 +66,9 @@ if [[ -f "$RUN/load_cpu.json" ]]; then
     jq --slurpfile c "$RUN/load_cpu.json" 'map(if .load_cpu == null then (.load_cpu = ($c[0][.dataset + "/" + .system] // null)) else . end)' "$rows" > "$work/rows.json"
     mv "$work/rows.json" "$rows"
 fi
+# Sparse columns (fewer than half of their supported queries finished): left out of the common
+# query sets of the CPU sums and the geomean (sparse_columns.py, SPARSE_FINISHED_FRACTION).
+python3 "$HERE/sparse_columns.py" "$rows"
 # CPU seconds per try (results' `cpu` arrays, SEARCHBENCH_CPU=on): summary rows + query panel.
 python3 "$HERE/cpu_time.py" "$rows"
 # Per-round timings (query panel: range across rounds), keyed like phases.json.

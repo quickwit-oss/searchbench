@@ -1,0 +1,18 @@
+{
+  "engine": "Loki",
+  "dataset": "otel_logs_1b",
+  "build": "3.7.9-m8gd.4xlarge-s3-frame-1b-20261119",
+  "engine_version": "3.7.9 d3b4a2f7",
+  "load_time": 5255.952,
+  "data_size": 74847449747,
+  "storage_units": {
+    "count": 109811,
+    "unit": "objects"
+  },
+  "os": "Ubuntu 24.04.5 LTS",
+  "date": "2026-11-19",
+  "loaded_by": "load_overlay.py (adapter.load; extra/loki-s3-600s-hot-1b-20261119)",
+  "load_cpu": 43775.942,
+  "load_cpu_containers": 31689.557,
+  "load_cpu_procs": 12086.385
+}

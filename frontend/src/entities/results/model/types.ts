@@ -29,7 +29,9 @@ export interface RawEngineRow {
   load_time: number;
   /** Bytes on disk, data + index. */
   data_size: number;
-  /** `result[qi] = [cold, hot, hot]`, seconds. */
+  /** Wall-clock cap of each try, seconds, when not the 60 s default (`capOf`). */
+  timeout_cap?: number;
+  /** `result[qi] = [cold, hot, hot]`, seconds; a cold-only column has null hot tries. */
   result: (number | null)[][];
   query_tags?: QueryTag[];
   /** The executed statement per query; "UNSUPPORTED: …" when the engine cannot. */

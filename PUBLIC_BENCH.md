@@ -15,12 +15,15 @@ four engines answer; Datadog BYOC, ClickHouse and OpenSearch: median of 3 rounds
 | ClickHouse 26.10.2.103 | ClickHouse · S3 · 1.7 GiB cap · 61 parts | 61 parts, 58.1 GiB | 1,343 / 894 ms | 64.1k | 1,288 s / 9,344 s | [`hippo-20261105/clickhouse-pr17/`](runs/hippo-20261105/clickhouse-pr17/) |
 | OpenSearch 3.8.0 | OpenSearch 3.8 · S3 · searchable snapshot · 16 shards | 16 shards x 1 segment, 80.0 GiB | 6,089 / 266 ms\* | 10.6k | 8,847 s / 50,340 s | [`hippo-20261105/opensearch/`](runs/hippo-20261105/opensearch/) |
 | DuckDB 2.0.0 | DuckDB 2.0 · S3 · sorted copy | no index, 24.7 GiB sorted copy | 7,769 / 6,683 ms | 401.6k | 1,453 s / 10,057 s | [`hippo-20261105/duckdb-parquet/`](runs/hippo-20261105/duckdb-parquet/) |
+| Grafana Loki 3.7.9 | Loki 3.7.9 · S3 · prefilter on · c16 · 600 s cap | 109,811 objects, 69.7 GiB | 54/56 ok (600 s cap)† | —† | 5,256 s / 31,690 s | [`hippo-20261105/loki/`](runs/hippo-20261105/loki/) |
 
 - Datadog BYOC: 2026-11-04 12:08–12:47 UTC; evidence in [`extra/datadog-byoc-c30/`](runs/hippo-20261105/extra/datadog-byoc-c30/).
 - ClickHouse: 2026-11-03 21:32–22:30 UTC; evidence in [`extra/clickhouse-1p7g/`](runs/hippo-20261105/extra/clickhouse-1p7g/).
 - DuckDB: sorted copy on S3, 2026-11-01, one run; evidence in [`extra/duckdb/`](runs/hippo-20261105/extra/duckdb/).
 - OpenSearch: 2026-11-19, lean mapping, index sort ServiceName asc + Timestamp desc; evidence in [`extra/opensearch-s3-1b/`](runs/hippo-20261105/extra/opensearch-s3-1b/).
   \* Its hot tries read its local file cache (0 S3 GETs): only its cold try is comparable with the other columns.
+- Grafana Loki: 2026-11-19, 600 s cap, one run; evidence in [`extra/loki-s3-600s-hot-1b-20261119/`](runs/hippo-20261105/extra/loki-s3-600s-hot-1b-20261119/).
+  † Excluded from the 57-query geomean, CPU and S3 GET common sets because it ran with a 600 s cap (10× the 60 s cap of the other columns); 54 of 56 supported queries finish, Q14 and Q29 time out at 600 s.
 
 Setup, method and caveats: [README](runs/hippo-20261105/README.md).
 

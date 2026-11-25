@@ -20,7 +20,7 @@
 import type { ReactNode } from 'react';
 import type { EngineRow } from '../../entities/results';
 import { fmtMs, fmtRatio, fmtSec, ratioBg } from '../../shared/lib/format';
-import { TIMEOUT_CAP, isTimeout, metricValue, ratioOf } from '../../shared/lib/metrics';
+import { capOf, isTimeout, metricValue, ratioOf } from '../../shared/lib/metrics';
 import type { CellSelection, Metric, SortDir, ValueMode } from '../../shared/model';
 import type { MetricRow } from './model/metricRows';
 
@@ -113,7 +113,7 @@ export function TableRow({
         }
         const v = raw as number;
         const ratio = isQuery ? ratioOf(v, best) : best ? v / best : 1;
-        const timedOut = isQuery && isTimeout(v);
+        const timedOut = isQuery && isTimeout(v, capOf(e));
         const text =
           row.kind === 'geomean'
             ? fmtRatio(v)
@@ -127,7 +127,7 @@ export function TableRow({
         const isSel =
           row.kind === 'query' && sel !== null && sel.sys === e.system && sel.id === row.id;
         const tip = timedOut
-          ? `timed out — killed at the ${TIMEOUT_CAP}s cap — click for query`
+          ? `timed out — killed at the ${capOf(e)}s cap — click for query`
           : isQuery
             ? `${fmtSec(v)} s · ${fmtRatio(ratio)} — click for query`
             : best

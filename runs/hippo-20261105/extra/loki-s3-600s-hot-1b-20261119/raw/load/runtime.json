@@ -1,0 +1,7 @@
+{
+  "target": "read,query-scheduler,compactor",
+  "image": "grafana/loki@sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580",
+  "container": "searchbench-loki-s3-600s-hot-1b",
+  "query_concurrency": 16,
+  "literal_prefilter": true
+}

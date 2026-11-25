@@ -25,7 +25,7 @@
 import { rowsFor, tagsForQuery } from '../../entities/results';
 import { fmtRatio, fmtSec } from '../../shared/lib/format';
 import {
-  TIMEOUT_CAP,
+  capOf,
   fastestForQuery,
   isTimeout,
   metricValue,
@@ -78,13 +78,14 @@ export function queryPanelData(
     tg ? ' · ' + [tg.task, tg.filter, tg.freq].filter(Boolean).join(' · ') : ''
   }`;
   const cold = typeof arr[0] === 'number' ? fmtSec(arr[0]) + ' s' : '—';
+  const cap = capOf(r);
   const runs = arr
-    .map((x) => (typeof x !== 'number' ? 'null' : (isTimeout(x) ? '💀' : '') + fmtSec(x)))
+    .map((x) => (typeof x !== 'number' ? 'null' : (isTimeout(x, cap) ? '💀' : '') + fmtSec(x)))
     .join(', ');
   const meta =
-    `${opts.metric} ${v == null ? '—' : (isTimeout(v) ? '💀 ' : '') + fmtSec(v) + ' s'}` +
-    (isTimeout(v)
-      ? ` (timed out — killed at the ${TIMEOUT_CAP}s cap)`
+    `${opts.metric} ${v == null ? '—' : (isTimeout(v, cap) ? '💀 ' : '') + fmtSec(v) + ' s'}` +
+    (isTimeout(v, cap)
+      ? ` (timed out — killed at the ${cap}s cap)`
       : rt != null
         ? ` (${fmtRatio(rt)} vs fastest)`
         : '') +

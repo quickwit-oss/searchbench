@@ -11,6 +11,7 @@ or paid service is needed.
 |---|---|---|---|
 | `Loki (3.7.9-m8gd4-100k-read-snappy)`, `Loki (3.7.9-m8gd4-100k-s3-gets)` | 100K | local NVMe, S3 | [`runs/100k-20261101`](runs/100k-20261101/README.md) |
 | `Loki (3.7.9-m8gd4-1b-local-frame-prefilter-{off,on}-c8-20261115)`, `Loki (3.7.9-m8gd4-1b-s3-gets)` | 1B | local NVMe, S3 | [`runs/1b-20261115`](runs/1b-20261115/README.md) |
+| `Loki (3.7.9-m8gd4-1b-s3-frame-prefilter-on-c16-600s-20261119)` | 1B (600 s cap) | S3 | [`runs/hippo-20261105/extra/loki-s3-600s-hot-1b-20261119`](../runs/hippo-20261105/extra/loki-s3-600s-hot-1b-20261119/README.md) |
 
 All ran on AWS `m8gd.4xlarge` (16 Graviton4 vCPUs, 64 GiB, local NVMe), not on
 the repository's reference machine. At 100K all 56 supported queries finish. At

@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "wall_seconds": 5255.951675696,
+  "load_cpu_seconds": 43775.942565,
+  "load_cpu_containers_seconds": 31689.557434,
+  "load_cpu_procs_seconds": 12086.385131,
+  "includes": [
+    "all-target start",
+    "Rust ingestion",
+    "flush",
+    "stop",
+    "read+compactor finalization",
+    "compaction settle",
+    "exact storage-only windowed count",
+    "stop",
+    "frozen inventory check"
+  ],
+  "excludes": [
+    "corpus download/hash",
+    "client build",
+    "image pull"
+  ],
+  "data_size_bytes": 74847449747,
+  "storage_units": {
+    "count": 109811,
+    "unit": "objects"
+  },
+  "s3_objects_by_top": {
+    "_searchbench_load_lock.json": {
+      "objects": 1,
+      "bytes": 482
+    },
+    "fake": {
+      "objects": 109810,
+      "bytes": 74846062720
+    },
+    "index": {
+      "objects": 1,
+      "bytes": 1386545
+    }
+  }
+}

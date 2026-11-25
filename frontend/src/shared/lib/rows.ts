@@ -15,6 +15,8 @@ export interface BenchRow {
   tags?: string[];
   load_time?: number;
   data_size?: number;
+  /** Wall-clock cap of this column's tries, seconds, when not the 60 s default. */
+  timeout_cap?: number;
 }
 
 /**

@@ -1,0 +1,3290 @@
+[
+  {
+    "query": "Q01",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      211.494015,
+      212.368488,
+      211.14078
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 211.494015,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      212.368488,
+      211.14078
+    ],
+    "best_hot_raw": 211.14078,
+    "best_hot": 211.14078,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 211.487797979,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 211.6063843940001,
+    "cold_engine_cpu_seconds": 2617.0221269999997,
+    "cold_busy_cores": 12.367406278854236,
+    "engine_cpu_seconds": [
+      2617.0221269999997,
+      2625.734462,
+      2616.268945
+    ],
+    "busy_cores": [
+      12.367406278854236,
+      12.357560913404718,
+      12.38444097457945
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "8eb44864e30a9b2a8eff04b9809ca844da51781d1363fffcd243b2c840f63e63"
+    ]
+  },
+  {
+    "query": "Q02",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      171.228196,
+      171.439683,
+      170.848267
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 171.228196,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      171.439683,
+      170.848267
+    ],
+    "best_hot_raw": 170.848267,
+    "best_hot": 170.848267,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 171.22277688,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 171.34118212999965,
+    "cold_engine_cpu_seconds": 2119.6086099999998,
+    "cold_busy_cores": 12.370689776097228,
+    "engine_cpu_seconds": [
+      2119.6086099999998,
+      2121.5272400000003,
+      2118.0891869999996
+    ],
+    "busy_cores": [
+      12.370689776097228,
+      12.366545815975389,
+      12.389357194903317
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "10d0c3cf3383d3997d0fa1f6913c39077fa09d39a8db18bec4adc477b7859dc9"
+    ]
+  },
+  {
+    "query": "Q03",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      201.70511,
+      202.075212,
+      202.313717
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 201.70511,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      202.075212,
+      202.313717
+    ],
+    "best_hot_raw": 202.075212,
+    "best_hot": 202.075212,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 201.694956026,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 201.8197192509997,
+    "cold_engine_cpu_seconds": 2523.3078299999997,
+    "cold_busy_cores": 12.502781390067268,
+    "engine_cpu_seconds": [
+      2523.3078299999997,
+      2528.257239,
+      2528.586407
+    ],
+    "busy_cores": [
+      12.502781390067268,
+      12.504411280734157,
+      12.49136220568501
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "c53b9abc1b8e2441fcc17ec12c0a882e57df3b5b7c7dd3b7c96fbd34bbd820a5"
+    ]
+  },
+  {
+    "query": "Q04",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      226.093644,
+      224.817098,
+      226.00009
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 226.093644,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      224.817098,
+      226.00009
+    ],
+    "best_hot_raw": 224.817098,
+    "best_hot": 224.817098,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 226.084491281,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 226.20932387599987,
+    "cold_engine_cpu_seconds": 2737.142684,
+    "cold_busy_cores": 12.100043610494176,
+    "engine_cpu_seconds": [
+      2737.142684,
+      2741.4609809999997,
+      2735.7895769999996
+    ],
+    "busy_cores": [
+      12.100043610494176,
+      12.187928277209659,
+      12.099144206305951
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "dafb97d7c951ecb1686059a3624f145186747722f8187131bb0cb267c575f064"
+    ]
+  },
+  {
+    "query": "Q05",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      172.312802,
+      172.707777,
+      173.049534
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 172.312802,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      172.707777,
+      173.049534
+    ],
+    "best_hot_raw": 172.707777,
+    "best_hot": 172.707777,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 172.30276482,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 172.4272927660004,
+    "cold_engine_cpu_seconds": 2156.854439,
+    "cold_busy_cores": 12.508776333495238,
+    "engine_cpu_seconds": [
+      2156.854439,
+      2159.1330999999996,
+      2159.858276
+    ],
+    "busy_cores": [
+      12.508776333495238,
+      12.493383177934927,
+      12.47287098709494
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "95497619259aa3f767366a02be219013544022678d54c495d41b5a8edddfe964"
+    ]
+  },
+  {
+    "query": "Q06",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      479.944557,
+      480.075129,
+      480.219708
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 479.944557,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      480.075129,
+      480.219708
+    ],
+    "best_hot_raw": 480.075129,
+    "best_hot": 480.075129,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 479.939258715,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 480.0575976100008,
+    "cold_engine_cpu_seconds": 6510.407424,
+    "cold_busy_cores": 13.561721460950734,
+    "engine_cpu_seconds": [
+      6510.407424,
+      6516.910749,
+      6518.422519999998
+    ],
+    "busy_cores": [
+      13.561721460950734,
+      13.571570214423879,
+      13.570626843030011
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "723b54de06241337204a27045a1ec75cc7803943cf382f41ad85e3ba6212e94c"
+    ]
+  },
+  {
+    "query": "Q07",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      527.295502,
+      527.492801,
+      527.825417
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 527.295502,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      527.492801,
+      527.825417
+    ],
+    "best_hot_raw": 527.492801,
+    "best_hot": 527.492801,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 527.28789561,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 527.4101131719999,
+    "cold_engine_cpu_seconds": 7389.0089100000005,
+    "cold_busy_cores": 14.009987153185824,
+    "engine_cpu_seconds": [
+      7389.0089100000005,
+      7395.499048000001,
+      7396.620058
+    ],
+    "busy_cores": [
+      14.009987153185824,
+      14.017083859835825,
+      14.01034665945928
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "5ffb75312a8f0e1cf301caca26e68b513c82996797c1ccea35f187f405571d2b"
+    ]
+  },
+  {
+    "query": "Q08",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      580.497873,
+      581.531195,
+      578.999222
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 580.497873,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      581.531195,
+      578.999222
+    ],
+    "best_hot_raw": 578.999222,
+    "best_hot": 578.999222,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 580.490238924,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 580.6123303250006,
+    "cold_engine_cpu_seconds": 8148.906367,
+    "cold_busy_cores": 14.035021203284831,
+    "engine_cpu_seconds": [
+      8148.906367,
+      8155.671175999999,
+      8151.287655999999
+    ],
+    "busy_cores": [
+      14.035021203284831,
+      14.021748486442629,
+      14.075477039770288
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "4432023b7aaa0f69be1312c6f283735995958db33d022fe16d6a78a19a4e04e8"
+    ]
+  },
+  {
+    "query": "Q10",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      195.234034,
+      195.11532,
+      195.124197
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 195.234034,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      195.11532,
+      195.124197
+    ],
+    "best_hot_raw": 195.11532,
+    "best_hot": 195.11532,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 195.224683759,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 195.34892355600095,
+    "cold_engine_cpu_seconds": 2469.376176,
+    "cold_busy_cores": 12.640848646868026,
+    "engine_cpu_seconds": [
+      2469.376176,
+      2476.619551,
+      2473.6455290000004
+    ],
+    "busy_cores": [
+      12.640848646868026,
+      12.685654939183319,
+      12.670005716595787
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "4cf471f9f60c5a196de0265c28af42e096c9766725adcadc1d6fb02c9482fdad"
+    ]
+  },
+  {
+    "query": "Q11",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      195.249926,
+      194.05807,
+      195.158426
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 195.249926,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      194.05807,
+      195.158426
+    ],
+    "best_hot_raw": 194.05807,
+    "best_hot": 194.05807,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 195.243871388,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 195.36450159800006,
+    "cold_engine_cpu_seconds": 2471.968805,
+    "cold_busy_cores": 12.653111413692494,
+    "engine_cpu_seconds": [
+      2471.968805,
+      2469.8342849999995,
+      2472.334059
+    ],
+    "busy_cores": [
+      12.653111413692494,
+      12.719890714659705,
+      12.660959858916906
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "4cf471f9f60c5a196de0265c28af42e096c9766725adcadc1d6fb02c9482fdad"
+    ]
+  },
+  {
+    "query": "Q12",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      172.249294,
+      171.778292,
+      172.454735
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 172.249294,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      171.778292,
+      172.454735
+    ],
+    "best_hot_raw": 171.778292,
+    "best_hot": 171.778292,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 172.241578413,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 172.3625589860003,
+    "cold_engine_cpu_seconds": 2120.293449,
+    "cold_busy_cores": 12.30135744951556,
+    "engine_cpu_seconds": [
+      2120.293449,
+      2127.3909849999995,
+      2127.136026
+    ],
+    "busy_cores": [
+      12.30135744951556,
+      12.376150563778534,
+      12.326103035271299
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "95497619259aa3f767366a02be219013544022678d54c495d41b5a8edddfe964"
+    ]
+  },
+  {
+    "query": "Q14",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      600,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 600,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "cold_process_wall_seconds": 600.1023592889997,
+    "cold_engine_cpu_seconds": 8781.728546,
+    "cold_busy_cores": 14.633717748426417,
+    "engine_cpu_seconds": [
+      8781.728546,
+      null,
+      null
+    ],
+    "busy_cores": [
+      14.633717748426417,
+      null,
+      null
+    ],
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q15",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      176.057171,
+      175.723254,
+      176.003695
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 176.057171,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      175.723254,
+      176.003695
+    ],
+    "best_hot_raw": 175.723254,
+    "best_hot": 175.723254,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 176.047328618,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 176.16933083600088,
+    "cold_engine_cpu_seconds": 2223.81635,
+    "cold_busy_cores": 12.62317532482535,
+    "engine_cpu_seconds": [
+      2223.81635,
+      2220.2854400000006,
+      2225.232723
+    ],
+    "busy_cores": [
+      12.62317532482535,
+      12.62709115585705,
+      12.634974386828874
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "83eb207a778255260e79b0f1c7d5b86a4e5f611acaab99d95a174be89d1760c5"
+    ]
+  },
+  {
+    "query": "Q16",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      197.046588,
+      196.885861,
+      196.484509
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 197.046588,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      196.885861,
+      196.484509
+    ],
+    "best_hot_raw": 196.484509,
+    "best_hot": 196.484509,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 197.03742707,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 197.15970387700145,
+    "cold_engine_cpu_seconds": 2483.284939,
+    "cold_busy_cores": 12.595296554863987,
+    "engine_cpu_seconds": [
+      2483.284939,
+      2483.4038,
+      2481.6152840000004
+    ],
+    "busy_cores": [
+      12.595296554863987,
+      12.60621840537506,
+      12.622765938829456
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "60356a2226e78b0d65c01a574e4073780fecf2075fc204246aaeb016f9dfeee4"
+    ]
+  },
+  {
+    "query": "Q17",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      207.446668,
+      208.08367,
+      207.484304
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 207.446668,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      208.08367,
+      207.484304
+    ],
+    "best_hot_raw": 207.484304,
+    "best_hot": 207.484304,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 207.438072604,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 207.56017766500008,
+    "cold_engine_cpu_seconds": 2639.884501,
+    "cold_busy_cores": 12.718646373779587,
+    "engine_cpu_seconds": [
+      2639.884501,
+      2650.8954439999998,
+      2646.147328
+    ],
+    "busy_cores": [
+      12.718646373779587,
+      12.732634695075426,
+      12.746643245914298
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "76ab301a4f2bef5d9dcee07f8eeacd6ac6305d1b109488f49258bee6d0997cdb"
+    ]
+  },
+  {
+    "query": "Q18",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      185.737507,
+      185.83978,
+      187.276796
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 185.737507,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      185.83978,
+      187.276796
+    ],
+    "best_hot_raw": 185.83978,
+    "best_hot": 185.83978,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 185.728971891,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 185.85072035100166,
+    "cold_engine_cpu_seconds": 2340.605305,
+    "cold_busy_cores": 12.594007171882264,
+    "engine_cpu_seconds": [
+      2340.605305,
+      2347.312542,
+      2347.7844540000006
+    ],
+    "busy_cores": [
+      12.594007171882264,
+      12.623090877136617,
+      12.528882566748312
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "ea6fd41a215806f962d6e3e608e5b2569df7dc0dbc23363843f12d948f1b091e"
+    ]
+  },
+  {
+    "query": "Q19",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      224.144121,
+      224.246481,
+      224.522382
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 224.144121,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      224.246481,
+      224.522382
+    ],
+    "best_hot_raw": 224.246481,
+    "best_hot": 224.246481,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 224.135951527,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 224.25570230300218,
+    "cold_engine_cpu_seconds": 2858.743207,
+    "cold_busy_cores": 12.747694607726945,
+    "engine_cpu_seconds": [
+      2858.743207,
+      2862.6032939999996,
+      2861.11409
+    ],
+    "busy_cores": [
+      12.747694607726945,
+      12.758957681812365,
+      12.736755247398165
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "bd88aec45fa855517f0fbfd6cfddd7ef598847a3b5c844eb3e1ad6181860dca7"
+    ]
+  },
+  {
+    "query": "Q20",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      186.768742,
+      187.652712,
+      187.181763
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 186.768742,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      187.652712,
+      187.181763
+    ],
+    "best_hot_raw": 187.181763,
+    "best_hot": 187.181763,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 186.760530252,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 186.88374752199888,
+    "cold_engine_cpu_seconds": 2348.1253389999997,
+    "cold_busy_cores": 12.56463106147629,
+    "engine_cpu_seconds": [
+      2348.1253389999997,
+      2355.9479870000005,
+      2350.9406150000004
+    ],
+    "busy_cores": [
+      12.56463106147629,
+      12.547292463526606,
+      12.552139457622207
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "ea6fd41a215806f962d6e3e608e5b2569df7dc0dbc23363843f12d948f1b091e"
+    ]
+  },
+  {
+    "query": "Q21",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      199.038714,
+      196.303883,
+      195.512212
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 199.038714,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      196.303883,
+      195.512212
+    ],
+    "best_hot_raw": 195.512212,
+    "best_hot": 195.512212,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 199.029475071,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 199.15277614099978,
+    "cold_engine_cpu_seconds": 2478.5106720000003,
+    "cold_busy_cores": 12.445273021176565,
+    "engine_cpu_seconds": [
+      2478.5106720000003,
+      2483.277598,
+      2473.037475
+    ],
+    "busy_cores": [
+      12.445273021176565,
+      12.642872403582759,
+      12.64178947796467
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "60356a2226e78b0d65c01a574e4073780fecf2075fc204246aaeb016f9dfeee4"
+    ]
+  },
+  {
+    "query": "Q25",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      184.921859,
+      185.642007,
+      185.170844
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 184.921859,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      185.642007,
+      185.170844
+    ],
+    "best_hot_raw": 185.170844,
+    "best_hot": 185.170844,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 184.914858932,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 185.03399735700077,
+    "cold_engine_cpu_seconds": 2341.8456069999997,
+    "cold_busy_cores": 12.656299060986568,
+    "engine_cpu_seconds": [
+      2341.8456069999997,
+      2346.7324720000006,
+      2338.6604639999996
+    ],
+    "busy_cores": [
+      12.656299060986568,
+      12.633539140124359,
+      12.621991250909018
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "ea6fd41a215806f962d6e3e608e5b2569df7dc0dbc23363843f12d948f1b091e"
+    ]
+  },
+  {
+    "query": "Q26",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      590.816121,
+      592.746935,
+      590.776948
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 590.816121,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      592.746935,
+      590.776948
+    ],
+    "best_hot_raw": 590.776948,
+    "best_hot": 590.776948,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 590.808626308,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 590.9296232399975,
+    "cold_engine_cpu_seconds": 8309.335651000001,
+    "cold_busy_cores": 14.061464046159834,
+    "engine_cpu_seconds": [
+      8309.335651000001,
+      8314.802053999998,
+      8317.002505
+    ],
+    "busy_cores": [
+      14.061464046159834,
+      14.02487777818136,
+      14.075365882826679
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "4d2b69eeaec3aaefe2b624d57c834b0d24c3144e2f5533c5bfa180f06d3fe498"
+    ]
+  },
+  {
+    "query": "Q27",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      192.817936,
+      192.114659,
+      192.791533
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 192.817936,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      192.114659,
+      192.791533
+    ],
+    "best_hot_raw": 192.114659,
+    "best_hot": 192.114659,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 192.810757387,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 192.93212207399847,
+    "cold_engine_cpu_seconds": 2415.770209,
+    "cold_busy_cores": 12.521347834827832,
+    "engine_cpu_seconds": [
+      2415.770209,
+      2415.445047,
+      2414.4000969999997
+    ],
+    "busy_cores": [
+      12.521347834827832,
+      12.56554737982847,
+      12.515952630397745
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "3905043be2e9b2325b27c22eb6e30dadf7dfe3b29279c569c630939c3437fe13"
+    ]
+  },
+  {
+    "query": "Q28",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      244.0329,
+      243.686047,
+      244.338736
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 244.0329,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      243.686047,
+      244.338736
+    ],
+    "best_hot_raw": 243.686047,
+    "best_hot": 243.686047,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 244.025533623,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 244.14603123099732,
+    "cold_engine_cpu_seconds": 2927.03607,
+    "cold_busy_cores": 11.988874262021495,
+    "engine_cpu_seconds": [
+      2927.03607,
+      2929.6053119999997,
+      2927.7465759999995
+    ],
+    "busy_cores": [
+      11.988874262021495,
+      12.016506627632708,
+      11.97681195819875
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "6dbaf3af2cf587c47e841d451407a1cd04fb163452debbd38e131b80600dd769"
+    ]
+  },
+  {
+    "query": "Q29",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      null,
+      null,
+      null
+    ],
+    "statuses": [
+      "timeout",
+      "skipped-after-cold-timeout",
+      "skipped-after-cold-timeout"
+    ],
+    "censored_at_seconds": [
+      600,
+      null,
+      null
+    ],
+    "cold": null,
+    "cold_status": "timeout",
+    "cold_censored_at_seconds": 600,
+    "hot_raw": [],
+    "best_hot_raw": null,
+    "best_hot": null,
+    "hot_matched_tries": [],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": true,
+    "timeout": true,
+    "errors": 0,
+    "cold_native_exec": null,
+    "cold_lines_processed": null,
+    "cold_bytes_processed": null,
+    "cold_shards": null,
+    "cold_splits": null,
+    "cold_process_wall_seconds": 600.1033770920003,
+    "cold_engine_cpu_seconds": 8803.90257,
+    "cold_busy_cores": 14.670643269268416,
+    "engine_cpu_seconds": [
+      8803.90257,
+      null,
+      null
+    ],
+    "busy_cores": [
+      14.670643269268416,
+      null,
+      null
+    ],
+    "rows": null,
+    "answer_multiset_sha256": []
+  },
+  {
+    "query": "Q30",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      210.761542,
+      210.467377,
+      210.765388
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 210.761542,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      210.467377,
+      210.765388
+    ],
+    "best_hot_raw": 210.467377,
+    "best_hot": 210.467377,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 210.756032903,
+    "cold_lines_processed": 1000002954,
+    "cold_bytes_processed": 303287483038,
+    "cold_shards": 518,
+    "cold_splits": 7,
+    "cold_process_wall_seconds": 210.87644185200043,
+    "cold_engine_cpu_seconds": 2616.178497,
+    "cold_busy_cores": 12.406215099342933,
+    "engine_cpu_seconds": [
+      2616.178497,
+      2612.366859,
+      2611.3891139999996
+    ],
+    "busy_cores": [
+      12.406215099342933,
+      12.405427146133269,
+      12.383409482933304
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "8eb44864e30a9b2a8eff04b9809ca844da51781d1363fffcd243b2c840f63e63"
+    ]
+  },
+  {
+    "query": "Q31",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      108.886619,
+      108.55844,
+      108.651845
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 108.886619,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      108.55844,
+      108.651845
+    ],
+    "best_hot_raw": 108.55844,
+    "best_hot": 108.55844,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 108.879784731,
+    "cold_lines_processed": 292303251,
+    "cold_bytes_processed": 89068604549,
+    "cold_shards": 262,
+    "cold_splits": 7,
+    "cold_process_wall_seconds": 108.9999905629993,
+    "cold_engine_cpu_seconds": 1188.3345120000001,
+    "cold_busy_cores": 10.902152430124957,
+    "engine_cpu_seconds": [
+      1188.3345120000001,
+      1187.5767790000002,
+      1186.1519640000001
+    ],
+    "busy_cores": [
+      10.902152430124957,
+      10.928084685193387,
+      10.90570662310705
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "64a792e643df16354053221eb85cff98ec051d4dbb5bf10d23eaf52c953a7f0f"
+    ]
+  },
+  {
+    "query": "Q32",
+    "variant": "c16",
+    "category": "body-count",
+    "latencies": [
+      580.858217,
+      578.77766,
+      579.500406
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 580.858217,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      578.77766,
+      579.500406
+    ],
+    "best_hot_raw": 578.77766,
+    "best_hot": 578.77766,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 580.850110094,
+    "cold_lines_processed": 1000004320,
+    "cold_bytes_processed": 303287908394,
+    "cold_shards": 518,
+    "cold_splits": 7,
+    "cold_process_wall_seconds": 580.9736815549986,
+    "cold_engine_cpu_seconds": 8133.668877,
+    "cold_busy_cores": 14.000064263203662,
+    "engine_cpu_seconds": [
+      8133.668877,
+      8131.001518000001,
+      8139.283932999999
+    ],
+    "busy_cores": [
+      14.000064263203662,
+      14.045853140767097,
+      14.042590563798147
+    ],
+    "rows": 1,
+    "answer_multiset_sha256": [
+      "4432023b7aaa0f69be1312c6f283735995958db33d022fe16d6a78a19a4e04e8"
+    ]
+  },
+  {
+    "query": "Q54",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      480.729236,
+      479.891536,
+      482.001721
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 480.729236,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      479.891536,
+      482.001721
+    ],
+    "best_hot_raw": 479.891536,
+    "best_hot": 479.891536,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 480.720597926,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 480.8427075209984,
+    "cold_engine_cpu_seconds": 6536.610086999999,
+    "cold_busy_cores": 13.594071376687241,
+    "engine_cpu_seconds": [
+      6536.610086999999,
+      6528.865123,
+      6541.698471999998
+    ],
+    "busy_cores": [
+      13.594071376687241,
+      13.601674173076098,
+      13.568756834378085
+    ],
+    "rows": 5,
+    "answer_multiset_sha256": [
+      "d7169cb6c73a7b0121dd3561adc81c0cb6afe3bf19cf0b3172b6892341ea626b"
+    ]
+  },
+  {
+    "query": "Q55",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      197.369596,
+      199.23154,
+      198.645127
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 197.369596,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      199.23154,
+      198.645127
+    ],
+    "best_hot_raw": 198.645127,
+    "best_hot": 198.645127,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 197.360526049,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 197.48309144499945,
+    "cold_engine_cpu_seconds": 2488.7140980000004,
+    "cold_busy_cores": 12.602162948685287,
+    "engine_cpu_seconds": [
+      2488.7140980000004,
+      2502.3206999999998,
+      2494.2060109999993
+    ],
+    "busy_cores": [
+      12.602162948685287,
+      12.552670100374604,
+      12.548934367045014
+    ],
+    "rows": 2,
+    "answer_multiset_sha256": [
+      "55cf8fee8acacf90ddb4d5172c32ba4950cb57ad84dc151e4f92cc04c4c02b5f"
+    ]
+  },
+  {
+    "query": "Q56",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      203.515464,
+      202.588665,
+      202.821108
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 203.515464,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      202.588665,
+      202.821108
+    ],
+    "best_hot_raw": 202.588665,
+    "best_hot": 202.588665,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 203.508396419,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 203.62924796099833,
+    "cold_engine_cpu_seconds": 2536.350593,
+    "cold_busy_cores": 12.455728331746304,
+    "engine_cpu_seconds": [
+      2536.350593,
+      2533.7940430000003,
+      2531.7787560000006
+    ],
+    "busy_cores": [
+      12.455728331746304,
+      12.500058028182638,
+      12.475893594862745
+    ],
+    "rows": 4,
+    "answer_multiset_sha256": [
+      "b55ccdafe6f4f13fce33ba7664fb1e194c716f2345cfced23f68e8b787032aff"
+    ]
+  },
+  {
+    "query": "Q57",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      481.268742,
+      481.545852,
+      479.1369
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 481.268742,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      481.545852,
+      479.1369
+    ],
+    "best_hot_raw": 479.1369,
+    "best_hot": 479.1369,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 481.262282672,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 481.3822859799984,
+    "cold_engine_cpu_seconds": 6521.304182999999,
+    "cold_busy_cores": 13.54703812942332,
+    "engine_cpu_seconds": [
+      6521.304182999999,
+      6535.109796999999,
+      6525.964598000002
+    ],
+    "busy_cores": [
+      13.54703812942332,
+      13.567908193526138,
+      13.617044096481367
+    ],
+    "rows": 4,
+    "answer_multiset_sha256": [
+      "4d2597c5f8e30a920d87b3de0bf73ead8a451e248bc663305929b299df891b60"
+    ]
+  },
+  {
+    "query": "Q58",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      196.964832,
+      196.580221,
+      197.602679
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 196.964832,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      196.580221,
+      197.602679
+    ],
+    "best_hot_raw": 196.580221,
+    "best_hot": 196.580221,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 196.955696517,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 197.0774434019986,
+    "cold_engine_cpu_seconds": 2485.968178,
+    "cold_busy_cores": 12.614169004258502,
+    "engine_cpu_seconds": [
+      2485.968178,
+      2483.356871,
+      2491.1236310000004
+    ],
+    "busy_cores": [
+      12.614169004258502,
+      12.625557950802673,
+      12.59959785786695
+    ],
+    "rows": 2,
+    "answer_multiset_sha256": [
+      "d7f5a196c74d590ba8f66c7da8a9340b9fb7023098f8937481ae28806253f6fa"
+    ]
+  },
+  {
+    "query": "Q60",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      479.659564,
+      480.018783,
+      479.806273
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 479.659564,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      480.018783,
+      479.806273
+    ],
+    "best_hot_raw": 479.806273,
+    "best_hot": 479.806273,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 479.652716357,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 479.77460418300325,
+    "cold_engine_cpu_seconds": 6516.92316,
+    "cold_busy_cores": 13.583301623681216,
+    "engine_cpu_seconds": [
+      6516.92316,
+      6520.768835999999,
+      6517.370169999998
+    ],
+    "busy_cores": [
+      13.583301623681216,
+      13.581216554996933,
+      13.580131218289026
+    ],
+    "rows": 4,
+    "answer_multiset_sha256": [
+      "4d2597c5f8e30a920d87b3de0bf73ead8a451e248bc663305929b299df891b60"
+    ]
+  },
+  {
+    "query": "Q61",
+    "variant": "c16",
+    "category": "histogram",
+    "latencies": [
+      238.934137,
+      239.493764,
+      240.090055
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 238.934137,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      239.493764,
+      240.090055
+    ],
+    "best_hot_raw": 239.493764,
+    "best_hot": 239.493764,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 238.924495326,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 239.0469812320007,
+    "cold_engine_cpu_seconds": 2899.494921,
+    "cold_busy_cores": 12.129393586384479,
+    "engine_cpu_seconds": [
+      2899.494921,
+      2904.120297,
+      2903.866236
+    ],
+    "busy_cores": [
+      12.129393586384479,
+      12.120333165569196,
+      12.089228237713668
+    ],
+    "rows": 30,
+    "answer_multiset_sha256": [
+      "222c41f687de2bc20e430f731ce16b6759aa77cd2594da4927222908b4dc0b67"
+    ]
+  },
+  {
+    "query": "Q62",
+    "variant": "c16",
+    "category": "histogram",
+    "latencies": [
+      214.474295,
+      214.18778,
+      214.913239
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 214.474295,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      214.18778,
+      214.913239
+    ],
+    "best_hot_raw": 214.18778,
+    "best_hot": 214.18778,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 214.464938616,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 214.58772636399954,
+    "cold_engine_cpu_seconds": 2671.910241,
+    "cold_busy_cores": 12.451365631544595,
+    "engine_cpu_seconds": [
+      2671.910241,
+      2675.2757429999997,
+      2676.5963819999997
+    ],
+    "busy_cores": [
+      12.451365631544595,
+      12.48371947296401,
+      12.447749806738125
+    ],
+    "rows": 30,
+    "answer_multiset_sha256": [
+      "7a9c0f3ddfffc7bf2458bd82a53b94895366302aa09afc099a5043e8aceca121"
+    ]
+  },
+  {
+    "query": "Q63",
+    "variant": "c16",
+    "category": "histogram",
+    "latencies": [
+      201.627929,
+      201.297633,
+      201.562006
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 201.627929,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      201.297633,
+      201.562006
+    ],
+    "best_hot_raw": 201.297633,
+    "best_hot": 201.297633,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 201.619872265,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 201.7435454430015,
+    "cold_engine_cpu_seconds": 2551.2330169999996,
+    "cold_busy_cores": 12.645921391922787,
+    "engine_cpu_seconds": [
+      2551.2330169999996,
+      2554.035401,
+      2548.9460849999996
+    ],
+    "busy_cores": [
+      12.645921391922787,
+      12.680772638393544,
+      12.638877954922592
+    ],
+    "rows": 30,
+    "answer_multiset_sha256": [
+      "4a9e2d2d1a6fb1e5e0abf20b573f16b7524103c0b18b8ec44a600daa85f50df8"
+    ]
+  },
+  {
+    "query": "Q64",
+    "variant": "c16",
+    "category": "histogram",
+    "latencies": [
+      504.540677,
+      503.719476,
+      504.700341
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 504.540677,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      503.719476,
+      504.700341
+    ],
+    "best_hot_raw": 503.719476,
+    "best_hot": 503.719476,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 504.530998905,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 504.6547380030024,
+    "cold_engine_cpu_seconds": 7048.316299,
+    "cold_busy_cores": 13.96661077015008,
+    "engine_cpu_seconds": [
+      7048.316299,
+      7046.197692000001,
+      7051.693990000002
+    ],
+    "busy_cores": [
+      13.96661077015008,
+      13.985201211372837,
+      13.968835799714643
+    ],
+    "rows": 30,
+    "answer_multiset_sha256": [
+      "c867c1166d3649da1a4493d49534fa4ebec3f038dc4a364f4b5d0c84007deefc"
+    ]
+  },
+  {
+    "query": "Q65",
+    "variant": "c16",
+    "category": "histogram",
+    "latencies": [
+      237.855083,
+      238.782987,
+      239.2165
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 237.855083,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      238.782987,
+      239.2165
+    ],
+    "best_hot_raw": 238.782987,
+    "best_hot": 238.782987,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 237.84717853,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 237.9689724560012,
+    "cold_engine_cpu_seconds": 2886.693088,
+    "cold_busy_cores": 12.130543987341582,
+    "engine_cpu_seconds": [
+      2886.693088,
+      2895.2244250000003,
+      2887.976039
+    ],
+    "busy_cores": [
+      12.130543987341582,
+      12.119234514267552,
+      12.066964322432767
+    ],
+    "rows": 30,
+    "answer_multiset_sha256": [
+      "222c41f687de2bc20e430f731ce16b6759aa77cd2594da4927222908b4dc0b67"
+    ]
+  },
+  {
+    "query": "Q66",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      111.077958,
+      110.747314,
+      111.256952
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 111.077958,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      110.747314,
+      111.256952
+    ],
+    "best_hot_raw": 110.747314,
+    "best_hot": 110.747314,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 111.07078495,
+    "cold_lines_processed": 292303194,
+    "cold_bytes_processed": 89068587535,
+    "cold_shards": 256,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 111.18995782599814,
+    "cold_engine_cpu_seconds": 1206.549821,
+    "cold_busy_cores": 10.851248121598692,
+    "engine_cpu_seconds": [
+      1206.549821,
+      1205.7973679999998,
+      1210.515117
+    ],
+    "busy_cores": [
+      10.851248121598692,
+      10.876809859355982,
+      10.869000380552963
+    ],
+    "rows": 2,
+    "answer_multiset_sha256": [
+      "edb76e43d6e0d8118e836289312687524bd997e2a5a16f6034e9012444882cd4"
+    ]
+  },
+  {
+    "query": "Q67",
+    "variant": "c16",
+    "category": "group-by",
+    "latencies": [
+      483.851143,
+      481.709611,
+      480.608246
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 483.851143,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      481.709611,
+      480.608246
+    ],
+    "best_hot_raw": 480.608246,
+    "best_hot": 480.608246,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 483.844915552,
+    "cold_lines_processed": 1000000000,
+    "cold_bytes_processed": 303286630136,
+    "cold_shards": 512,
+    "cold_splits": 0,
+    "cold_process_wall_seconds": 483.96523560800415,
+    "cold_engine_cpu_seconds": 6550.102195,
+    "cold_busy_cores": 13.534241125338529,
+    "engine_cpu_seconds": [
+      6550.102195,
+      6545.999091000001,
+      6542.619667000001
+    ],
+    "busy_cores": [
+      13.534241125338529,
+      13.585910817062096,
+      13.60998981300097
+    ],
+    "rows": 7,
+    "answer_multiset_sha256": [
+      "a3e60338c2b61d57edfd5cb4fbff5a9d997388a97f4250de98ac7852fe4617ba"
+    ]
+  },
+  {
+    "query": "Q68",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      9.184381,
+      7.943863,
+      10.13456
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 9.184381,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      7.943863,
+      10.13456
+    ],
+    "best_hot_raw": 7.943863,
+    "best_hot": 7.943863,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 9.175616,
+    "cold_lines_processed": 12923153,
+    "cold_bytes_processed": 5666955847,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 9.307471063002595,
+    "cold_engine_cpu_seconds": 67.581302,
+    "cold_busy_cores": 7.26097363532369,
+    "engine_cpu_seconds": [
+      67.581302,
+      67.08918299999999,
+      68.79655199999999
+    ],
+    "busy_cores": [
+      7.26097363532369,
+      8.325001851951123,
+      6.710989629085647
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q69",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      116.310039,
+      115.48795,
+      113.93838
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 116.310039,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      115.48795,
+      113.93838
+    ],
+    "best_hot_raw": 113.93838,
+    "best_hot": 113.93838,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 116.300755,
+    "cold_lines_processed": 369824627,
+    "cold_bytes_processed": 108027394916,
+    "cold_shards": 257,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 116.42611682999996,
+    "cold_engine_cpu_seconds": 1446.084435,
+    "cold_busy_cores": 12.420618967404932,
+    "engine_cpu_seconds": [
+      1446.084435,
+      1440.868738,
+      1438.2969730000004
+    ],
+    "busy_cores": [
+      12.420618967404932,
+      12.464255466471565,
+      12.611124000653591
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "530065b4f9435894182c8915f4e3245463377f924e9be9965140475fc430079c"
+    ]
+  },
+  {
+    "query": "Q70",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      120.11073,
+      121.431923,
+      121.959716
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 120.11073,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      121.431923,
+      121.959716
+    ],
+    "best_hot_raw": 121.431923,
+    "best_hot": 121.431923,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 120.101235,
+    "cold_lines_processed": 375742812,
+    "cold_bytes_processed": 109613426196,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 120.22372134000034,
+    "cold_engine_cpu_seconds": 1524.28128,
+    "cold_busy_cores": 12.678706523226273,
+    "engine_cpu_seconds": [
+      1524.28128,
+      1533.182243,
+      1530.381363
+    ],
+    "busy_cores": [
+      12.678706523226273,
+      12.61405265545383,
+      12.53634212782575
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "99c920571b79679475dc04659f5f9cb1b518d3d00a9c5015fece453ab6e5562f"
+    ]
+  },
+  {
+    "query": "Q71",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      138.852439,
+      136.207346,
+      137.420756
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 138.852439,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      136.207346,
+      137.420756
+    ],
+    "best_hot_raw": 136.207346,
+    "best_hot": 136.207346,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 138.843331,
+    "cold_lines_processed": 406098829,
+    "cold_bytes_processed": 117887807538,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 138.9671496729934,
+    "cold_engine_cpu_seconds": 1777.141777,
+    "cold_busy_cores": 12.788214921165403,
+    "engine_cpu_seconds": [
+      1777.141777,
+      1768.198051,
+      1771.2328619999998
+    ],
+    "busy_cores": [
+      12.788214921165403,
+      12.97086656773544,
+      12.878370686436831
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "269ffb3fd88fd84fa7807084b2dff0bc47c100bb3f65d60a21d54a5f00a6200f"
+    ]
+  },
+  {
+    "query": "Q72",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      4.364878,
+      4.255722,
+      4.241899
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 4.364878,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      4.255722,
+      4.241899
+    ],
+    "best_hot_raw": 4.241899,
+    "best_hot": 4.241899,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 4.356109,
+    "cold_lines_processed": 5858963,
+    "cold_bytes_processed": 2012651314,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 4.481337566001457,
+    "cold_engine_cpu_seconds": 34.010233,
+    "cold_busy_cores": 7.589303974336875,
+    "engine_cpu_seconds": [
+      34.010233,
+      34.159635,
+      34.419489999999996
+    ],
+    "busy_cores": [
+      7.589303974336875,
+      7.818748075254924,
+      7.902755495322289
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q73",
+    "variant": "c16",
+    "category": "unfiltered",
+    "latencies": [
+      1.612075,
+      1.268493,
+      1.349893
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.612075,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      1.268493,
+      1.349893
+    ],
+    "best_hot_raw": 1.268493,
+    "best_hot": 1.268493,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.605948,
+    "cold_lines_processed": 297061,
+    "cold_bytes_processed": 84040378,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 1.7253089759979048,
+    "cold_engine_cpu_seconds": 14.211876,
+    "cold_busy_cores": 8.237293260344842,
+    "engine_cpu_seconds": [
+      14.211876,
+      13.665208000000002,
+      14.402197999999999
+    ],
+    "busy_cores": [
+      8.237293260344842,
+      9.897683922115773,
+      9.846873876877112
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q74",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      117.250512,
+      117.127353,
+      115.365567
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 117.250512,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      117.127353,
+      115.365567
+    ],
+    "best_hot_raw": 115.365567,
+    "best_hot": 115.365567,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 117.239699,
+    "cold_lines_processed": 372722859,
+    "cold_bytes_processed": 106846189771,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 117.36950309199892,
+    "cold_engine_cpu_seconds": 1470.0442810000002,
+    "cold_busy_cores": 12.524925489781792,
+    "engine_cpu_seconds": [
+      1470.0442810000002,
+      1473.492505,
+      1468.8027940000002
+    ],
+    "busy_cores": [
+      12.524925489781792,
+      12.567953430605746,
+      12.718864793178339
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "3d730501ea75d1aaba8c50f4bcafe3d6c0a0fbc2251ffe6f9cd9017ac92d7a59"
+    ]
+  },
+  {
+    "query": "Q75",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      277.167198,
+      277.45748,
+      283.155684
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 277.167198,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      277.45748,
+      283.155684
+    ],
+    "best_hot_raw": 277.45748,
+    "best_hot": 277.45748,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 277.156846,
+    "cold_lines_processed": 223572078,
+    "cold_bytes_processed": 67411597940,
+    "cold_shards": 257,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 277.28314988600323,
+    "cold_engine_cpu_seconds": 3714.118924,
+    "cold_busy_cores": 13.394679501898871,
+    "engine_cpu_seconds": [
+      3714.118924,
+      3716.84073,
+      3722.2638690000003
+    ],
+    "busy_cores": [
+      13.394679501898871,
+      13.390492788453507,
+      13.140262697683145
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "5801ffd24393b4bce0cfe735a50c0add68a994455c0ebe98ca1d3955d7d9dc08"
+    ]
+  },
+  {
+    "query": "Q76",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      10.748261,
+      8.390986,
+      8.005032
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 10.748261,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      8.390986,
+      8.005032
+    ],
+    "best_hot_raw": 8.005032,
+    "best_hot": 8.005032,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 10.736864,
+    "cold_lines_processed": 12923153,
+    "cold_bytes_processed": 5666955847,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 10.865181467001094,
+    "cold_engine_cpu_seconds": 68.905671,
+    "cold_busy_cores": 6.341879443916798,
+    "engine_cpu_seconds": [
+      68.905671,
+      67.451811,
+      67.03119199999998
+    ],
+    "busy_cores": [
+      6.341879443916798,
+      7.928286865105903,
+      8.255061798674081
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "7d7fc16677eff73d6c12658fb7d362c3ec79dde301d88d642acfc780ca32b2ac"
+    ]
+  },
+  {
+    "query": "Q77",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      115.799564,
+      113.219416,
+      113.524645
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 115.799564,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      113.219416,
+      113.524645
+    ],
+    "best_hot_raw": 113.219416,
+    "best_hot": 113.219416,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 115.789126,
+    "cold_lines_processed": 369824627,
+    "cold_bytes_processed": 108027394916,
+    "cold_shards": 257,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 115.9142039770013,
+    "cold_engine_cpu_seconds": 1443.8752709999999,
+    "cold_busy_cores": 12.456413635782559,
+    "engine_cpu_seconds": [
+      1443.8752709999999,
+      1436.4078150000003,
+      1438.7023479999998
+    ],
+    "busy_cores": [
+      12.456413635782559,
+      12.674154131236074,
+      12.660070959404743
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "530065b4f9435894182c8915f4e3245463377f924e9be9965140475fc430079c"
+    ]
+  },
+  {
+    "query": "Q78",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      122.623671,
+      119.476698,
+      123.376523
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 122.623671,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      119.476698,
+      123.376523
+    ],
+    "best_hot_raw": 119.476698,
+    "best_hot": 119.476698,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 122.614591,
+    "cold_lines_processed": 375742812,
+    "cold_bytes_processed": 109613426196,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 122.73995035300322,
+    "cold_engine_cpu_seconds": 1540.2767159999999,
+    "cold_busy_cores": 12.549106558786482,
+    "engine_cpu_seconds": [
+      1540.2767159999999,
+      1532.97138,
+      1548.4749390000006
+    ],
+    "busy_cores": [
+      12.549106558786482,
+      12.818298173045154,
+      12.538738609060433
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "99c920571b79679475dc04659f5f9cb1b518d3d00a9c5015fece453ab6e5562f"
+    ]
+  },
+  {
+    "query": "Q79",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      138.174086,
+      138.11167,
+      136.55193
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 138.174086,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      138.11167,
+      136.55193
+    ],
+    "best_hot_raw": 136.55193,
+    "best_hot": 136.55193,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 138.163291,
+    "cold_lines_processed": 406098829,
+    "cold_bytes_processed": 117887807538,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 138.2885913029968,
+    "cold_engine_cpu_seconds": 1769.6334669999999,
+    "cold_busy_cores": 12.796669995159975,
+    "engine_cpu_seconds": [
+      1769.6334669999999,
+      1770.190847,
+      1765.053986
+    ],
+    "busy_cores": [
+      12.796669995159975,
+      12.806429845990696,
+      12.915039010578594
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "269ffb3fd88fd84fa7807084b2dff0bc47c100bb3f65d60a21d54a5f00a6200f"
+    ]
+  },
+  {
+    "query": "Q80",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      4.460251,
+      4.382298,
+      4.430054
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 4.460251,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      4.382298,
+      4.430054
+    ],
+    "best_hot_raw": 4.382298,
+    "best_hot": 4.382298,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 4.450916,
+    "cold_lines_processed": 5858963,
+    "cold_bytes_processed": 2012651314,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 4.576844786002766,
+    "cold_engine_cpu_seconds": 34.312516,
+    "cold_busy_cores": 7.496980475487609,
+    "engine_cpu_seconds": [
+      34.312516,
+      34.40033999999999,
+      34.48795
+    ],
+    "busy_cores": [
+      7.496980475487609,
+      7.652272330046399,
+      7.587092878106687
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "ce1a8229537315b0c77b3cb918dfd4898ad52778e6435185eea88adc26454c4a"
+    ]
+  },
+  {
+    "query": "Q81",
+    "variant": "c16",
+    "category": "unfiltered",
+    "latencies": [
+      1.63658,
+      1.31739,
+      1.393371
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 1.63658,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      1.31739,
+      1.393371
+    ],
+    "best_hot_raw": 1.31739,
+    "best_hot": 1.31739,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 1.626759,
+    "cold_lines_processed": 297061,
+    "cold_bytes_processed": 84040378,
+    "cold_shards": 33,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 1.7507287730040844,
+    "cold_engine_cpu_seconds": 14.863099,
+    "cold_busy_cores": 8.48966397833077,
+    "engine_cpu_seconds": [
+      14.863099,
+      14.664498,
+      15.654412
+    ],
+    "busy_cores": [
+      8.48966397833077,
+      10.251138499249931,
+      10.381944724850698
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "bf75228c7d10b1015674e76c4cb4eec70436552e68a84847cd5536a79cf2a296"
+    ]
+  },
+  {
+    "query": "Q82",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      117.751923,
+      115.063402,
+      115.524746
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 117.751923,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      115.063402,
+      115.524746
+    ],
+    "best_hot_raw": 115.063402,
+    "best_hot": 115.063402,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 117.743026,
+    "cold_lines_processed": 372722859,
+    "cold_bytes_processed": 106846189771,
+    "cold_shards": 279,
+    "cold_splits": 24,
+    "cold_process_wall_seconds": 117.86702596899704,
+    "cold_engine_cpu_seconds": 1479.0757879999999,
+    "cold_busy_cores": 12.548681667670534,
+    "engine_cpu_seconds": [
+      1479.0757879999999,
+      1475.67278,
+      1477.428774
+    ],
+    "busy_cores": [
+      12.548681667670534,
+      12.811965559166527,
+      12.776014243142408
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "3d730501ea75d1aaba8c50f4bcafe3d6c0a0fbc2251ffe6f9cd9017ac92d7a59"
+    ]
+  },
+  {
+    "query": "Q83",
+    "variant": "c16",
+    "category": "logs",
+    "latencies": [
+      281.171033,
+      276.966495,
+      278.560127
+    ],
+    "statuses": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "censored_at_seconds": [
+      null,
+      null,
+      null
+    ],
+    "cold": 281.171033,
+    "cold_status": "ok",
+    "cold_censored_at_seconds": null,
+    "hot_raw": [
+      276.966495,
+      278.560127
+    ],
+    "best_hot_raw": 276.966495,
+    "best_hot": 276.966495,
+    "hot_matched_tries": [
+      2,
+      3
+    ],
+    "hot_lines_mismatch_tries": [],
+    "cold_timeout": false,
+    "timeout": false,
+    "errors": 0,
+    "cold_native_exec": 281.160211,
+    "cold_lines_processed": 223572078,
+    "cold_bytes_processed": 67411597940,
+    "cold_shards": 257,
+    "cold_splits": 2,
+    "cold_process_wall_seconds": 281.2869449850041,
+    "cold_engine_cpu_seconds": 3720.122289,
+    "cold_busy_cores": 13.225364188865312,
+    "engine_cpu_seconds": [
+      3720.122289,
+      3706.588121,
+      3712.0063310000005
+    ],
+    "busy_cores": [
+      13.225364188865312,
+      13.377223177172064,
+      13.320151313180544
+    ],
+    "rows": 100,
+    "answer_multiset_sha256": [
+      "5801ffd24393b4bce0cfe735a50c0add68a994455c0ebe98ca1d3955d7d9dc08"
+    ]
+  }
+]
