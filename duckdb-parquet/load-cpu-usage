@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Cumulative CPU of the DuckDB worker during ./load (SEARCHBENCH_CPU=on): the sorted copy is written by the
+# long-lived worker that ./start launched, not by ./load's own processes. Same reading as ./cpu-usage.
+exec "$(dirname "$0")/cpu-usage"

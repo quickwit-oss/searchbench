@@ -19,6 +19,49 @@ set -e
 : "${CH_HOST:=127.0.0.1}"
 : "${CH_TCP_PORT:=9000}"
 : "${CH_INDEX_SETTING:=enable_full_text_index=1}"
+# Every query runs with result reuse and in-memory data caches off, so hot tries
+# measure query execution rather than cached answers or cached data:
+#   - query cache and query condition cache (result / per-granule match reuse);
+#   - the four text-index caches that hold data or lookup results (26.10 source,
+#     src/Storages/MergeTree/TextIndexCache.h): tokens (per part and token: cardinality,
+#     which answers counts with no read, block offsets and posting lists of up to 6
+#     rows inlined), negative tokens (cached "token absent from this part"), pattern
+#     bypass (cached outcome of a pattern dictionary scan) and postings (decoded
+#     posting-list blocks and phrase-search results). With them on, hot count and
+#     phrase queries on S3 make 0 GETs -- the counterpart of Quickwit's fast-field
+#     cache, which the quickwit adapter also disables;
+#   - column statistics: they are not a cache, but 26.x reads every part's
+#     statistics.packed one GET at a time before pruning (~24 s per cold query on
+#     S3 with 59 parts) and prunes nothing on this corpus.
+# Metadata caches stay on, like Quickwit's split footer cache (footer + hotcache):
+# the mark and primary-index caches and the text-index header cache (per part: format
+# version, codecs and the sparse index of the token dictionary, i.e. the first token
+# and offset of each dictionary block). So do the OS page cache on local disk and the
+# uncompressed / columns caches, which are off by default.
+# CH_DATA_CACHES=on restores the engine defaults for the text-index caches and
+# statistics. CH_QUERY_SETTINGS: further client settings, space-separated. A setting
+# given there replaces the default above (the client rejects a repeated option).
+: "${CH_DATA_CACHES:=off}"
+case "$CH_DATA_CACHES" in
+    off) cache_settings=(--use_text_index_tokens_cache=0 --use_text_index_negative_tokens_cache=0
+                         --use_text_index_pattern_bypass_cache=0 --use_text_index_postings_cache=0
+                         --use_statistics=0 --use_statistics_for_part_pruning=0
+                         --use_statistics_for_min_max_aggregation=0) ;;
+    on)  cache_settings=() ;;
+    *) echo "CH_DATA_CACHES must be on or off, got: $CH_DATA_CACHES" >&2; exit 2 ;;
+esac
+read -r -a extra_settings <<< "${CH_QUERY_SETTINGS:-}"
+# Drop defaults that CH_QUERY_SETTINGS sets explicitly: clickhouse client refuses an
+# option given twice ("cannot be specified more than once").
+if (( ${#extra_settings[@]} )); then
+    kept=()
+    for d in ${cache_settings[@]+"${cache_settings[@]}"}; do
+        name="${d%%=*}"; dup=0
+        for e in "${extra_settings[@]}"; do [[ "${e%%=*}" == "$name" ]] && dup=1; done
+        (( dup )) || kept+=("$d")
+    done
+    cache_settings=(${kept[@]+"${kept[@]}"})
+fi
 
 query=$(cat)
 
@@ -32,7 +75,8 @@ tmp_err=$(mktemp)
 trap 'rm -f "$tmp_out" "$tmp_err"' EXIT
 
 if ! "$CLICKHOUSE_BIN" client --host "$CH_HOST" --port "$CH_TCP_PORT" \
-        "--$CH_INDEX_SETTING" --use_query_cache=0 --time --query "$query" \
+        "--$CH_INDEX_SETTING" --use_query_cache=0 --use_query_condition_cache=0 \
+        ${cache_settings[@]+"${cache_settings[@]}"} ${extra_settings[@]+"${extra_settings[@]}"} --time --query "$query" \
         >"$tmp_out" 2>"$tmp_err"; then
     cat "$tmp_err" >&2
     exit 1

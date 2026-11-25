@@ -22,8 +22,46 @@ set -euo pipefail
 export CH_EXEC_STDIN=1
 CH=( "$CLICKHOUSE_BIN" client --host "$CH_HOST" --port "$CH_TCP_PORT" "--$CH_INDEX_SETTING" )
 
-echo "==> creating schema"
-"${CH[@]}" --multiquery < create.sql
+# CH_PHRASE_INDEX=on (default) stores token positions in the text index
+# (support_phrase_search), as upstream's schema and serenedb/searchbench#9 do:
+# matchPhrase is then resolved by the index. off: matchPhrase uses the index
+# to narrow candidates by token and re-checks adjacency on the column; results
+# are identical. Measured at 1b, settled parts <= 1.75 GiB: on 26.9.9.28 on
+# costs +16% size (62.4 vs 53.9 GB) and +155s load at the same speed; on
+# 26.8.2.7 it made the index 127 GiB and phrase queries >60s.
+: "${CH_PHRASE_INDEX:=on}"
+case "$CH_PHRASE_INDEX" in
+    on)  phrase_opt=", support_phrase_search = 1"; phrase_setting="SETTINGS allow_experimental_text_index_phrase_search = 1" ;;
+    off) phrase_opt=""; phrase_setting="" ;;
+    *) echo "CH_PHRASE_INDEX must be on or off" >&2; exit 1 ;;
+esac
+# CH_ORDER_BY: the MergeTree sorting key. Default (ServiceName, Timestamp), as in
+# upstream serenedb/searchbench and TextBench: rows of a service are contiguous and
+# time-ordered, which compresses the attribute maps far better and lets time-sorted
+# queries read in key order. `tuple()` = unsorted (insertion order).
+: "${CH_ORDER_BY:=(ServiceName, Timestamp)}"
+[[ "$CH_ORDER_BY" =~ ^[A-Za-z0-9_(),\ ]+$ ]] || { echo "CH_ORDER_BY has unexpected characters: $CH_ORDER_BY" >&2; exit 1; }
+# CH_MAX_PART_BYTES caps the size of a part produced by a background merge
+# (max_bytes_to_merge_at_max_space_in_pool, default 150 GiB), and so sets how
+# many parts a settled table keeps -- the ClickHouse analogue of Quickwit's
+# split_num_docs_target and SereneDB's segment count.
+# 100M default: 1 GiB parts (~9 settled parts). Measured on m8gd.4xlarge, sorted: merges
+# done at 73 s instead of 256 s (one single-threaded merge into a 4.8 GiB part), +0.3% size.
+# An explicit CH_MAX_PART_BYTES (empty = ClickHouse default) wins.
+if [[ "${SEARCHBENCH_DATASET:-}" == otel_logs_100m && -z "${CH_MAX_PART_BYTES+x}" ]]; then
+    CH_MAX_PART_BYTES=1073741824
+fi
+if [[ "${CH_STORAGE:-local}" == s3 ]]; then
+    s3_setting="storage_policy = 's3_main'"
+    if [[ -n "$phrase_setting" ]]; then phrase_setting="${phrase_setting}, ${s3_setting}"; else phrase_setting="SETTINGS ${s3_setting}"; fi
+fi
+if [[ -n "${CH_MAX_PART_BYTES:-}" ]]; then
+    part_setting="max_bytes_to_merge_at_max_space_in_pool = ${CH_MAX_PART_BYTES}"
+    if [[ -n "$phrase_setting" ]]; then phrase_setting="${phrase_setting}, ${part_setting}"; else phrase_setting="SETTINGS ${part_setting}"; fi
+fi
+echo "==> creating schema (order by: ${CH_ORDER_BY}, phrase index: ${CH_PHRASE_INDEX}, max part bytes: ${CH_MAX_PART_BYTES:-default}, storage: ${CH_STORAGE:-local})"
+sed -e "s|__PHRASE_OPT__|${phrase_opt}|" -e "s|__ORDER_BY__|${CH_ORDER_BY}|" -e "s|^-- __PHRASE_SETTING__\$|${phrase_setting}|" create.sql \
+    | "${CH[@]}" --multiquery
 
 [[ -d "$SEARCHBENCH_DATA_DIR" ]] || { echo "missing data dir: $SEARCHBENCH_DATA_DIR" >&2; exit 1; }
 shopt -s nullglob
@@ -52,14 +90,54 @@ fi
 # single-file scales). SELECT * EXCEPT (TimestampTime) drops the corpus's extra
 # column; the remaining 15 map positionally onto otel_logs' columns (Timestamp
 # ns -> DateTime is cast on insert). The text index builds as part of the INSERT.
+# Phase accounting (lib/load-phases.sh): sample running merges every 5s from the
+# start of the INSERT, which already merges while it writes.
+source ../lib/load-phases.sh
+phases_start "\"\${CH[@]}\" --query \"SELECT count() FROM system.merges WHERE table = 'otel_logs'\""
 echo "==> ingesting ${#parquet[@]} file(s) via server-side file('parquet/part_*.parquet')"
 "${CH[@]}" --query \
     "INSERT INTO otel_logs SELECT * EXCEPT (TimestampTime) FROM file('parquet/part_*.parquet', Parquet)"
 
-# Stop background merges for the benchmark table as soon as the ingest is done, so the query phase
-# measures queries and not the merge backlog.
-"${CH[@]}" --query "SYSTEM STOP MERGES otel_logs"
-echo "==> merges stopped: $("${CH[@]}" --query "SELECT count() FROM system.parts WHERE active AND table='otel_logs'") active parts"
+# CH_STOP_MERGES=on (upstream's default) stops background merges right after the INSERT, so the
+# queries run on the unmerged parts. Off (the default here, as in the published run sets): merges
+# finish and ./load waits for them to settle below, so the queries run on the settled table.
+: "${CH_STOP_MERGES:=off}"
+case "$CH_STOP_MERGES" in on|off) ;; *) echo "CH_STOP_MERGES must be on or off" >&2; exit 1 ;; esac
+if [[ "$CH_STOP_MERGES" == on ]]; then
+    "${CH[@]}" --query "SYSTEM STOP MERGES otel_logs"
+    echo "==> merges stopped: $("${CH[@]}" --query "SELECT count() FROM system.parts WHERE active AND table='otel_logs'") active parts"
+fi
 
 rows=$("${CH[@]}" --query "SELECT count() FROM otel_logs")
 echo "==> load done: ${rows} rows"
+phases_mark ingest_end
+
+# Wait for background merges to settle, as for every engine: at 1b the INSERT
+# returns with ~740 parts and ~28 merges running, which then took ~50 min to
+# reach 8 parts. Querying before that measures a fragmented table while merges
+# compete for CPU/IO (token queries were 2x slower). Settled = no merge running
+# and the active part set unchanged for CH_MERGE_QUIET_SECS. Counted in load_time.
+case "$SEARCHBENCH_DATASET" in   # smoke scales settle in seconds; 180s would dominate their load time
+    otel_logs_100k|otel_logs_1m|otel_logs_10m) : "${CH_MERGE_QUIET_SECS:=20}" ;;
+esac
+: "${CH_WAIT_MERGES:=yes}"; : "${CH_MERGE_QUIET_SECS:=180}"; : "${CH_MERGE_MAX_SECS:=14400}"
+if [[ "$CH_WAIT_MERGES" == yes ]]; then
+    echo "==> waiting for merges to settle (${CH_MERGE_QUIET_SECS}s quiet)"
+    t0=$(date +%s); quiet_since=$t0; quiet_since_f=$(phases_now); last=""; last_report=0
+    while :; do
+        now=$(date +%s)
+        st=$("${CH[@]}" --query "SELECT (SELECT count() FROM system.merges WHERE table = 'otel_logs'), (SELECT count() FROM system.parts WHERE active AND table = 'otel_logs'), (SELECT cityHash64(groupArraySorted(1000000)(name)) FROM system.parts WHERE active AND table = 'otel_logs')" | tr '\t' ' ')
+        read -r merging nparts sig <<< "$st"
+        [[ "$merging" != 0 || "$sig" != "$last" ]] && { quiet_since=$now; quiet_since_f=$(phases_now); }
+        last="$sig"
+        if (( now - last_report >= 60 )); then
+            echo "    +$((now - t0))s parts=${nparts} merges_running=${merging} quiet=$((now - quiet_since))s"; last_report=$now
+        fi
+        (( now - quiet_since >= CH_MERGE_QUIET_SECS )) && { phases_mark merges_end "$quiet_since_f"; break; }
+        (( now - t0 > CH_MERGE_MAX_SECS )) && { echo "merges not settled after ${CH_MERGE_MAX_SECS}s" >&2; exit 1; }
+        sleep 10
+    done
+    echo "==> merges settled after $(( $(date +%s) - t0 - CH_MERGE_QUIET_SECS ))s: ${nparts} active parts"
+fi
+[[ "$CH_WAIT_MERGES" == yes ]] || phases_mark merges_end "$_PH_ingest_end"
+phases_finish $([[ "$CH_WAIT_MERGES" == yes ]] && echo "$CH_MERGE_QUIET_SECS" || echo 0)

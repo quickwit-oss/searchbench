@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Active table parts, regardless of whether the underlying disk is local or S3.
+# Do not count detached/obsolete parts or the individual files inside each part.
+set -euo pipefail
+cd "$(dirname "$0")"
+: "${CH_BACKEND:=docker}"
+: "${CH_HOST:=127.0.0.1}"
+: "${CH_TCP_PORT:=9000}"
+if [[ "$CH_BACKEND" == docker ]]; then
+    : "${CLICKHOUSE_BIN:=$PWD/ch-exec}"
+else
+    : "${CLICKHOUSE_BIN:=./clickhouse}"
+fi
+count=$("$CLICKHOUSE_BIN" client --host "$CH_HOST" --port "$CH_TCP_PORT" --query \
+    "SELECT count() FROM system.parts WHERE active AND database = currentDatabase() AND table = 'otel_logs'")
+jq -nc --argjson count "$count" '{count:$count, unit:"parts"}'

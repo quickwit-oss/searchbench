@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Cumulative CPU seconds of the DuckDB worker process (SEARCHBENCH_CPU=on; see lib/cpu-usage.sh).
+# The worker is the long-lived `adapter.py serve` process ./start launches; its pid is in worker.lock.
+HERE="$(cd "$(dirname "$0")" && pwd)"
+pid=$(pgrep -f "$HERE/adapter.py serve" | head -1)
+[[ -n "$pid" ]] && exec "$HERE/../lib/cpu-usage.sh" pids "$pid"

@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Run one Quickwit query through the ES-compatible API; timing on stderr.
+#
+# stdin = one ES DSL body (the same dialect elastic/ uses). stdout = result rows.
+# stderr last line = curl %{time_total}.
+set -euo pipefail
+: "${QW_PORT:=7280}"; : "${QW_INDEX:=otel_logs}"
+Q="http://127.0.0.1:${QW_PORT}/api/v1/_elastic/${QW_INDEX}/_search"
+
+q=$(cat)
+if [[ "$q" == UNSUPPORTED:* ]]; then echo "${q#UNSUPPORTED: }" >&2; exit 3; fi
+
+# SEARCHBENCH_QW_METRICS_LOG=<file>: append one JSON line per query with the object
+# storage GETs, downloaded bytes and total GET request time (ms) it caused (deltas of
+# Quickwit's process counters around the search; the timed request itself is
+# unchanged). get_ms / gets = mean time per GET. Unset = no scraping.
+qw_storage() {
+    curl -s "http://127.0.0.1:${QW_PORT}/metrics" | awk '
+        $1 == "quickwit_storage_object_storage_gets_total" { g = $2 }
+        $1 == "quickwit_storage_object_storage_download_num_bytes" { b = $2 }
+        $1 == "quickwit_storage_object_storage_request_duration_seconds_sum{action=\"get_object\"}" { s = $2 }
+        END { printf "%d %d %d\n", g, b, s * 1000 }'
+}
+[[ -n "${SEARCHBENCH_QW_METRICS_LOG:-}" ]] && before=$(qw_storage)
+
+# No -f: Quickwit returns its error as a JSON body with a 4xx/5xx status, and
+# -f discards that body, leaving only "curl: (22) ... error: 500" with no clue
+# what went wrong. The error check below reports the server's own message.
+resp=$(curl -sS -w '\n%{time_total}' -X POST "$Q" \
+    -H 'Content-Type: application/json' --data-binary "$q")
+rt=$(printf '%s\n' "$resp" | tail -n1)
+body=$(printf '%s\n' "$resp" | sed '$d')
+if [[ -n "${SEARCHBENCH_QW_METRICS_LOG:-}" ]]; then
+    read -r g0 b0 s0 <<< "$before"; read -r g1 b1 s1 <<< "$(qw_storage)"
+    printf '{"query_sha1":"%s","time":%s,"gets":%d,"bytes":%d,"get_ms":%d}\n' \
+        "$(printf '%s' "$q" | sha1sum | cut -c1-12)" "$rt" $((g1 - g0)) $((b1 - b0)) $((s1 - s0)) >> "$SEARCHBENCH_QW_METRICS_LOG"
+fi
+
+printf '%s' "$body" | python3 -c '
+import sys, json
+d = json.load(sys.stdin)
+if "error" in d and "hits" not in d:
+    print(json.dumps(d["error"])[:300], file=sys.stderr); sys.exit(1)
+aggs = d.get("aggregations") or {}
+if aggs:
+    for name, a in aggs.items():
+        for b in a.get("buckets", []):
+            print(json.dumps({"key": b.get("key_as_string", b.get("key")),
+                              "doc_count": b.get("doc_count")}))
+elif d.get("hits", {}).get("hits"):
+    for h in d["hits"]["hits"]:
+        print(json.dumps(h.get("_source", h)))
+else:
+    t = d.get("hits", {}).get("total", {})
+    print(t.get("value", 0) if isinstance(t, dict) else t)
+'
+printf '%s\n' "$rt" >&2

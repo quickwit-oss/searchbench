@@ -1,0 +1,24 @@
+<!-- CH_STORAGE=s3: MergeTree parts (columns + text index) on an S3 disk.
+     Only part metadata stays local. No filesystem cache: every read of column
+     or index data goes to S3, the counterpart of Quickwit on S3 without its
+     split cache. In-memory caches (marks, primary index, text index header)
+     stay at their defaults, as on local disk. Credentials: the instance
+     profile via IMDS (host network). -->
+<clickhouse>
+    <storage_configuration>
+        <disks>
+            <s3_main>
+                <type>s3</type>
+                <endpoint from_env="CH_S3_ENDPOINT"/>
+                <region>us-east-1</region>
+                <use_environment_credentials>true</use_environment_credentials>
+                <metadata_path>/var/lib/clickhouse/disks/s3_main/</metadata_path>
+            </s3_main>
+        </disks>
+        <policies>
+            <s3_main>
+                <volumes><main><disk>s3_main</disk></main></volumes>
+            </s3_main>
+        </policies>
+    </storage_configuration>
+</clickhouse>

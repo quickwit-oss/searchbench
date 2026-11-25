@@ -49,7 +49,7 @@ queries_json() {
     } | jq -Rsc 'split("\n") | map(select(length > 0))'
 }
 
-# {load_time, data_size} from the authoritative load record, or {} if none.
+# Load metrics (including optional storage_units) from the authoritative record.
 # The copies inside a results file are a cache stamped at run time; the record in
 # results/load/ is the source of truth, so a corrected record reaches the UI
 # without re-running the benchmark. Precedence matches lib/benchmark.sh: a
@@ -61,11 +61,19 @@ load_overlay() {
     if [[ -z "$ds" ]]; then printf '{}'; return 0; fi
     base="$(basename "$rf" .json)"
     stem="${base%"$ds"}"; stem="${stem%_}"        # <engine>[_<version-slug>]
-    slug="${stem##*_}"
-    [[ "$slug" == "$stem" ]] && slug=""           # no version segment present
+    if jq -e 'has("build")' "$rf" >/dev/null; then
+        slug=$(jq -r '.build // ""' "$rf")
+        slug=$(printf '%s' "$slug" | tr -c 'A-Za-z0-9._-' '_')
+    else
+        # Legacy rows: preserve the whole version slug, including underscores.
+        slug="${stem#*_}"
+        [[ "$slug" == "$stem" ]] && slug=""
+    fi
     for cand in "$ed/results/load/${ds}${slug:+.$slug}.json" "$ed/results/load/${ds}.json"; do
         if [[ -f "$cand" ]]; then
-            jq -c '{load_time, data_size}' "$cand" 2>/dev/null && return 0
+            jq -c '{load_time, data_size} +
+                (if .load_cpu != null then {load_cpu} else {} end) +
+                (if has("storage_units") then {storage_units} else {} end)' "$cand" 2>/dev/null && return 0
         fi
     done
     printf '{}'

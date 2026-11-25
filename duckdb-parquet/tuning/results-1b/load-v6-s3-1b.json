@@ -1,0 +1,15 @@
+{
+  "engine": "DuckDB-Parquet",
+  "dataset": "otel_logs_1b",
+  "build": "v6-s3-1b",
+  "engine_version": "2.0.0 (threads=16, memory_limit=48GB, external_file_cache=false, metadata_cache=true)",
+  "load_time": 0.446,
+  "data_size": 40991166725,
+  "storage_units": null,
+  "os": "Ubuntu 24.04.5 LTS",
+  "date": "2026-11-01",
+  "loaded_by": "queries.sql",
+  "load_cpu": 0.105,
+  "load_cpu_containers": 0.000,
+  "load_cpu_procs": 0.105
+}

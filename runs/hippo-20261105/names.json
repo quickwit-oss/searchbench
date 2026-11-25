@@ -1,0 +1,5 @@
+{
+  "otel_logs_1b/DuckDB-Parquet (d1b-s3-sorted)": "DuckDB 2.0 · S3 · sorted copy",
+  "otel_logs_1b/Datadog BYOC (s3-cloudprem0136-ingestapi-c30-64s-public)": "Datadog BYOC 0.1.36 · S3 · ingest API · 64 splits · public bench",
+  "otel_logs_1b/ClickHouse (s3-cap1p7g-61p-public)": "ClickHouse · S3 · 1.7 GiB cap · 61 parts · public bench"
+}

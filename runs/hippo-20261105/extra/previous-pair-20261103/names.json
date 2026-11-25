@@ -1,0 +1,4 @@
+{
+ "otel_logs_1b/ClickHouse (s3-cap1p3g-84p-public-20261103)": "ClickHouse · S3 · 1.3 GiB cap · 84 parts · public bench",
+ "otel_logs_1b/Quickwit (s3-71c9181-82s-public-20261103)": "Quickwit · S3 · 71c9181 · 82 splits · public bench"
+}

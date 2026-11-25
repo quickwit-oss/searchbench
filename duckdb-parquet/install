@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+HERE="$(cd "$(dirname "$0")" && pwd)"
+if [[ -z "${DUCKDB_PYTHON:-}" ]]; then
+    [[ -x "$HERE/.venv/bin/python" ]] || "${SEARCHBENCH_PYTHON:-python3}" -m venv "$HERE/.venv"
+    "$HERE/.venv/bin/python" -m pip install --require-hashes -r "$HERE/requirements.txt"
+fi
+PYTHON="${DUCKDB_PYTHON:-$HERE/.venv/bin/python}"
+"$PYTHON" -c 'import duckdb, pytz; assert duckdb.__version__ == "2.0.0", "expected DuckDB 2.0.0 (requirements.txt)"'
+# Download extensions once, outside query/load timing; never install FTS.
+if [[ "${DUCKDB_PARQUET_PATH:-}" == s3://* ]]; then
+    "$PYTHON" "$HERE/adapter.py" extensions
+fi

@@ -1,0 +1,27 @@
+{
+  "engine": "Quickwit",
+  "dataset": "otel_logs_1b",
+  "build": "parquet-bulk-71c9181-pipelines16-split10m-noTT-m8gd4x-64g-s3-1b-20261102T-qw-71c9181-10m-s3",
+  "engine_version": "0.9.3-nightly (71c9181)",
+  "load_time": 1941.394,
+  "data_size": 45254837060,
+  "storage_units": {
+    "count": 82,
+    "unit": "splits"
+  },
+  "os": "Ubuntu 24.04.5 LTS",
+  "date": "2026-11-02",
+  "loaded_by": "/opt/sb-qw-71c9181-10m-s3/quickwit-s3-ingest/ingest-only.queries",
+  "phases": {
+    "ingest": 1645.5,
+    "merge_after": 107.5,
+    "check": 180.0,
+    "samples": 40,
+    "failed_samples": 347,
+    "sample_secs": 5,
+    "ingest_mode": "parquet"
+  },
+  "load_cpu": 25478.192,
+  "load_cpu_containers": 25472.616,
+  "load_cpu_procs": 5.576
+}

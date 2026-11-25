@@ -1,0 +1,31 @@
+{
+ "engine": "ClickHouse",
+ "dataset": "otel_logs_1b",
+ "build": "26.10.2.103-m8gd.4xlarge-s3-sorted-ch17-1b-20261105T-ch-cap-1p7g-s3",
+ "engine_version": "26.10.2.103",
+ "load_time": 1288.359,
+ "data_size": 62382447136,
+ "storage_units": {
+  "count": 61,
+  "unit": "parts"
+ },
+ "os": "Ubuntu 24.04.5 LTS",
+ "date": "2026-11-03",
+ "loaded_by": "/opt/sb-ch17/clickhouse-ch17-ingest/ingest-only.queries",
+ "phases": {
+  "ingest": 339.7,
+  "merge_after": 766.9,
+  "check": 180.0,
+  "merge_busy": 1070.0,
+  "merge_work": 15860.0,
+  "samples": 252,
+  "failed_samples": 0,
+  "sample_secs": 5
+ },
+ "load_cpu": 9344.231,
+ "load_cpu_containers": 9344.231,
+ "load_cpu_procs": 6.992,
+ "load_cpu_total": 9351.223,
+ "load_cpu_client": 6.992,
+ "load_cpu_note": "load_cpu = the engine containers only (the Rust ingest client / ./load processes excluded); load_cpu_total includes them"
+}

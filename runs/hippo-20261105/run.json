@@ -1,0 +1,14 @@
+{
+  "label": "hippo-20261105 · m8gd.4xlarge · S3 · 1B · public bench",
+  "description": "The S3 columns of the public bench (2026-11-05, updated 2026-11-06). 16 vCPU ARM64 · 64 GiB RAM · S3 (us-east-1) · 1B rows · in-memory data caches off. Datadog BYOC 0.1.36 through the ingest API (48 shards, 20 MB/s shard limit, 30 s commit, 64 splits; 2026-11-04) and ClickHouse 26.10.2.103 (1.7 GiB part cap, 61 parts, max_threads=32; 2026-11-03), each median of 3 rounds on its own box. Load CPU is the engine only (the ingest client excluded). DuckDB 2.0 over a sorted Parquet copy on S3: separate session (2026-11-01), one run.",
+  "links": [
+    {
+      "label": "Public bench runs",
+      "href": "https://github.com/quickwit-oss/searchbench/blob/main/PUBLIC_BENCH.md"
+    },
+    {
+      "label": "DuckDB configuration",
+      "href": "https://github.com/quickwit-oss/searchbench/blob/main/duckdb-parquet/TUNING.md"
+    }
+  ]
+}
