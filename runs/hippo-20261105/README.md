@@ -105,19 +105,13 @@ other columns (worker restart + page-cache drop per query, cold/hot/hot, 60 s ca
 chosen: [`duckdb-parquet/TUNING.md`](../../duckdb-parquet/TUNING.md). Evidence (environment, HTTP stats, result
 log): `extra/duckdb/`.
 
-## Previous public pair (2026-11-03, replaced 2026-11-06)
-
-ClickHouse 1.3 GiB (84 parts, 1,352 / 933 ms) and Quickwit 71c9181 Parquet bulk load (82 splits, 389 / 275 ms),
-same box, interleaved, median of 3. Its results, rounds, S3 counters and raw evidence are unchanged in
-[`extra/previous-pair-20261103/`](extra/previous-pair-20261103/README.md); not shown on the site.
-
 ## About this copy
 
 - **Names.** The Datadog BYOC column ran the public image `datadog/cloudprem:v0.1.36` through this repository's
   Quickwit-based adapter, now [`datadog-byoc/`](../../datadog-byoc/README.md). The page-facing files (results,
   load record, `names.json`, `details.json`, `s3_requests.json`, `rounds.json`) name it Datadog BYOC. The raw round
   outputs under `extra/` keep the names recorded at run time (engine `Quickwit`, folder and build labels with
-  `cloudprem`), and the Quickwit columns of the previous pair are vanilla Quickwit 71c9181.
+  `cloudprem`).
 - **Redactions.** S3 bucket names, instance IDs and the IAM role name in scripts and environment dumps are replaced
   with `<bucket>`, `<instance>` and `<benchmark-role>`. Raw uploads in that bucket are not public; everything the
   page and this README use is in this directory.
