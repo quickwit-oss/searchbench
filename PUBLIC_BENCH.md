@@ -21,8 +21,6 @@ four engines answer; Datadog BYOC, ClickHouse and OpenSearch: median of 3 rounds
 - DuckDB: sorted copy on S3, 2026-11-01, one run; evidence in [`extra/duckdb/`](runs/hippo-20261105/extra/duckdb/).
 - OpenSearch: 2026-11-19, lean mapping, index sort ServiceName asc + Timestamp desc; evidence in [`extra/opensearch-s3-1b/`](runs/hippo-20261105/extra/opensearch-s3-1b/).
   \* Its hot tries read its local file cache (0 S3 GETs): only its cold try is comparable with the other columns.
-- Previously public (2026-11-05 to 2026-11-06): ClickHouse 1.3 GiB / Quickwit 71c9181 bulk load, in
-  [`hippo-20261105/extra/previous-pair-20261103/`](runs/hippo-20261105/extra/previous-pair-20261103/README.md).
 
 Setup, method and caveats: [README](runs/hippo-20261105/README.md).
 
