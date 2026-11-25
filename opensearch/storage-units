@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Count the Lucene segments of the index as searched (primaries), the unit closest to Quickwit's splits
+# and ClickHouse's parts. Works for the local index and the mounted searchable snapshot (remote_snapshot):
+# _cat/segments lists the segments of each shard's current reader, which ./load refreshes after any
+# force merge (an unrefreshed reader still lists the merged-away segments).
+set -euo pipefail
+: "${OS_PORT:=9200}"
+INDEX="${OS_INDEX:-otel_logs}"
+curl -fsS --max-time 60 "http://127.0.0.1:${OS_PORT}/_cat/segments/${INDEX}?format=json&h=shard,prirep,segment,searchable" \
+    | jq -ce '
+        if type == "array" and length > 0 then
+          {count: ([.[] | select(.prirep == "p" and (.searchable == "true" or .searchable == true))] | length), unit: "segments"}
+        else error("no segments listed") end'

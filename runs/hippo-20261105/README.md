@@ -1,21 +1,25 @@
 # hippo-20261105 · m8gd.4xlarge · S3 · 1B · public bench
 
-> **USED IN THE PUBLIC BENCH (2026-11-05, columns updated 2026-11-06).** This run set holds the S3 numbers of the
+> **USED IN THE PUBLIC BENCH (2026-11-05, columns updated 2026-11-06; OpenSearch added 2026-11-19, its index sort changed to Timestamp desc 2026-11-20).** This run set holds the S3 numbers of the
 > public benchmark, listed in [`PUBLIC_BENCH.md`](../../PUBLIC_BENCH.md). It is the site's default page.
 
 | column | session | layout | median cold / hot | cold S3 GETs | load | load CPU |
 |---|---|--:|--:|--:|--:|--:|
 | Datadog BYOC 0.1.36 · S3 · ingest API · 64 splits | 2026-11-04 | 64 splits, 42.1 GiB | **515 / 338 ms** | 26.4k | 2,364 s | 26,241 s |
 | ClickHouse · S3 · 1.7 GiB cap · 61 parts | 2026-11-03 | 61 parts, 58.1 GiB | **1,343 / 894 ms** | 64.1k | 1,288 s | 9,344 s |
+| OpenSearch 3.8 · S3 · searchable snapshot · 16 shards | 2026-11-19 | 16 shards x 1 segment, 80.0 GiB | 6,089 / 266 ms\* | 10.6k | 8,847 s | 50,340 s |
 | DuckDB 2.0 · S3 · sorted copy | 2026-11-01 | no index, 24.7 GiB copy | 7,769 / 6,683 ms | 401.6k | 1,453 s | 10,057 s |
 
-Geomean over the **57 queries all three answer**. Datadog BYOC and ClickHouse: per query, the median across 3 rounds
+\* OpenSearch's hot tries read its local file cache (0 S3 GETs), not S3: only its cold try is comparable with
+the other columns. See [OpenSearch](#opensearch-38--s3--searchable-snapshot--16-shards).
+
+Geomean over the **57 queries all four answer**. Datadog BYOC, ClickHouse and OpenSearch: per query, the median across 3 rounds
 (hot = min of tries 2–3 in each round), then the geomean; the page shows the per-try medians of the rounds, so its
 hot geomean can differ by ~2–3%. DuckDB: one run.
 
 **Load CPU is the engine's own CPU** (`load_cpu` in the load records = the engine containers, ingest + merges
 until settled). Datadog BYOC's figure excludes the Rust ingest client (2,313 s converting the Parquet to JSON and
-sending it); `load_cpu_total` in the load record keeps it (28,554 s). ClickHouse's excludes `./load` (7 s).
+sending it); `load_cpu_total` in the load record keeps it (28,554 s). ClickHouse's excludes `./load` (7 s). OpenSearch's excludes its bulk-ingest client (13,968 s).
 DuckDB's is its worker process (the sort into the S3 copy), unchanged.
 
 **Not the same box.** Datadog BYOC and ClickHouse ran a day apart on two m8gd.4xlarge. Each box also ran a Quickwit
@@ -56,6 +60,39 @@ bypass, postings), statistics. On: mark, primary-index and text-index header cac
 - **Queries:** restart + page-cache drop before every query, 3 tries, 60 s cap (none hit). 3 rounds 2026-11-03
   21:32–22:30 UTC, alternated with the Quickwit 71c9181 ingest-API index (64 splits, 500 / 346 ms). Evidence,
   including `system.query_log`: `extra/clickhouse-1p7g/`.
+
+## OpenSearch 3.8 · S3 · searchable snapshot · 16 shards
+
+OpenSearch 3.8.0 with the `repository-s3` plugin, **lean mapping** (`OS_MAPPING=lean`,
+[`opensearch/config/index_mapping_lean.json`](../../opensearch/config/index_mapping_lean.json)): it indexes only
+what the queries use, like the Datadog BYOC column's index config (Body text with positions; ServiceName, SeverityText
+keywords; SeverityNumber and Timestamp with points and doc values; ScopeName doc values; the other fields stored
+only), with derived source (no `_source`), zstd level 6, ResourceAttributes / ScopeAttributes as doc-values
+keywords, and the index sort `ServiceName asc, Timestamp desc` (newest first within each service, as
+Elasticsearch's logsdb does). `./load` builds the index on local disk (16 shards, each force-merged to 1 segment),
+snapshots it to S3 and mounts it as a searchable snapshot (`remote_snapshot`); the node fetches 8 MiB blocks into
+a local file cache.
+
+- **Load:** 8,847 s (ingest 4,362 s; most of the rest is the force merge, one shard at a time), 16 segments,
+  80.0 GiB on S3. Load CPU 50,340 s is the OpenSearch container; the ingest client's 13,968 s is excluded, as for
+  Datadog BYOC (`load_cpu_total` in the load record keeps both: 64,308 s).
+- **Queries:** restart + file-cache wipe before every query, so the cold try reads from S3; 3 tries, 60 s cap
+  (none hit), all 83 supported queries answered (the 9 joins are unsupported). 3 rounds, 2026-11-19, on its
+  own m8gd.4xlarge (not interleaved with the other columns). 56 of the 57 common queries return ClickHouse's
+  answers in every round (Q67's two-key group-by reports only the outer buckets).
+- **Hot tries read the local file cache.** No result caching: the request and query caches are off and count 0
+  hits. The file cache cannot be disabled for a searchable snapshot, and capping it does not make hot tries read
+  S3. So OpenSearch's hot tries make 0 S3 GETs, unlike the other columns, which re-read S3 on every try: **only its
+  cold try is comparable**. On the page, the hot ratio to the fastest engine often takes OpenSearch as the
+  baseline, which changes the other columns' hot ratios and "fastest" marks; their absolute times and the cold
+  view are unchanged.
+- **S3 requests:** 10.6k GETs and 82.8 GiB cold over the 57 queries, 0 hot (repository GetObject counts; bytes =
+  file-cache growth, whole 8 MiB blocks).
+- **Index sort `Timestamp desc` (2026-11-20).** It replaces the same index with `Timestamp asc` (cold / hot
+  6,446 / 378 ms, 80.2 GiB): the 16 recent queries (sort by Timestamp desc, 100 hits) gain (cold 7,497 vs
+  9,194 ms, hot 89 vs 312 ms), the other 41 common queries are unchanged (cold 5,615 vs 5,612 ms). Same-box A/B:
+  [`opensearch/README.md`](../../opensearch/README.md#index-sort-servicename-asc-timestamp-desc). Rounds, metrics
+  and the cache check: [`extra/opensearch-s3-1b/`](extra/opensearch-s3-1b/README.md).
 
 ## DuckDB 2.0 · S3 · sorted copy
 

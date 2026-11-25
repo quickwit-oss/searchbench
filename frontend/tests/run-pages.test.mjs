@@ -38,10 +38,10 @@ test('the published run page keeps its controls and metrics and shows storage co
   t.after(() => rmSync(temp, { force: true, recursive: true }));
   const out = join(temp, 'hippo.html');
   const rows = build('hippo-20261105', out);
-  assert.equal(rows.length, 3);
-  assert.equal(rows.filter(r => r.cpu_by_q).length, 3, 'CPU per query for every column');
-  assert.equal(rows.filter(r => r.s3_requests).length, 3, 'S3 GETs and bytes for every column');
-  assert.equal(rows.filter(r => r.rounds).length, 2, 'per-round timings for the two engines run in rounds');
+  assert.equal(rows.length, 4);
+  assert.equal(rows.filter(r => r.cpu_by_q).length, 4, 'CPU per query for every column');
+  assert.equal(rows.filter(r => r.s3_requests).length, 4, 'S3 GETs and bytes for every column');
+  assert.equal(rows.filter(r => r.rounds).length, 3, 'per-round timings for the three engines run in rounds');
   assert.ok(rows.every(r => typeof r.load_cpu === 'number'));
   // Load time excludes a recorded settle check; the measured wall time is kept, never altered otherwise.
   for (const r of rows) {
@@ -62,7 +62,7 @@ test('the published run page keeps its controls and metrics and shows storage co
     assert.equal(r.load_searchable, r.load_ingest);
   }
   const units = Object.fromEntries(rows.map(r => [r.system.split(' · ')[0], r.storage_units ?? null]));
-  assert.deepEqual(units, { 'Datadog BYOC 0.1.36': { count: 64, unit: 'splits' }, 'ClickHouse': { count: 61, unit: 'parts' }, 'DuckDB 2.0': null });
+  assert.deepEqual(units, { 'Datadog BYOC 0.1.36': { count: 64, unit: 'splits' }, 'ClickHouse': { count: 61, unit: 'parts' }, 'OpenSearch 3.8': { count: 16, unit: 'segments' }, 'DuckDB 2.0': null });
 
   const browser = await chromium.launch();
   try {
@@ -73,12 +73,12 @@ test('the published run page keeps its controls and metrics and shows storage co
     page.on('request', req => { if (/^https?:/.test(req.url())) network.push(req.url()); });
     await page.goto(pathToFileURL(out).href);
     await page.locator('.sb-app').waitFor();
-    assert.equal(await page.locator('.engcol').count(), 3);
+    assert.equal(await page.locator('.engcol').count(), 4);
     const label = page.getByRole('button', { name: 'Splits / parts / files', exact: true });
     assert.equal(await label.isDisabled(), true);
     assert.match(await page.locator('.storage-units-row').evaluate(el => el.previousElementSibling.textContent), /Load time/);
     const counts = page.locator('.storage-units-row [data-storage-system]');
-    const expected = ['61 parts', '64 splits', '—'];
+    const expected = ['16 segments', '61 parts', '64 splits', '—'];
     assert.deepEqual((await counts.allTextContents()).sort(), expected);
     for (const name of ['Wall', 'CPU', 'S3 GETs', 'S3 bytes']) {
       assert.equal(await page.getByRole('button', { name, exact: true }).count(), 1);

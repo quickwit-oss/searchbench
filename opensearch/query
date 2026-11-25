@@ -17,23 +17,36 @@ INDEX="${OS_INDEX:-otel_logs}"
 # cache and JVM warm-up, not a result cache.
 q=$(cat)
 
-# SEARCHBENCH_OS_METRICS_LOG=<file>: one JSON line per query with the S3 GETs it caused
-# (the snapshot repository's GetObject count and time) and the file cache's misses and
-# used bytes (node stats deltas around the search; the timed request is unchanged).
+# SEARCHBENCH_OS_METRICS_LOG=<file>: one JSON line per query with node-stats deltas around the search
+# (the timed request is unchanged):
+#   gets / get_ms   the snapshot repository's S3 GetObject count and time
+#   bytes           S3 bytes downloaded = growth of the searchable-snapshot file cache. Every remote
+#                   read fetches whole blocks (8 MiB, the last block of a file shorter) into the cache,
+#                   and nothing is evicted at this size, so the growth is exactly what was downloaded.
+#   misses          file-cache misses (blocks fetched)
+#   req_cache_hits / query_cache_hits / fielddata_mb  request, query and fielddata caches (the two
+#                   caches are disabled; any hit would mean a result was served from memory)
+#   net_rx          bytes received by the host network interfaces (S3 payloads + HTTP/TLS overhead)
 fc() { curl -fsS "$OS_URL/_nodes/_local/stats" 2>/dev/null | jq -c '.nodes[] |
     {gets: ([.repositories[]?.request_success_total.GetObject // 0] | add // 0),
      get_ms: ([.repositories[]?.request_time_in_millis.GetObject // 0] | add // 0),
-     misses: (.aggregate_file_cache.miss_count // 0), used: (.aggregate_file_cache.used_in_bytes // 0)}'; }
-[[ -n "${SEARCHBENCH_OS_METRICS_LOG:-}" ]] && fc0=$(fc)
+     misses: (.aggregate_file_cache.miss_count // 0), used: (.aggregate_file_cache.used_in_bytes // 0),
+     rq: (.indices.request_cache.hit_count // 0), qc: (.indices.query_cache.hit_count // 0),
+     fd: (.indices.fielddata.memory_size_in_bytes // 0)}'; }
+rx() { awk -F'[: ]+' '$0 ~ /:/ && $2 != "lo" {s += $3} END {printf "%d", s}' /proc/net/dev 2>/dev/null || echo 0; }
+if [[ -n "${SEARCHBENCH_OS_METRICS_LOG:-}" ]]; then fc0=$(fc); rx0=$(rx); fi
 # -w appends round-trip secs on final line
 resp=$(curl -fsS -w '\n%{time_total}' -X POST "$OS_URL/$INDEX/_search?request_cache=false&allow_partial_search_results=false" \
     -H 'Content-Type: application/json' --data-binary "$q")
 rt=$(printf '%s\n' "$resp" | tail -n1)
 if [[ -n "${SEARCHBENCH_OS_METRICS_LOG:-}" ]]; then
+    rx1=$(rx)
     jq -cn --arg sha "$(printf '%s' "$q" | sha1sum | cut -c1-12)" --argjson t "$rt" \
-        --argjson a "${fc0:-null}" --argjson b "$(fc)" \
+        --argjson a "${fc0:-null}" --argjson b "$(fc)" --argjson rx $((rx1 - rx0)) \
         '{query_sha1: $sha, time: $t, gets: ($b.gets - $a.gets), get_ms: ($b.get_ms - $a.get_ms),
-          misses: ($b.misses - $a.misses), cache_used_after: $b.used}' >> "$SEARCHBENCH_OS_METRICS_LOG" || true
+          bytes: ($b.used - $a.used), misses: ($b.misses - $a.misses), cache_used_after: $b.used,
+          req_cache_hits: ($b.rq - $a.rq), query_cache_hits: ($b.qc - $a.qc), fielddata_mb: ($b.fd / 1048576),
+          net_rx: $rx}' >> "$SEARCHBENCH_OS_METRICS_LOG" || true
 fi
 body=$(printf '%s\n' "$resp" | sed '$d')
 

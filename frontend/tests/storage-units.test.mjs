@@ -3,7 +3,7 @@ import test from 'node:test';
 import { sbStorageText, sbStorageValid } from '../storage_units.mjs';
 
 test('counts retain exact units and singular/plural labels', () => {
-  for (const unit of ['splits', 'parts', 'files', 'objects']) {
+  for (const unit of ['splits', 'parts', 'segments', 'files', 'objects']) {
     assert.equal(sbStorageText({ count: 0, unit }), `0 ${unit}`);
     assert.equal(sbStorageText({ count: 1, unit }), `1 ${unit.slice(0, -1)}`);
     assert.equal(sbStorageText({ count: 12345, unit }), `12,345 ${unit}`);

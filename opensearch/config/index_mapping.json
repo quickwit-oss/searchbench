@@ -9,7 +9,7 @@
     "index.queries.cache.enabled": false,
     "sort": {
       "field": ["ServiceName", "Timestamp"],
-      "order": ["asc", "asc"]
+      "order": ["asc", "desc"]
     },
     "analysis": {
       "tokenizer": {

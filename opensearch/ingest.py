@@ -64,6 +64,11 @@ def _ts_epoch_ms(col):
     return pc.multiply(i64, 1_000)  # s
 
 
+# --maps-as-json: send each map column as one JSON string instead of an object. Passed to the
+# worker processes through the environment (inherited by fork and spawn alike).
+MAPS_AS_JSON = os.environ.get("SB_MAPS_AS_JSON") == "1"
+
+
 def batch_to_ndjson(batch: pa.RecordBatch) -> bytes:
     """RecordBatch -> ES bulk NDJSON (action + doc per row)."""
     cols = {}
@@ -76,7 +81,11 @@ def batch_to_ndjson(batch: pa.RecordBatch) -> bytes:
         if pa.types.is_timestamp(t):
             cols[out] = _ts_epoch_ms(col).to_pylist()   # epoch_millis
         elif pa.types.is_map(t):
-            cols[out] = [dict(v) if v is not None else None for v in col.to_pylist()]
+            if MAPS_AS_JSON:
+                # one JSON string per map (config/index_mapping_lean.json maps them as keywords)
+                cols[out] = [orjson.dumps(dict(v)).decode() if v is not None else None for v in col.to_pylist()]
+            else:
+                cols[out] = [dict(v) if v is not None else None for v in col.to_pylist()]
         else:
             cols[out] = col.to_pylist()
 
@@ -210,7 +219,13 @@ def main():
     p.add_argument("--bulk-workers", type=int, default=4, help="Bulk HTTP threads per process")
     p.add_argument("--batch-size", type=int, default=50000)
     p.add_argument("--local-dir", default="/tmp")
+    p.add_argument("--maps-as-json", action="store_true",
+                   help="send map columns as JSON strings (for config/index_mapping_lean.json)")
     args = p.parse_args()
+    if args.maps_as_json:
+        os.environ["SB_MAPS_AS_JSON"] = "1"
+        global MAPS_AS_JSON
+        MAPS_AS_JSON = True
 
     indices = [i.strip() for i in args.index.split(",")]
     t0 = time.monotonic()

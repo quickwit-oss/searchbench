@@ -87,6 +87,9 @@ test('missing/failed/invalid hooks stay unknown; zero is valid', (t) => {
     run(f, ['--index']);
     assert.equal(json(result).storage_units, null, body);
   }
+  script(f.engine, 'storage-units', `echo '{"count":16,"unit":"segments"}'`);
+  run(f, ['--index']);
+  assert.deepEqual(json(result).storage_units, { count: 16, unit: 'segments' });
   script(f.engine, 'storage-units', `echo '{"count":0,"unit":"files"}'`);
   run(f, ['--index']);
   assert.deepEqual(json(result).storage_units, { count: 0, unit: 'files' });

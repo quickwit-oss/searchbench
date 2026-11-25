@@ -370,7 +370,7 @@ read_storage_units() {
         select(length == 1) | .[0] |
         select(type == "object" and (.count | type == "number") and
                .count >= 0 and .count <= 9007199254740991 and (.count | floor) == .count and
-               (.unit == "splits" or .unit == "parts" or .unit == "files" or .unit == "objects")) |
+               (.unit == "splits" or .unit == "parts" or .unit == "segments" or .unit == "files" or .unit == "objects")) |
         {count, unit}'); then
         printf '%s' "$units"
     else

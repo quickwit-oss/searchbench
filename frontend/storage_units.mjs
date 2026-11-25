@@ -1,9 +1,9 @@
 // Storage-unit metadata for the pinned run-page bundle. Keep counts neutral:
-// splits, active parts and physical files/objects are not performance scores.
+// splits, active parts, Lucene segments and physical files/objects are not performance scores.
 export function sbStorageValid(value) {
   return value !== null && typeof value === 'object' &&
     Number.isSafeInteger(value.count) && value.count >= 0 &&
-    ['splits', 'parts', 'files', 'objects'].includes(value.unit);
+    ['splits', 'parts', 'segments', 'files', 'objects'].includes(value.unit);
 }
 
 export function sbStorageText(value) {

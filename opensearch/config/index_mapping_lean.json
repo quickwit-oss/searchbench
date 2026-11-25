@@ -1,0 +1,127 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "30s",
+    "codec": "zstd",
+    "index.search.concurrent_segment_search.mode": "all",
+    "index.requests.cache.enable": false,
+    "index.queries.cache.enabled": false,
+    "sort": {
+      "field": [
+        "ServiceName",
+        "Timestamp"
+      ],
+      "order": [
+        "asc",
+        "desc"
+      ]
+    },
+    "analysis": {
+      "tokenizer": {
+        "nonalnum_delim": {
+          "type": "char_group",
+          "tokenize_on_chars": [
+            "whitespace",
+            "punctuation",
+            "symbol"
+          ]
+        }
+      },
+      "analyzer": {
+        "body_analyzer": {
+          "type": "custom",
+          "tokenizer": "nonalnum_delim",
+          "filter": [
+            "lowercase"
+          ]
+        }
+      }
+    },
+    "derived_source": {
+      "enabled": true
+    },
+    "codec.compression_level": 6
+  },
+  "mappings": {
+    "properties": {
+      "Timestamp": {
+        "type": "date_nanos"
+      },
+      "TraceId": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "SpanId": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "TraceFlags": {
+        "type": "byte",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "SeverityText": {
+        "type": "keyword",
+        "index_options": "docs",
+        "norms": false
+      },
+      "SeverityNumber": {
+        "type": "byte"
+      },
+      "ServiceName": {
+        "type": "keyword",
+        "index_options": "docs",
+        "norms": false
+      },
+      "Body": {
+        "type": "text",
+        "analyzer": "body_analyzer",
+        "store": true
+      },
+      "ResourceSchemaUrl": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "ResourceAttributes": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": true
+      },
+      "ScopeSchemaUrl": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "ScopeName": {
+        "type": "keyword",
+        "index": false
+      },
+      "ScopeVersion": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      },
+      "ScopeAttributes": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": true
+      },
+      "LogAttributes": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false,
+        "store": true
+      }
+    }
+  }
+}

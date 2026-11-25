@@ -1,0 +1,20 @@
+{
+  "engine": "OpenSearch",
+  "dataset": "otel_logs_1b",
+  "build": "s3-16x1-leandesc-r1",
+  "engine_version": "3.8.0",
+  "load_time": 8847.272,
+  "data_size": 85863516007,
+  "storage_units": {
+    "count": 16,
+    "unit": "segments"
+  },
+  "os": "Ubuntu 24.04.5 LTS",
+  "date": "2026-11-19",
+  "loaded_by": "queries.dsl",
+  "load_cpu": 50340.159,
+  "load_cpu_total": 64307.997,
+  "load_cpu_client": 13967.838,
+  "load_cpu_containers": 50340.159,
+  "load_cpu_procs": 13967.838
+}

@@ -54,9 +54,12 @@ if docker inspect "$OS_CONTAINER" >/dev/null 2>&1; then
 else
     # Only data dir bind-mounted; GC logs stay in container (docker logs)
     # --network host: no NAT; bind via http.port, http.host=0.0.0.0
+    # Under the driver's CPU slice when it exists (SEARCHBENCH_CPU=on reads its usage).
+    cgroup=(); [[ -d "/sys/fs/cgroup/${SEARCHBENCH_CPU_SLICE:-searchbench.slice}" ]] \
+        && cgroup=(--cgroup-parent "${SEARCHBENCH_CPU_SLICE:-searchbench.slice}")
     docker run -d \
         --name "$OS_CONTAINER" \
-        --network host \
+        --network host "${cgroup[@]}" \
         -e discovery.type=single-node \
         -e "http.port=${OS_PORT}" \
         -e "http.host=0.0.0.0" \
