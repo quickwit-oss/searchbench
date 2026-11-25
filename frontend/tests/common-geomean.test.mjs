@@ -56,7 +56,10 @@ test('the page geomean is computed on the queries every displayed engine answere
     return Array.isArray(v) && typeof v[0] === 'number' ? v[0] : null;
   };
   const expected = commonGeomean(rows, ids, cold, timeout);
-  assert.equal(expected.common, 57, 'Datadog BYOC, ClickHouse and DuckDB share 57 queries');
+  assert.equal(expected.common, 57, 'Datadog BYOC, ClickHouse, OpenSearch and DuckDB share 57 queries');
+  // The 600 s-cap Loki S3 1B column (not comparable) is outside the common set: its cell shows "—".
+  assert.equal(expected.sparse, 1);
+  assert.equal(expected.get('Loki 3.7.9 · S3 · prefilter on · c16 · 600 s cap'), null);
   const geoRow = page => page.locator('.trow', { has: page.locator('.rowlab[data-key="geomean"]') });
   const shownValues = async page => (await geoRow(page).locator('.cell').allInnerTexts())
     .map(s => parseFloat(s.replace(/[^0-9.]/g, ''))).sort((a, b) => a - b);
@@ -67,9 +70,11 @@ test('the page geomean is computed on the queries every displayed engine answere
     const errors = []; page.on('pageerror', e => errors.push(e.message));
     await page.goto(pathToFileURL(out).href); await page.locator('.sb-app').waitFor();
     await page.getByRole('button', { name: 'Cold', exact: true }).click();
-    assert.match(await page.locator('.rowlab[data-key="geomean"]').innerText(), /Geomean · 57 common q\./);
-    assert.deepEqual(await shownValues(page),
-      [...expected.values()].map(v => Math.round(v * 100) / 100).sort((a, b) => a - b));
+    assert.match(await page.locator('.rowlab[data-key="geomean"]').innerText(), /Geomean · 57 common q\. · 1 sparse excluded/);
+    const shown = await geoRow(page).locator('.cell').allInnerTexts();
+    assert.equal(shown.filter(s => s.trim() === '—').length, 1, 'the sparse column only');
+    assert.deepEqual((await shownValues(page)).filter(Number.isFinite),
+      [...expected.values()].filter(v => v !== null).map(v => Math.round(v * 100) / 100).sort((a, b) => a - b));
     // Joins: Datadog BYOC answers none, so no query is common to the three columns; the label states
     // the count, so a geomean over fewer engines cannot be read as a comparison of all three.
     await page.locator('[data-act="qtask"][data-task="join"]').click();

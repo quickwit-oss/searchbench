@@ -126,7 +126,12 @@ export function ResultsTable({ ds, engines, ids, state, dispatch }: ResultsTable
         ))}
       </div>
 
-      <TableLegend metric={state.metric} valueMode={state.valueMode} sortRow={state.sortRow} />
+      <TableLegend
+        metric={state.metric}
+        valueMode={state.valueMode}
+        sortRow={state.sortRow}
+        engines={engines}
+      />
     </Panel>
   );
 }

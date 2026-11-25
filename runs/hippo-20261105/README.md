@@ -9,9 +9,13 @@
 | ClickHouse · S3 · 1.7 GiB cap · 61 parts | 2026-11-03 | 61 parts, 58.1 GiB | **1,343 / 894 ms** | 64.1k | 1,288 s | 9,344 s |
 | OpenSearch 3.8 · S3 · searchable snapshot · 16 shards | 2026-11-19 | 16 shards x 1 segment, 80.0 GiB | 6,089 / 266 ms\* | 10.6k | 8,847 s | 50,340 s |
 | DuckDB 2.0 · S3 · sorted copy | 2026-11-01 | no index, 24.7 GiB copy | 7,769 / 6,683 ms | 401.6k | 1,453 s | 10,057 s |
+| Loki 3.7.9 · S3 · prefilter on · c16 · 600 s cap | 2026-11-19 | 109,811 objects, 69.7 GiB | 54/56 ok (600 s cap)† | —† | 5,256 s | 31,690 s |
 
 \* OpenSearch's hot tries read its local file cache (0 S3 GETs), not S3: only its cold try is comparable with
 the other columns. See [OpenSearch](#opensearch-38--s3--searchable-snapshot--16-shards).
+† Loki ran with a **600 s** timeout cap (10× the 60 s cap of the other columns), so 54 of its 56 supported
+queries finish (Q14 and Q29 time out at 600 s; Q09 OR-minmatch is unsupported). It is left out of the 57-query
+geomean, CPU and GET common sets. See [Loki](#loki-379--s3--prefilter-on--c16--600-s-cap).
 
 Geomean over the **57 queries all four answer**. Datadog BYOC, ClickHouse and OpenSearch: per query, the median across 3 rounds
 (hot = min of tries 2–3 in each round), then the geomean; the page shows the per-try medians of the rounds, so its
@@ -19,7 +23,7 @@ hot geomean can differ by ~2–3%. DuckDB: one run.
 
 **Load CPU is the engine's own CPU** (`load_cpu` in the load records = the engine containers, ingest + merges
 until settled). Datadog BYOC's figure excludes the Rust ingest client (2,313 s converting the Parquet to JSON and
-sending it); `load_cpu_total` in the load record keeps it (28,554 s). ClickHouse's excludes `./load` (7 s). OpenSearch's excludes its bulk-ingest client (13,968 s).
+sending it); `load_cpu_total` in the load record keeps it (28,554 s). ClickHouse's excludes `./load` (7 s). OpenSearch's excludes its bulk-ingest client (13,968 s). Loki's excludes its Rust ingest client (12,086 s).
 DuckDB's is its worker process (the sort into the S3 copy), unchanged.
 
 **Not the same box.** Datadog BYOC and ClickHouse ran a day apart on two m8gd.4xlarge. Each box also ran a Quickwit
@@ -104,6 +108,25 @@ other columns (worker restart + page-cache drop per query, cold/hot/hot, 60 s ca
 **a separate session on another m8gd.4xlarge, not interleaved with the pair, one run.** How the configuration was
 chosen: [`duckdb-parquet/TUNING.md`](../../duckdb-parquet/TUNING.md). Evidence (environment, HTTP stats, result
 log): `extra/duckdb/`.
+
+## Loki 3.7.9 · S3 · prefilter on · c16 · 600 s cap
+
+Grafana Loki 3.7.9 (`grafana/loki:3.7.9`, commit `d3b4a2f7`), TSDB schema v13, JSON frame encoding, Snappy chunks
+on S3 (`object_store: s3`), query target `read,query-scheduler`, querier concurrency 16, `LOKI_LITERAL_PREFILTER=on`,
+result and chunk caches off (persisted TSDB index metadata cached).
+
+- **Load:** 5,256 s wall, 69.7 GiB (74.8 GB) in 109,811 objects (109,810 chunk objects + 1 compacted index object),
+  exact 1,000,000,000 rows verified. Load CPU 31,690 s is the Loki containers only; the Rust ingest client's
+  12,086 s is excluded, as for Datadog BYOC and OpenSearch (`load_cpu_total` keeps both: 43,776 s).
+- **Queries (600 s cap):** one round, 2026-11-19, on its own m8gd.4xlarge. Stop + page-cache drop + start before
+  every query, 1 cold + 2 hot tries, 600 s cap (client and server `query_timeout`). 56 supported queries (Q09
+  OR-minmatch and BM25/fuzzy/proximity/joins are unsupported): **54 finish all three tries** (1.3–593 s; best hot ÷
+  cold median 0.998), **Q14 and Q29 time out cold at 600 s**.
+- **Excluded from the common sets:** because of its 600 s cap (10× the 60 s cap of the other four columns), the
+  page marks timeouts at 600 s for this column and leaves it out of the 57-query geomean, CPU and S3 GET summaries,
+  so the other four columns are unchanged. Per-query native S3 `GetObject` counts are in `s3_requests.json`
+  (`partial: true`; bytes not collected). Evidence and conversion script:
+  [`extra/loki-s3-600s-hot-1b-20261119/`](extra/loki-s3-600s-hot-1b-20261119/README.md).
 
 ## About this copy
 

@@ -1,0 +1,388 @@
+{
+  "round": 1,
+  "reverse": false,
+  "queries": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q10",
+    "Q11",
+    "Q12",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20",
+    "Q21",
+    "Q25",
+    "Q26",
+    "Q27",
+    "Q28",
+    "Q29",
+    "Q30",
+    "Q31",
+    "Q32",
+    "Q54",
+    "Q55",
+    "Q56",
+    "Q57",
+    "Q58",
+    "Q60",
+    "Q61",
+    "Q62",
+    "Q63",
+    "Q64",
+    "Q65",
+    "Q66",
+    "Q67",
+    "Q68",
+    "Q69",
+    "Q70",
+    "Q71",
+    "Q72",
+    "Q73",
+    "Q74",
+    "Q75",
+    "Q76",
+    "Q77",
+    "Q78",
+    "Q79",
+    "Q80",
+    "Q81",
+    "Q82",
+    "Q83"
+  ],
+  "variants": [
+    "c16"
+  ],
+  "variant_env": {
+    "c16": {
+      "LOKI_QUERY_CONCURRENCY": "16",
+      "LOKI_LITERAL_PREFILTER": "on"
+    }
+  },
+  "expected_settings": {
+    "c16": {
+      "literal_prefilter": true,
+      "query_concurrency": 16
+    }
+  },
+  "require_server_config": true,
+  "base_query_concurrency": 16,
+  "query_limits": {
+    "tsdb_max_query_parallelism": 32,
+    "split_queries_by_interval": "15m",
+    "split_instant_metric_queries_by_interval": "1h",
+    "tsdb_max_bytes_per_shard": "600MB",
+    "query_timeout": "600s"
+  },
+  "steps": [
+    {
+      "query": "Q01",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q02",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q03",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q04",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q05",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q06",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q07",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q08",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q10",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q11",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q12",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q14",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q15",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q16",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q17",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q18",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q19",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q20",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q21",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q25",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q26",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q27",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q28",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q29",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q30",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q31",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q32",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q54",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q55",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q56",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q57",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q58",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q60",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q61",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q62",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q63",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q64",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q65",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q66",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q67",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q68",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q69",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q70",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q71",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q72",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q73",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q74",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q75",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q76",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q77",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q78",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q79",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q80",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q81",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q82",
+      "variant": "c16",
+      "position": 1
+    },
+    {
+      "query": "Q83",
+      "variant": "c16",
+      "position": 1
+    }
+  ],
+  "tries": 3,
+  "cold_only": false,
+  "skip_hot_after_cold_timeout": true,
+  "cap_seconds": 600,
+  "cold_cap_seconds": 600,
+  "cap_source": "--cap-seconds",
+  "server_query_timeout_seconds": 600,
+  "effective_ceiling_seconds": 600,
+  "pair_budget_floor_seconds": 0,
+  "data_dir": "/mnt/lp/loki-1b-s3",
+  "storage": "s3",
+  "container": "searchbench-loki-s3-600s-hot-1b",
+  "image": "grafana/loki@sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580",
+  "destination_id": "d5ad619f-1f8a-4f40-af35-5e8c3ec29f1a",
+  "manifest_rows": 1000000000,
+  "inventory_before": "7d72fec18f0400838fee5e6880a355e749168a07807f28c0361859b65c7e1f14",
+  "deadline_epoch": 1795146420.0,
+  "started_epoch": 1795099858.4439518,
+  "driver_sha256": "8b5ef890ea97cfaf74b7089e100dff8aa696b388d013485de6718e663aa1a8cd",
+  "queries_sha256": "25d512b1e6a4129e4e5aa4a03bc7f534dd20a5ca77dcf2bd575d9cf0b97900e4"
+}

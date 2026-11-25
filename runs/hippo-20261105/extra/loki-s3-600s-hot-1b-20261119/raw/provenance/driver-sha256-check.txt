@@ -1,0 +1,5 @@
+query_pair_variants.py: OK
+test_query_pair_variants.py: OK
+answers.py: OK
+references.json: OK
+check_answers.py: OK

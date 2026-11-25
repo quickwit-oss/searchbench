@@ -1,0 +1,6 @@
+loki, version 3.7.9 (branch: release-3.7.x, revision: d3b4a2f7)
+  build user:       root@buildkitsandbox
+  build date:       2026-10-20T21:43:00Z
+  go version:       go1.26.10
+  platform:         linux/arm64
+  tags:             netgo

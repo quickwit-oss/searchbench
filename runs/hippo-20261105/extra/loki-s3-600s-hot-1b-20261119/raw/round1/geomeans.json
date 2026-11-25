@@ -1,0 +1,188 @@
+{
+  "body-count": {
+    "queries": 27,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 2
+    },
+    "cold_timeouts": {
+      "c16": 2
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [
+      "Q14",
+      "Q29"
+    ],
+    "cold_timeout_only_c16": [
+      "Q14",
+      "Q29"
+    ],
+    "c16_cold_geomean": 235.96557089960692,
+    "cold_queries": 25,
+    "c16_best_hot_geomean": 235.51412669758503,
+    "best_hot_queries": 25,
+    "c16_best_hot_raw_geomean": 235.51412669758503,
+    "best_hot_raw_queries": 25
+  },
+  "group-by": {
+    "queries": 8,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 0
+    },
+    "cold_timeouts": {
+      "c16": 0
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_c16": [],
+    "c16_cold_geomean": 287.8912161036812,
+    "cold_queries": 8,
+    "c16_best_hot_geomean": 287.3281925759086,
+    "best_hot_queries": 8,
+    "c16_best_hot_raw_geomean": 287.3281925759086,
+    "best_hot_raw_queries": 8
+  },
+  "histogram": {
+    "queries": 5,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 0
+    },
+    "cold_timeouts": {
+      "c16": 0
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_c16": [],
+    "c16_cold_geomean": 262.23010730768993,
+    "cold_queries": 5,
+    "c16_best_hot_geomean": 262.31549077355925,
+    "best_hot_queries": 5,
+    "c16_best_hot_raw_geomean": 262.31549077355925,
+    "best_hot_raw_queries": 5
+  },
+  "logs": {
+    "queries": 14,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 0
+    },
+    "cold_timeouts": {
+      "c16": 0
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_c16": [],
+    "c16_cold_geomean": 60.01833323439034,
+    "cold_queries": 14,
+    "c16_best_hot_geomean": 57.383321365404996,
+    "best_hot_queries": 14,
+    "c16_best_hot_raw_geomean": 57.383321365404996,
+    "best_hot_raw_queries": 14
+  },
+  "unfiltered": {
+    "queries": 2,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 0
+    },
+    "cold_timeouts": {
+      "c16": 0
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_c16": [],
+    "c16_cold_geomean": 1.6242812882933793,
+    "cold_queries": 2,
+    "c16_best_hot_geomean": 1.2927103284456267,
+    "best_hot_queries": 2,
+    "c16_best_hot_raw_geomean": 1.2927103284456267,
+    "best_hot_raw_queries": 2
+  },
+  "all": {
+    "queries": 56,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 2
+    },
+    "cold_timeouts": {
+      "c16": 2
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [
+      "Q14",
+      "Q29"
+    ],
+    "cold_timeout_only_c16": [
+      "Q14",
+      "Q29"
+    ],
+    "c16_cold_geomean": 143.10740408612705,
+    "cold_queries": 54,
+    "c16_best_hot_geomean": 140.0994763949776,
+    "best_hot_queries": 54,
+    "c16_best_hot_raw_geomean": 140.0994763949776,
+    "best_hot_raw_queries": 54
+  },
+  "prefiltered": {
+    "queries": 38,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 0
+    },
+    "cold_timeouts": {
+      "c16": 0
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [],
+    "cold_timeout_only_c16": [],
+    "c16_cold_geomean": 126.10629478503259,
+    "cold_queries": 38,
+    "c16_best_hot_geomean": 124.08676054039292,
+    "best_hot_queries": 38,
+    "c16_best_hot_raw_geomean": 124.08676054039292,
+    "best_hot_raw_queries": 38
+  },
+  "not-prefiltered": {
+    "queries": 18,
+    "cap_seconds": 600,
+    "timeouts": {
+      "c16": 2
+    },
+    "cold_timeouts": {
+      "c16": 2
+    },
+    "errors": {
+      "c16": 0
+    },
+    "cold_timeout_both": [
+      "Q14",
+      "Q29"
+    ],
+    "cold_timeout_only_c16": [
+      "Q14",
+      "Q29"
+    ],
+    "c16_cold_geomean": 193.24567475212396,
+    "cold_queries": 16,
+    "c16_best_hot_geomean": 186.90688187401577,
+    "best_hot_queries": 16,
+    "c16_best_hot_raw_geomean": 186.90688187401577,
+    "best_hot_raw_queries": 16
+  }
+}

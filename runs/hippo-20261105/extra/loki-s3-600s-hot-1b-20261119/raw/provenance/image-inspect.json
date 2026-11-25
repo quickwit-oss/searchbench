@@ -1,0 +1,65 @@
+[
+    {
+        "Id": "sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580",
+        "RepoTags": [
+            "grafana/loki@sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580"
+        ],
+        "RepoDigests": [
+            "grafana/loki@sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-20T21:45:42.003100377Z",
+        "Config": {
+            "User": "10001",
+            "ExposedPorts": {
+                "3100/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "Entrypoint": [
+                "/usr/bin/loki"
+            ],
+            "Cmd": [
+                "-config.file=/etc/loki/local-config.yaml"
+            ],
+            "WorkingDir": "/",
+            "ArgsEscaped": true
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 42820418,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:e842bc95a0a8664498b7881e537b5929e419d590f5a9954fb7f81c73c20fc6c7",
+                "sha256:621c35e751a51a9a9dc3e80aa0b7fe8be2a93402ea6ccd307d30852cd7776cda",
+                "sha256:763a77745f27b86cf26b97887b6842d83720e63b1c48848c0ba9ee54e351d63a",
+                "sha256:f0d0eff4c2312a7bd6e21797bdfea5eb35f60e76b555ce2b22794424af2cad36",
+                "sha256:275a30dd8ce958b21daa9ad962c6fbc09f98306ee2f486b65c9075dc257b1412",
+                "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
+                "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
+                "sha256:6f1cdceb6a3146f0ccb986521156bef8a422cdbb0863396f7f751f575ba308f4",
+                "sha256:bd3cdfae1d3fdd83a2231d608969b38b82349777c2fff9a7c12d54f8ac5c9b38",
+                "sha256:4cde6b0bb6f50a5f255eef7b2a42162c661cf776b803225dcac9a659e396bb6b",
+                "sha256:ad51d0769d16ba578106a177987dfe3d2e02c1668c852b795b2f6b024068242a",
+                "sha256:187cfc6d1e3e8a40a5e64653bcd3239c140807dcf1c09e48021178705a5a6139",
+                "sha256:5e387454b02f499442fa024ebdf2a59f0c6deeac75e774e59e3377a79e1e8bb9",
+                "sha256:e7f8f2a6a58a97bd2d244ff6a69293d7ff64dffa38664f96dc1180e5e7caaa5a",
+                "sha256:01a56845e52c34b2aff83a45a71891eccbf9cb54d5292d6ef4ba8b4bab644eda",
+                "sha256:9dc0c8eaac398565780bdac14c25fd2ea1cde1586068c2b2922928504fd433a0",
+                "sha256:c057bbe0ec11d2642ecbe5e52f0abe27daf455a185d75be44701fd47b4d77920",
+                "sha256:e89c768b53f95dbadc6e2c74b66e03f4d46d46e91ac8aada093f0acb2586ef91"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-19T13:15:00.040976951Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:1a779c5f714e795ac698b125fc265ae97292f792a91535fa29726073d03d5580",
+            "size": 4062
+        }
+    }
+]

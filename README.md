@@ -15,13 +15,13 @@ implements `./install`, `./start`, `./stop`, `./check`, `./load`,
 
 ## Public benchmark (Datadog, 2026-11)
 
-This fork publishes the runs behind Datadog's 2026-11 log search benchmark: Datadog BYOC, ClickHouse, OpenSearch
-and DuckDB on S3, 1B rows, AWS m8gd.4xlarge. [`PUBLIC_BENCH.md`](PUBLIC_BENCH.md) lists every published number
+This fork publishes the runs behind Datadog's 2026-11 log search benchmark: Datadog BYOC, ClickHouse, OpenSearch,
+DuckDB and Grafana Loki on S3, 1B rows, AWS m8gd.4xlarge. [`PUBLIC_BENCH.md`](PUBLIC_BENCH.md) lists every published number
 and where it comes from; the run set, with its method, settings and evidence, is
 [`runs/hippo-20261105`](runs/hippo-20261105/README.md), and it is the results page's default view
 ([`runs/README.md`](runs/README.md) describes the layout). Adapters used: [`datadog-byoc/`](datadog-byoc/README.md)
 (this fork's Quickwit-based adapter, renamed), [`clickhouse/`](clickhouse/README.md),
-[`opensearch/`](opensearch/README.md) and [`duckdb-parquet/`](duckdb-parquet/README.md) (configuration choices in
+[`opensearch/`](opensearch/README.md), [`duckdb-parquet/`](duckdb-parquet/README.md) and [`loki/`](loki/README.md) (configuration choices in
 [`duckdb-parquet/TUNING.md`](duckdb-parquet/TUNING.md)).
 
 ## Results page
